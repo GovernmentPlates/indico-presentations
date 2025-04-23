@@ -16,9 +16,9 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '^12.13.1'
+          node-version: '^20'
 
-      - uses: actions/cache@v1
+      - uses: actions/cache@v4
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -43,10 +43,8 @@ jobs:
 
 
       - name: Deploy to GitHub pages
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: dist
-          TARGET_FOLDER: ${{ steps.build_slides.outputs.target_folder }}
+          branch: gh-pages
+          folder: dist
+          target-folder: ${{ steps.build_slides.outputs.target_folder }}

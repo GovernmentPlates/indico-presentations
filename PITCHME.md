@@ -1,24 +1,23 @@
 ---
 marp: true
-title: Indico - Test Presentation
-description: A boilerplate presentation
+title: Rewriting the check-in app
 theme: indico
 paginate: true
 _paginate: false
-footer: CC BY-NC-SA 4.0
+footer: ''
 ---
 
 <!-- _footer: '' -->
 
-![bg](#0033A0)
+<!-- _backgroundColor: "#0033A0" -->
 ![bg width:400px](assets/theme/cern.svg)
 
 ---
 
 ![width:400px](assets/theme/logo.svg)
-*test presentation*
+*Rewriting the Indico check-in app*
 
-### Indico Team (CERN)
+### Dominic Hollis - Indico Team (CERN)
 
 <style scoped>
 h3 {
@@ -28,6 +27,38 @@ h3 {
 }
 </style>
 
+
+---
+![bg left](assets/slides/seats.jpg)
+
+### What is the check-in app?
+
+ - Helps organizers manage attendee check-in at events
+ - Used at CERN for (major) conferences
+ - Used at other institutions (e.g. UNOG etc.)
+ - Does what it says on the tin
+
+---
+![bg right](assets/slides/old-engine.jpg)
+
+### Legacy check-in app
+
+ - Built in 2013 (and continued to be developed till 2015)
+ - Based on AngularJS
+ - Uses Cordova to build for iOS and Android
+ - Showing its age
+ - Hard to maintain
+
+---
+<style scoped>
+    section {
+        justify-content: start;
+    }
+</style>
+
+### Check-in App (PWA)
+
+![bg width:65% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/checkin_app.png)
 
 ---
 
@@ -45,5 +76,5 @@ img {
 <!-- _footer: '' -->
 <!-- _paginate: false -->
 
-![bg](#002939ff)
+<!-- _backgroundColor: "#002939ff" -->
 ![bg 30%](assets/theme/logo_inverted.svg)
