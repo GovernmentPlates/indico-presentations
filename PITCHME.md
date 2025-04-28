@@ -33,23 +33,11 @@ h3 {
 }
 </style>
 ---
-### Overview
-- What is the check-in app?
-- Why did we rewrite it?
-- What is a PWA?
-- How did we rewrite it?
-- 🔮 Mystery slide
-- Demo
-- 💬 Questions
-
-XXX: Maybe reorder the slides a bit...
-
----
 ![bg left](assets/slides/seats.jpg)
 
 ### What is the check-in app?
 
- - Helps organizers check-in attendees at events
+ - For organizers to check-in attendees at events
  - Used at CERN for (major) events and beyond
  - Does what it says on the tin
 
@@ -68,6 +56,7 @@ XXX: Maybe reorder the slides a bit...
 
 ### The old check-in app
 🪦 2013 - 2023*
+
 ![height:460px](assets/slides/checkin-legacy-app.png)
 
 <small>*GPlay listing removed as of early 2024, App Store listing removed in early April 2025 (oops)</small>
@@ -77,6 +66,8 @@ XXX: Maybe reorder the slides a bit...
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
     }
 
     h3 {
@@ -92,29 +83,12 @@ XXX: Maybe reorder the slides a bit...
 </style>
 
 ---
-<style scoped>
-    section {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    h3 {
-        font-size: 1.5em;
-    }
-</style>
-
-### The new check-in app
-
-![height:500px](assets/slides/checkin_app.png)
-
----
-### Progressive Web App (PWA)
-- Works on all modern browsers (cross-platform)
-- No need to install (but can be installed)
-- Works offline (with some limitations)
-- Uses web APIs to access device features (camera, vibrations, etc.)
-- It just works (most of the time)
+![bg left](assets/slides/gears.jpg)
+### What is a Progressive Web App (PWA)?
+- PWAs are web applications that behave like native apps
+- They can work offline and can be installed on devices
+- Built using standard web technologies (HTML, CSS, JS)
+- Provide a seamless, app-like experience across platforms
 
 ---
 ![bg right](assets/slides/steelworks.jpg)
@@ -129,21 +103,117 @@ XXX: Maybe reorder the slides a bit...
 <!-- _footer: Image source: Provincial Archives of Alberta (PA3315.2 / Circa 1963) -->
 
 ---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+</style>
+
+### The new check-in app
+https://checkin.getindico.io
+
+![height:500px](assets/slides/checkin_app.png)
+
+---
 
 ### PWA > React Native
 ![bg left](assets/slides/thumbs-up.jpg)
 
-- Single, uniform codebase for both iOS and Android (it is web, after all...)
+- Single, uniform codebase for both iOS and Android
+- Lightweight, easy to develop and maintain
 - No need to publish to GPlay/App Store (although, we could in theory)
 - Modern PWAs are pretty great these days 👍 (mobile browsers are packing more functionality with each release)
 
 ---
+![bg right](assets/slides/road-issues.jpg)
 
-### 
+### Challenges
+- Modifying Indico's API to support the new app
+- Building a new UI from scratch
+- Learning curve for the team
+- Deprecation of React CRA (Create React App) ➡️ Vite
+- Browser/Device compatibility (especially Safari/Apple in general)
+
+---
+### Apple 💔 PWAs
+
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    small {
+        margin: 0;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+</style>
+
+![height:550px](assets/slides/apple-pwa-fuckery.png)
+
+<small>Feb 2024: "PWAs? No thanks! (EU Digital Markets Act said so!)"</small>
+
+---
+### Apple ❤️‍🩹 PWAs
+
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    small {
+        margin: 0;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+</style>
+
+![height:500px](assets/slides/apple-pwa-uturn.png)
+
+<small>March 2024: 🇪🇺 Apple and the EU Commission made up (for now)?</small>
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    h3 {
+        font-size: 2.5em;
+    }
+</style>
+
+### Any questions?
 
 ---
 
-### [getindico.io](https://getindico.io)
+### [🌐 getindico.io](https://getindico.io)
 #### ![twitter width:50px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
 
 <style scoped>
