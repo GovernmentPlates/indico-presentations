@@ -14,28 +14,43 @@ footer: ''
 
 ---
 
-![width:400px](assets/theme/logo.svg)
+![width:400px right:50% left:50%](assets/theme/logo.svg)
 *Rewriting the Indico check-in app*
 
 ### Dominic Hollis - Indico Team (CERN)
 
 <style scoped>
+section {
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
 h3 {
     color: #aaa;
     font-size: 0.8em;
     font-weight: normal;
 }
 </style>
+---
+### Overview
+- What is the check-in app?
+- Why did we rewrite it?
+- What is a PWA?
+- How did we rewrite it?
+- 🔮 Mystery slide
+- Demo
+- 💬 Questions
 
+XXX: Maybe reorder the slides a bit...
 
 ---
 ![bg left](assets/slides/seats.jpg)
 
 ### What is the check-in app?
 
- - Helps organizers manage attendee check-in at events
- - Used at CERN for (major) conferences
- - Used at other institutions (e.g. UNOG etc.)
+ - Helps organizers check-in attendees at events
+ - Used at CERN for (major) events and beyond
  - Does what it says on the tin
 
 ---
@@ -44,21 +59,87 @@ h3 {
 ### Legacy check-in app
 
  - Built in 2013 (and continued to be developed till 2015)
- - Based on AngularJS
- - Uses Cordova to build for iOS and Android
+ - AngularJS
+ - Cordova to build for iOS and Android
  - Showing its age
  - Hard to maintain
 
 ---
+
+### The old check-in app
+🪦 2013 - 2023*
+![height:460px](assets/slides/checkin-legacy-app.png)
+
+<small>*GPlay listing removed as of early 2024, App Store listing removed in early April 2025 (oops)</small>
+
 <style scoped>
     section {
-        justify-content: start;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
+
+    small {
+        margin: 0;
+        font-size: 0.8em;
+        color: #aaa;
     }
 </style>
 
-### Check-in App (PWA)
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
 
-![bg width:65% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/checkin_app.png)
+    h3 {
+        font-size: 1.5em;
+    }
+</style>
+
+### The new check-in app
+
+![height:500px](assets/slides/checkin_app.png)
+
+---
+### Progressive Web App (PWA)
+- Works on all modern browsers (cross-platform)
+- No need to install (but can be installed)
+- Works offline (with some limitations)
+- Uses web APIs to access device features (camera, vibrations, etc.)
+- It just works (most of the time)
+
+---
+![bg right](assets/slides/steelworks.jpg)
+
+### The rewrite
+
+- Idea floated in 2023
+- Summer student project (João Gil & Tomáš Roun)
+- Early ideas involved using React Native, but...
+- PWA was chosen instead (more on that later)
+
+<!-- _footer: Image source: Provincial Archives of Alberta (PA3315.2 / Circa 1963) -->
+
+---
+
+### PWA > React Native
+![bg left](assets/slides/thumbs-up.jpg)
+
+- Single, uniform codebase for both iOS and Android (it is web, after all...)
+- No need to publish to GPlay/App Store (although, we could in theory)
+- Modern PWAs are pretty great these days 👍 (mobile browsers are packing more functionality with each release)
+
+---
+
+### 
 
 ---
 
