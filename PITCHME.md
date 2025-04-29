@@ -54,7 +54,7 @@ h3 {
 
 ---
 
-### The old check-in app
+### The legacy check-in app
 🪦 2013 - 2023*
 
 ![height:460px](assets/slides/checkin-legacy-app.png)
@@ -91,7 +91,7 @@ h3 {
 - Provide a seamless, app-like experience across platforms
 
 ---
-![bg right](assets/slides/steelworks.jpg)
+![bg right](assets/slides/planning.jpg)
 
 ### The rewrite
 
@@ -99,8 +99,6 @@ h3 {
 - Summer student project (João Gil & Tomáš Roun)
 - Early ideas involved using React Native, but...
 - PWA was chosen instead (more on that later)
-
-<!-- _footer: Image source: Provincial Archives of Alberta (PA3315.2 / Circa 1963) -->
 
 ---
 <style scoped>
@@ -117,15 +115,22 @@ h3 {
     }
 </style>
 
-### The new check-in app
+### ✨ The new check-in app ✨
 https://checkin.getindico.io
 
 ![height:500px](assets/slides/checkin_app.png)
 
 ---
+![bg right](assets/slides/stack.jpg)
+### Project Stack
+- React (Typescript/TSX)
+- Vite (Build)
+- Tailwind CSS
+- Openshift/OKD (Deployment)
 
-### PWA > React Native
+---
 ![bg left](assets/slides/thumbs-up.jpg)
+### PWA > React Native
 
 - Single, uniform codebase for both iOS and Android
 - Lightweight, easy to develop and maintain
@@ -157,17 +162,9 @@ https://checkin.getindico.io
     h3 {
         font-size: 1.5em;
     }
-
-    small {
-        margin: 0;
-        font-size: 0.8em;
-        color: #aaa;
-    }
 </style>
 
 ![height:550px](assets/slides/apple-pwa-fuckery.png)
-
-<small>Feb 2024: "PWAs? No thanks! (EU Digital Markets Act said so!)"</small>
 
 ---
 ### Apple ❤️‍🩹 PWAs
