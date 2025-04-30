@@ -111,11 +111,14 @@ h3 {
     }
 
     h3 {
-        font-size: 1.5em;
+        font-size: 1.75em;
+        background: linear-gradient(to right, #1488cc, #2b32b2);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 </style>
 
-### ✨ The new check-in app ✨
+### The new check-in app
 https://checkin.getindico.io
 
 ![height:500px](assets/slides/checkin_app.png)
@@ -172,9 +175,17 @@ https://checkin.getindico.io
     h3 {
         font-size: 1.5em;
     }
+
+    small {
+        margin: 0;
+        font-size: 0.8em;
+        color: #aaa;
+    }
 </style>
 
 ![height:550px](assets/slides/apple-pwa-fuckery.png)
+
+<small>Sources: The Register (Thomas C.) on [8 Feb. 2024](https://www.theregister.com/2024/02/08/apple_web_apps_eu/) and [16 Feb. 2024](https://www.theregister.com/2024/02/16/apple_web_apps/)</small>
 
 ---
 ### Apple ❤️‍🩹 PWAs
@@ -201,7 +212,7 @@ https://checkin.getindico.io
 
 ![height:500px](assets/slides/apple-pwa-uturn.png)
 
-<small>March 2024: 🇪🇺 Apple and the EU Commission made up (for now)?</small>
+<small>Source: TechCrunch (Ivan M.) on [1 Mar. 2024](https://techcrunch.com/2024/03/01/apple-reverses-decision-about-blocking-web-apps-on-iphones-in-the-eu/)</small>
 
 ---
 <style scoped>
@@ -254,6 +265,6 @@ img {
 </style>
 
 ### 📷 Image sources disclaimer
-Images used in this talk (apart from screenshots of the old and new check-in app and the Indico/CERN logos) are licensed under the [Unsplash License (see below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
+Images used in this talk (apart from screenshots of the old and new check-in app, Indico/CERN logos and news extracts from The Register and TechCrunch) are licensed under the [Unsplash License (see below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
 
 > Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use images from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile images from Unsplash to replicate a similar or competing service.
