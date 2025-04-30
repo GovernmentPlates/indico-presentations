@@ -254,6 +254,6 @@ img {
 </style>
 
 ### 📷 Image sources disclaimer
-Images used in this talk (apart from screenshots of the old and new check-in app) are licensed under the [Unsplash License (see below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
+Images used in this talk (apart from screenshots of the old and new check-in app and the Indico/CERN logos) are licensed under the [Unsplash License (see below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
 
 > Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use images from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile images from Unsplash to replicate a similar or competing service.
