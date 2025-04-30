@@ -122,11 +122,11 @@ https://checkin.getindico.io
 
 ---
 ![bg right](assets/slides/stack.jpg)
-### Project Stack
+### App Stack
 - React (Typescript/TSX)
 - Vite (Build)
 - Tailwind CSS
-- Openshift/OKD (Deployment)
+- Openshift (Deployment)
 
 ---
 ![bg left](assets/slides/thumbs-up.jpg)
@@ -138,7 +138,17 @@ https://checkin.getindico.io
 - Modern PWAs are pretty great these days 👍 (mobile browsers are packing more functionality with each release)
 
 ---
-![bg right](assets/slides/road-issues.jpg)
+![bg right](assets/slides/lighthouse.jpg)
+
+### Lighthouse reporting (Chrome)
+- Performance, accessibility, SEO and best practices
+- Used to (roughly) test the app on different devices
+- Integrated into the CI pipeline
+- Helped to pinpoint issues in the PWA (e.g. service workers, manifest etc.)
+- Some issues are not relevant to our use case (e.g. SEO)
+
+---
+![bg left](assets/slides/road-issues.jpg)
 
 ### Challenges
 - Modifying Indico's API to support the new app
