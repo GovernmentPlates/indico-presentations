@@ -215,41 +215,30 @@ https://checkin.getindico.io
 <small>Source: TechCrunch (Ivan M.) on [1 Mar. 2024](https://techcrunch.com/2024/03/01/apple-reverses-decision-about-blocking-web-apps-on-iphones-in-the-eu/)</small>
 
 ---
-<style scoped>
-    section {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-    }
-
-    h3 {
-        font-size: 2.5em;
-    }
-</style>
-
-### Any questions?
-
----
+<!-- _backgroundColor: "#002939ff" -->
+![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
 
 ### [🌐 getindico.io](https://getindico.io)
+### [📱 checkin.getindico.io](https://checkin.getindico.io)
 ### [💬 talk.getindico.io](https://talk.getindico.io)
 ### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
 ### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
 ### IRC [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
 
 <style scoped>
-img {
-    vertical-align: middle;
+h3 {
+    color: #ffffff !important;
+}
+
+p {
+    text-align: middle;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
 }
 </style>
-
----
-
-<!-- _footer: '' -->
-<!-- _paginate: false -->
-
-<!-- _backgroundColor: "#002939ff" -->
-![bg 30%](assets/theme/logo_inverted.svg)
 
 ---
 <style scoped>
