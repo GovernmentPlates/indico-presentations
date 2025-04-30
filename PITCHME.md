@@ -221,7 +221,10 @@ https://checkin.getindico.io
 ---
 
 ### [🌐 getindico.io](https://getindico.io)
-#### ![twitter width:50px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
+### [💬 talk.getindico.io](https://talk.getindico.io)
+### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
+### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
+### IRC [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
 
 <style scoped>
 img {
@@ -236,3 +239,21 @@ img {
 
 <!-- _backgroundColor: "#002939ff" -->
 ![bg 30%](assets/theme/logo_inverted.svg)
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+</style>
+
+### 📷 Image sources disclaimer
+Images used in this talk (apart from screenshots of the old and new check-in app) are licensed under the [Unsplash License (see below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
+
+> Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use images from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile images from Unsplash to replicate a similar or competing service.
