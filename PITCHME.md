@@ -20,17 +20,17 @@ footer: ''
 ### Dominic Hollis - Indico Team (CERN)
 
 <style scoped>
-section {
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-}
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
 
-h3 {
-    color: #aaa;
-    font-size: 0.8em;
-    font-weight: normal;
-}
+    h3 {
+        color: #aaa;
+        font-size: 0.8em;
+        font-weight: normal;
+    }
 </style>
 ---
 ![bg left](assets/slides/seats.jpg)
@@ -112,7 +112,7 @@ h3 {
 
     h3 {
         font-size: 1.75em;
-        background: linear-gradient(to right, #1488cc, #2b32b2);
+        background: linear-gradient(to right,rgb(0, 255, 255),rgb(9, 19, 216));
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -144,14 +144,24 @@ https://checkin.getindico.io
 ![bg right](assets/slides/lighthouse.jpg)
 
 ### Lighthouse reporting (Chrome)
-- Performance, accessibility, SEO and best practices
+
+- Performance, accessibility, SEO (Search Engine Optimization) and general best practices
 - Used to (roughly) test the app on different devices
 - Integrated into the CI pipeline
-- Helped to pinpoint issues in the PWA (e.g. service workers, manifest etc.)
+- Helped to pinpoint issues in the PWA (e.g. getting the 'install' prompt to appear etc.)
 - Some issues are not relevant to our use case (e.g. SEO)
 
 ---
-![bg left](assets/slides/road-issues.jpg)
+### Vite
+![bg left](assets/slides/motorway.jpg)
+
+- Our replacement for the deprecated Create React App (CRA) boilerplate
+- Fast, modern frontend build tool (leverages Rollup under the hood)
+- Hot module reloading (HMR) for development - changes are reflected in the browser almost instantly
+- Out-of-the-box support for TypeScript, JSX, CSS and more
+
+---
+![bg right](assets/slides/road-issues.jpg)
 
 ### Challenges
 - Modifying Indico's API to support the new app
@@ -219,25 +229,24 @@ https://checkin.getindico.io
 ![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
 
 ### [🌐 getindico.io](https://getindico.io)
-### [📱 checkin.getindico.io](https://checkin.getindico.io)
-### [💬 talk.getindico.io](https://talk.getindico.io)
-### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
+### ![checkin width:40px](assets/theme/checkin.png) [checkin.getindico.io](https://checkin.getindico.io)
 ### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
-### IRC [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
+### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
+### ![matrix width:40px](assets/theme/matrix_bw.svg) [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
 
 <style scoped>
-h3 {
-    color: #ffffff !important;
-}
+    p {
+        text-align: middle;
+    }
 
-p {
-    text-align: middle;
-}
+    img {
+        vertical-align: middle;
+    }
 
-a {
-    color: #ffffff;
-    text-decoration: none;
-}
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
 </style>
 
 ---
@@ -251,9 +260,16 @@ a {
     h3 {
         font-size: 1.5em;
     }
+
+    small {
+        font-size: 0.8em;
+        color: #aaa;
+    }
 </style>
 
 ### 📷 Image sources disclaimer
-Images used in this talk (apart from screenshots of the old and new check-in app, Indico/CERN logos and news extracts from The Register and TechCrunch) are licensed under the [Unsplash License (see below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
+Images used in this talk - apart from screenshots of the old and new check-in app, Indico/CERN logos and press extracts from The Register and TechCrunch - are licensed under the [Unsplash License (longform below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
 
 > Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use images from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile images from Unsplash to replicate a similar or competing service.
+
+<small>Information correct at the time of writing (30th April 2025)</small>
