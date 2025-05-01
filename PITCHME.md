@@ -153,11 +153,11 @@ https://checkin.getindico.io
 
 ---
 ### Vite
-![bg left](assets/slides/motorway.jpg)
+![bg left](assets/slides/saw.jpg)
 
 - Our replacement for the deprecated Create React App (CRA) boilerplate
 - Fast, modern frontend build tool (leverages Rollup under the hood)
-- Hot module reloading (HMR) for development - changes are reflected in the browser almost instantly
+- Fast Hot Module Reloading (HMR) for development - changes are reflected in the browser almost instantly
 - Out-of-the-box support for TypeScript, JSX, CSS and more
 
 ---
