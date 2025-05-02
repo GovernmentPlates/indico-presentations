@@ -6,11 +6,22 @@ paginate: true
 _paginate: false
 footer: ''
 ---
-
 <!-- _footer: '' -->
+![bg](assets/slides/splash.png)
 
-<!-- _backgroundColor: "#0033A0" -->
-![bg width:400px](assets/theme/cern.svg)
+![](assets/theme/cern_bw.svg)
+
+<style scoped>
+    img {
+        margin-left: 15px;
+        margin-top: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60px;
+        height: 60px;
+        }
+</style>
 
 ---
 
@@ -55,11 +66,11 @@ footer: ''
 ---
 
 ### The legacy check-in app
-🪦 2013 - 2023*
+🪦 2013 - 2023
 
 ![height:460px](assets/slides/checkin-legacy-app.png)
 
-<small>*GPlay listing removed as of early 2024, App Store listing removed in early April 2025 (oops)</small>
+<small>GPlay listing removed as of early 2024, App Store listing removed in early April 2025</small>
 
 <style scoped>
     section {
@@ -96,7 +107,7 @@ footer: ''
 ### The rewrite
 
 - Idea floated in 2023
-- Summer student project (João Gil & Tomáš Roun)
+- Summer student project (João Mesquita & Tomáš Roun)
 - Early ideas involved using React Native, but...
 - PWA was chosen instead (more on that later)
 
