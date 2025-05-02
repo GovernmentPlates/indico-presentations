@@ -279,8 +279,8 @@ https://checkin.getindico.io
 </style>
 
 ### 📷 Image sources disclaimer
-Images used in this talk - apart from screenshots of the old and new check-in app, Indico/CERN logos and press extracts from The Register and TechCrunch - are licensed under the [Unsplash License (longform below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
+Images used in this talk - apart from screenshots of the old and new check-in app, Indico/CERN logos/branding, social media logos, and press extracts from The Register and TechCrunch - are licensed under the [Unsplash License (longform below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
 
 > Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use images from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile images from Unsplash to replicate a similar or competing service.
 
-<small>Information correct at the time of writing (30th April 2025)</small>
+<small>Information correct at the time of writing (2nd May 2025)</small>
