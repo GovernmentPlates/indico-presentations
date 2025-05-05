@@ -14,17 +14,17 @@ footer: ''
 <style scoped>
     img {
         margin-left: 15px;
-        margin-top: 15px;
+        margin-bottom: 15px;
         position: absolute;
-        top: 0;
+        bottom: 0;
         left: 0;
         width: 60px;
         height: 60px;
-        }
+    }
 </style>
 
 ---
-
+<!-- _paginate: false -->
 ![width:400px right:50% left:50%](assets/theme/logo.svg)
 *Rewriting the Indico check-in app*
 
@@ -237,9 +237,10 @@ https://checkin.getindico.io
 
 ---
 <!-- _backgroundColor: "#002939ff" -->
+<!-- _paginate: false -->
 ![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
 
-### [🌐 getindico.io](https://getindico.io)
+### 🌐 [getindico.io](https://getindico.io)
 ### ![checkin width:40px](assets/theme/checkin.png) [checkin.getindico.io](https://checkin.getindico.io)
 ### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
 ### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
@@ -261,6 +262,7 @@ https://checkin.getindico.io
 </style>
 
 ---
+<!-- _paginate: false -->
 <style scoped>
     section {
         justify-content: center !important;
