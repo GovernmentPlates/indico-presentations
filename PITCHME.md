@@ -131,6 +131,47 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
    - [lpc.events](https://lpc.events)
 
 ---
+
+# Lessons learned & Advice
+
+![bg right:60%](assets/slides/advice/advice.jpeg)
+
+---
+
+# How do you stay motivated after so many years? 
+
+---
+
+# How do you stay motivated after so many years? 
+
+> Indico's codebase is large and varied so no two days are the same
+
+---
+
+# How do you stay motivated after so many years? 
+
+> By seeing the impact of your work. Seeing people use your project and appreciate the work you've done.
+
+---
+
+# What advice would you give to other maintainers? 
+
+> Don’t underestimate the impact of writing that blog post, social media post or attending a conference
+
+---
+
+# What advice would you give to other maintainers? 
+
+> Keep the scope of the project in-mind. Do not blindy accept everything people ask for, especially if the maintenance burden is large.
+
+---
+
+# What advice would you give to other maintainers? 
+
+> Get some help - even if it is someone just looking at/filtering PRs, it can help a lot 
+
+---
+
 <!-- _backgroundColor: "#002939ff" -->
 <!-- _paginate: false -->
 ![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
