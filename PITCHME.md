@@ -8,7 +8,7 @@ footer: ''
 ---
 <!-- _paginate: false -->
 ![width:400px right:50% left:50%](assets/theme/logo.svg)
-*Rewriting the Indico check-in app*
+_**Indico**: the 20 year history and evolution of an open-source project at **CERN**_
 
 ### Dominic Hollis & Tomas Roun - Indico Team (CERN)
 
@@ -25,7 +25,90 @@ footer: ''
         font-weight: normal;
     }
 </style>
+
 ---
+
+# Adopting React
+
+<!-- Before: Jinja, reactivity handled by jQuery -->
+
+![bg right:60%](assets/slides/react/react.svg)
+
+---
+
+<!-- "early adopters" - back when class components were the (only) standard -->
+
+![bg](assets/slides/react/classes.png)
+
+---
+
+# Adopting React
+
+**First steps**: Rewriting a separate module
+
+<!-- self-contained SPA, great for testing out stuff -->
+<!-- The team liked it so we decided to stick with it -->
+<!-- Since then, all new features use React if possible -->
+<!-- It was not possible rewrite all of Indico to React in one go, the switch is happening gradually -->
+<!-- What helped a lot, is being able to mix Jinja and React on the same page -->
+
+![bg right](assets/slides/react/rb.png)
+
+---
+
+<!-- Header + sidebar rendered with Jinja, profile itself is written in React -->
+<!-- React code also uses Rest endpoints returning JSON -->
+
+![bg contain](assets/slides/react/profile.png)
+
+---
+
+# Jinja + React?
+
+<!-- Jinja is used to render the header and sidebar -->
+<!-- It also renders a container element with a predefined id -->
+
+```html
+<!-- user_profile.html -->
+{{ render_header() }}
+<div>
+    {{ render_sidebar() }}
+    <div id="user-profile"></div>
+</div>
+```
+
+---
+
+# Jinja + React?
+
+<!-- The id is used by React to render inside the container element -->
+
+```html
+<!-- user_profile.html -->
+{{ render_header() }}
+<div>
+    {{ render_sidebar() }}
+    <div id="user-profile"></div>
+</div>
+
+<script>
+    const container = document.querySelector('#user-profile')
+
+    ReactDOM.render(
+        <UserProfile/>,
+        container
+    )
+</script>
+```
+
+---
+
+<!-- Very successful adoption -->
+
+![bg contain](assets/slides/react/react_prominence.png)
+
+---
+
 ![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/indico_main_page.png)
 
  - **Event Management** System
