@@ -25,6 +25,117 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
         font-weight: normal;
     }
 </style>
+---
+
+#TODO: Here be intro
+
+---
+
+<!-- # What is CERN?
+
+CERN stands for the European Organization for Nuclear Research
+It is the largest particle-physics laboratory in the world.
+CERN's mission: study of fundamental particles -->
+
+![bg](assets/slides/cern/lhc.jpg)
+![bg](assets/slides/cern/cern.jpg)
+
+---
+
+<!-- CERN Founded in 1954, located near Geneva, Switzerland
+It is a large international collaboration. CERN currently has 24 member states, 10 associate member states and over 100 nationalities. There are 2500 members of staff and more than 12,000 visiting scientists -->
+
+![bg](assets/slides/cern/geneva.jpg)
+![bg](assets/slides/cern/flags.jpg)
+
+---
+
+<!-- But what exactly do we do at CERN? -->
+
+![bg contain](assets/slides/cern/cerndoge.jpg)
+
+---
+
+![bg contain](assets/slides/cern/lhcmap.png)
+
+<!-- The LHC
+
+The Large Hadron Collider is the largest particle accelerator in the world and the largest machine ever built. It is a circular tunnel 100 meteres underground.
+The LHC has a circumefernce of 27 km and a diameter of about 8.5 km.
+
+Protons and other particles are accelerated to almost the speed of light
+before being collided. These collisions recreate conditions just after the Big Bang and are analyzed in gigantic detectors. -->
+
+---
+
+![bg contain](assets/slides/cern/lhc.png)
+
+---
+
+<!-- The detectors can be thought of as giant cameras that allow us to take pictures of the collisions and reconstruct what happened. During the collision, new particles are created. -->
+
+![bg](assets/slides/cern/atlas.jpg)
+
+---
+
+![bg contain](assets/slides/cern/higgs.webp)
+
+<!-- # The Higgs Boson discovery -->
+
+<!-- The missing piece the Standard Model of Particle physics
+
+Particle reponsible for giving mass to other particles
+Theorized in the 50s, finally observed by CERN in 2012 (Nobel Prize awarded a year later) Probably the biggest achievemnt of CERN to date -->
+
+
+<!-- ![bg](assets/slides/cern/particles.png) -->
+<!-- ![bg](assets/slides/cern/higgs.jpg) -->
+
+---
+
+<!-- # The Computing Grid
+
+The LHC generates Petabytes of data which need to be processed and analyzed.
+To that end, CERN built the Worldwide LHC Computing Grid.
+
+> The world's largest computing grid comprising over 170 computing facilities in a worldwide network across 42 countries
+
+More than 1.4 million cores and 1.5 exabytes of storage  -->
+
+![bg contain](assets/slides/cern/wlcg.png)
+
+---
+
+<!-- # The Birth of the Web -->
+
+<!-- Invented by Tim Berners-Lee at CERN (1989)
+It’s a great example of fundamental science leading to unexpected innovation. -->
+
+![bg](assets/slides/cern/web.jpg)
+
+---
+
+![bg](assets/slides/cern/web.webp)
+
+---
+
+# Open Source at CERN
+
+CERN has a long tradition of open science and open software
+
+Open Data Portal,
+ROOT, EOS, CTA, Zenodo, White Rabbit, Open Hardware License, ..
+
+Many tools created at and for CERN find uses elsewhere
+All research done at CERN is open and available
+
+---
+
+# Where does Indico fit in?
+
+Born out of the need to manage scientific collaboration at an unprecedented scale
+
+- TODO: Here we can continue with introducing Indico
 
 ---
 
@@ -108,7 +219,6 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 ![bg contain](assets/slides/react/react_prominence.png)
 
 ---
-
 ![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/indico_main_page.png)
 
  - **Event Management** System
@@ -118,6 +228,7 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
  - **70+ developers** over the years
 
 ---
+
 ![bg 100% left](assets/slides/community_map.png)
 
 *The most popular event management system you never heard about*
@@ -129,6 +240,48 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
    - [events.canonical.org](https://events.canonical.com/)
    - [indico.gnome.org](https://indico.gnome.org)
    - [lpc.events](https://lpc.events)
+
+---
+
+# Stats
+
+Code in Git since 2009. Migrated to GitHub in early 2015.
+
+---
+
+![bg contain](assets/slides/stats/stats1.png)
+
+---
+
+![bg contain](assets/slides/stats/stats2.png)
+
+---
+
+![bg contain](assets/slides/stats/commit_length.png)
+
+---
+
+![bg contain](assets/slides/stats/contrib_absence.png)
+
+---
+
+![bg contain](assets/slides/stats/time_to_first_response.png)
+
+---
+
+![bg contain](assets/slides/stats/overtime_commits.png)
+
+---
+
+![bg contain](assets/slides/stats/merge_stats.png)
+
+---
+
+![bg contain](assets/slides/stats/test_ratio.png)
+
+---
+
+![bg contain](assets/slides/stats/change_request_closure_ratio.png)
 
 ---
 
