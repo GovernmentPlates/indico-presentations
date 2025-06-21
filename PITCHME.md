@@ -139,6 +139,237 @@ Born out of the need to manage scientific collaboration at an unprecedented scal
 
 ---
 
+# Indico
+
+#TODO
+
+---
+
+# Evolution through the years
+
+- Late 90’s/Early 00’s -> PHP + MySQL
+- Early 00’s/Late 00’s -> mod_python + ZODB
+- Late 00’s/Early 10’s -> flask + jQuery
+- Nowadays -> React, flask + Postgres
+
+#TODO add logos?
+
+---
+
+# Code Archeology - PHP
+
+---
+
+![bg contain](assets/slides/tech/php.jpg)
+
+---
+
+# Code Archeology - PHP
+
+```php
+function changePassword($userid, $password)
+{
+    $sql = "UPDATE user
+            SET password='$password'
+            WHERE id='$userid'";
+    $db->query($sql);
+}
+```
+
+This is _NOT_ a password hash, it is the actual password!
+md5 _WAS_ used ... as a cache key
+
+---
+
+Set `$password` to `' OR '1'='1' --` to change everyone's password:
+
+```sql
+UPDATE user SET password='' OR '1'='1' --' WHERE id='$userid'
+```
+
+Or be a good hacker and drop the table to prevent leaking passwords:
+
+```sql
+UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
+```
+
+---
+
+# Code Archeology - Early Python days
+
+###### Constructing HTML by hand
+
+
+```python
+edit = []
+edit.append("""<a href='""")
+edit.append(str(urlHandlers.UHConfModifBadgeDesign.getURL(dconf, templateId)))
+edit.append("""'><img src='""")
+edit.append(str(Config.getInstance().getSystemIconURL("file_edit")))
+edit.append("""' border='0'></a>&nbsp;""")
+templateListHTML.append("".join(edit))
+```
+
+If you can't read it, that's the point
+
+---
+
+# ZODB
+
+A Python pickle store
+
+```python
+class Account(Persistent):
+    def __init__(self, balance):
+        self.balance = balance
+
+account = Account(42)
+root.account = account
+```
+
+---
+
+# ZODB
+
+#TODO go trough the recording and see what P&A said about it
+
+- No native support for indexes
+- No consistency/constraints enforcement
+- No fixed schema, so changing the implementation (adding/removing attributes, renaming classes) can cause unpickling to fail
+
+OK for small projects, gets quite messy for large apps
+
+https://news.ycombinator.com/item?id=6791293
+
+---
+
+# Homegrown state management UI framework
+
+- Predates jQuery
+- Kind of like React but worse (predates it by ~10 years)
+    - Different terminology:
+        - Draw vs Render
+        - WatchValue vs State
+
+---
+
+###### Create observable values
+```js
+// Can also watch arrays, objects, etc..
+const count = new WatchValue(0)
+
+// Update value
+count.set(1)
+
+// Watch for changes
+count.observe(v => console.log(v))
+```
+
+---
+
+###### Construct HTML elements
+```js
+const count = new WatchValue(0)
+
+Html.span(
+    {style: {color: 'red'}},
+    'The count is: ',
+    count
+)
+```
+
+---
+
+```js
+const count = new WatchValue(0)
+
+const span = Html.span(
+    {className: 'red'},
+    'The count is: ',
+    count
+)
+
+const btn = Html.button('Click me!')
+btn.observeClick(() => {
+    value.set(value.get() + 1)
+})
+
+value.observe(() => {
+    console.log('Value changed')
+})
+
+return Html.span({}, span, btn)
+```
+
+---
+
+<style scoped>
+    .flex {
+        margin: -40px;
+        display: flex;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+    .flex > div {
+        flex: 50%;
+    }
+</style>
+
+<div class="flex">
+<div>
+
+```js
+const count = new WatchValue(0)
+
+const span = Html.span(
+    {className: 'red'},
+    'The count is: ',
+    count
+)
+
+const btn = Html.button('Click me!')
+btn.observeClick(() => {
+    value.set(value.get() + 1)
+})
+
+value.observe(() => {
+    console.log('Value changed')
+})
+
+return Html.span({}, span, btn)
+```
+
+</div>
+
+<div>
+
+```jsx
+const [count, setCount] = useState(0)
+
+useEffect(() => {
+    console.log('Value changed')
+}, [count])
+
+return (
+    <>
+        <span>
+            The count is: {count}
+        </span>
+        <button onClick={
+            () => setCount(c => c+1)
+        }>
+            Click me!
+        </button>
+    </>
+)
+```
+
+</div>
+</div>
+
+---
+
 # Adopting React
 
 <!-- Before: Jinja, reactivity handled by jQuery -->
@@ -291,37 +522,37 @@ Code in Git since 2009. Migrated to GitHub in early 2015.
 
 ---
 
-# How do you stay motivated after so many years? 
+# How do you stay motivated after so many years?
 
 ---
 
-# How do you stay motivated after so many years? 
+# How do you stay motivated after so many years?
 
 > Indico's codebase is large and varied so no two days are the same
 
 ---
 
-# How do you stay motivated after so many years? 
+# How do you stay motivated after so many years?
 
 > By seeing the impact of your work. Seeing people use your project and appreciate the work you've done.
 
 ---
 
-# What advice would you give to other maintainers? 
+# What advice would you give to other maintainers?
 
 > Don’t underestimate the impact of writing that blog post, social media post or attending a conference
 
 ---
 
-# What advice would you give to other maintainers? 
+# What advice would you give to other maintainers?
 
 > Keep the scope of the project in-mind. Do not blindy accept everything people ask for, especially if the maintenance burden is large.
 
 ---
 
-# What advice would you give to other maintainers? 
+# What advice would you give to other maintainers?
 
-> Get some help - even if it is someone just looking at/filtering PRs, it can help a lot 
+> Get some help - even if it is someone just looking at/filtering PRs, it can help a lot
 
 ---
 
