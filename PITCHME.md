@@ -238,26 +238,65 @@ Born out of the need to manage scientific collaboration at an unprecedented scal
 
 ---
 
-# Evolution through the years
+# Indico's evolution through the years
 
-- Late 90’s/Early 00’s -> PHP + MySQL
-- Early 00’s/Late 00’s -> mod_python + ZODB
-- Late 00’s/Early 10’s -> flask + jQuery
-- Nowadays -> React, flask + Postgres
-
-#TODO add logos?
+<!-- 
+Indico has changed a lot over the last >20 years
+-->
 
 ---
 
-# Code Archeology - PHP
+# Late 90’s/Early 00’s
+
+<style scoped>
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        margin-bottom: 2em;
+    }
+
+    .flex img {
+        height: auto;
+        width: auto;
+        max-width: 500px;
+        max-height: 300px;
+    }
+</style>
+
+<div class="flex">
+
+<div>
+  <img src="assets/slides/tech/php.png"></img>
+</div>
+<div>
+  <img src="assets/slides/tech/mysql.png"></img>
+</div>
+</div>
 
 ---
 
-![bg contain](assets/slides/tech/php.jpg)
+# Code Archeology
+
+```php
+function changePassword($userid, $password)
+{
+    $sql = "UPDATE user
+            SET password='$password'
+            WHERE id='$userid'";
+    $db->query($sql);
+}
+```
+<!-- 
+
+- What's wrong with this code?
+
+- This is _NOT_ a password hash, it is the actual password!
+- md5 _WAS_ used ... as a cache key
+
+-->
 
 ---
-
-# Code Archeology - PHP
 
 ```php
 function changePassword($userid, $password)
@@ -269,15 +308,22 @@ function changePassword($userid, $password)
 }
 ```
 
-This is _NOT_ a password hash, it is the actual password!
-md5 _WAS_ used ... as a cache key
-
----
-
 Set `$password` to `' OR '1'='1' --` to change everyone's password:
 
 ```sql
 UPDATE user SET password='' OR '1'='1' --' WHERE id='$userid'
+```
+
+---
+
+```php
+function changePassword($userid, $password)
+{
+    $sql = "UPDATE user
+            SET password='$password'
+            WHERE id='$userid'";
+    $db->query($sql);
+}
 ```
 
 Or be a good hacker and drop the table to prevent leaking passwords:
@@ -288,9 +334,59 @@ UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
 
 ---
 
+![bg contain](assets/slides/tech/php.jpg)
+
+---
+
+# Early 00’s/Late 00’s
+
+<style scoped>
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .center {
+        justify-content: center;
+        margin-bottom: 2em;
+    }
+
+    .flex img {
+        height: auto;
+        width: auto;
+        max-width: 500px;
+        max-height: 300px;
+    }
+</style>
+
+<div class="flex center">
+  <img src="assets/slides/tech/apache.png"></img>
+</div>
+
+<div class="flex">
+
+<div>
+  <img src="assets/slides/tech/modpython.gif"></img>
+</div>
+<div>
+  <img src="assets/slides/tech/zope.png"></img>
+</div>
+</div>
+
+---
+
 # Code Archeology - Early Python days
 
-###### Constructing HTML by hand
+<!-- 
+Constructing HTML by hand
+
+The dark ages before templating engines
+
+If you can't read it, that's the point
+
+And we used to use camelCase
+-->
 
 
 ```python
@@ -303,13 +399,24 @@ edit.append("""' border='0'></a>&nbsp;""")
 templateListHTML.append("".join(edit))
 ```
 
-If you can't read it, that's the point
-
 ---
 
-# ZODB
+# Code Archeology - ZODB
 
-A Python pickle store
+<!--
+#TODO go trough the recording and see what P&A said about it
+
+- Quite popular at the time, around Python 2.5/2.6
+- Essentially a Python pickle store
+- Very easy to store Python objects
+
+Some downsides (at least at the time)
+- No indexes
+- No replication
+- No fixed schema
+- Changing the implementation (adding/removing attributes, renaming classes) can cause unpickling to fail
+
+-->
 
 ```python
 class Account(Persistent):
@@ -322,29 +429,20 @@ root.account = account
 
 ---
 
-# ZODB
+# Homegrown reactive UI framework
 
-#TODO go trough the recording and see what P&A said about it
+* Similar to React (predates it by ~7 years)
+* Different terminology:
+    - __Draw__ vs __Render__
+    - __WatchValue__ vs __State__
 
-- No native support for indexes
-- No consistency/constraints enforcement
-- No fixed schema, so changing the implementation (adding/removing attributes, renaming classes) can cause unpickling to fail
-
-OK for small projects, gets quite messy for large apps
-
-https://news.ycombinator.com/item?id=6791293
-
----
-
-# Homegrown state management UI framework
-
-- Predates jQuery
-- Kind of like React but worse (predates it by ~10 years)
-    - Different terminology:
-        - Draw vs Render
-        - WatchValue vs State
+<!--
+Otherwise very similar under the hood
+-->
 
 ---
+
+# Quick demo
 
 ###### Create observable values
 ```js
@@ -372,6 +470,8 @@ Html.span(
 ```
 
 ---
+
+# Simple click counter
 
 ```js
 const count = new WatchValue(0)
@@ -460,6 +560,18 @@ return (
 
 </div>
 </div>
+
+---
+
+# Late 00’s/Early 10’s
+
+- #TODO something about flask?
+
+---
+
+# What we're using these days
+
+- #TODO React, flask, Postgres
 
 ---
 
