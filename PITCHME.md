@@ -1,7 +1,7 @@
 ---
 marp: true
 title: "Indico: the 20 year history and evolution of an open-source project at CERN"
-theme: indico
+theme: default
 paginate: true
 _paginate: false
 footer: ''
@@ -31,26 +31,54 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 
 ---
 
-<!-- # What is CERN?
+<!--
+# What is CERN?
 
-CERN stands for the European Organization for Nuclear Research
-It is the largest particle-physics laboratory in the world.
-CERN's mission: study of fundamental particles -->
+- Stands for the European Organization for Nuclear Research
+- Largest particle-physics laboratory in the world
+- CERN's mission: study of fundamental particles that make up matter (and antimatter)
+
+-->
 
 ![bg](assets/slides/cern/lhc.jpg)
 ![bg](assets/slides/cern/cern.jpg)
 
 ---
 
-<!-- CERN Founded in 1954, located near Geneva, Switzerland
-It is a large international collaboration. CERN currently has 24 member states, 10 associate member states and over 100 nationalities. There are 2500 members of staff and more than 12,000 visiting scientists -->
+<!--
+# CERN in pop culture
+
+- In the opening scene of Angels and Demons when they steal the anitmatter to blow up the Vatican
+- Completely unrealistic, not possible to manufacture or store that amount of antimatter for that long
+
+- In Steins Gate as a secret organization and the main antagonist
+
+ -->
+
+![bg contain](assets/slides/cern/angelsdemons.jpg)
+![bg contain](assets/slides/cern/steinsgate.jpg)
+
+---
+
+<!--
+- Founded in 1954, located near Geneva, Switzerland
+- Grown to be a large international collaboration
+- 25 member states, 10 associate member states and over 100 nationalities.
+- 2500+ members of staff and more than 12,000 visiting scientists
+-->
 
 ![bg](assets/slides/cern/geneva.jpg)
 ![bg](assets/slides/cern/flags.jpg)
 
 ---
 
-<!-- But what exactly do we do at CERN? -->
+<!--
+# But what exactly do we do at CERN?
+
+- Summarizes it in one picture
+- Accelerate particles to almost the speed of light and make them collide
+- Study the aftermath of the collision
+-->
 
 ![bg contain](assets/slides/cern/cerndoge.jpg)
 
@@ -58,13 +86,18 @@ It is a large international collaboration. CERN currently has 24 member states, 
 
 ![bg contain](assets/slides/cern/lhcmap.png)
 
-<!-- The LHC
+<!--
+# But how do we accelerate the particles?
 
-The Large Hadron Collider is the largest particle accelerator in the world and the largest machine ever built. It is a circular tunnel 100 meteres underground.
-The LHC has a circumefernce of 27 km and a diameter of about 8.5 km.
+- Using something called a Particle Accelerator
+- Specifically, the LHC - Large Hadron Collider
+- The largest particle accelerator in the world
+- The largest machine ever built
+- A circular tunnel 100 meteres underground, circumefernce of 27 km and a diameter of about 8.5 km.
 
-Protons and other particles are accelerated to almost the speed of light
-before being collided. These collisions recreate conditions just after the Big Bang and are analyzed in gigantic detectors. -->
+- Particles such as protons are accelerated to almost the speed of light
+before being collided.
+- These collisions recreate conditions just after the Big Bang. -->
 
 ---
 
@@ -72,7 +105,14 @@ before being collided. These collisions recreate conditions just after the Big B
 
 ---
 
-<!-- The detectors can be thought of as giant cameras that allow us to take pictures of the collisions and reconstruct what happened. During the collision, new particles are created. -->
+<!--
+# Detectors
+
+- Collisions are analyzed using four detectors
+- The detectors can be thought of as giant cameras that allow us to take pictures of the collisions and reconstruct what happened.
+- During the collisions, new particles are created and sometimes we are lucky and see a new particle.
+
+-->
 
 ![bg](assets/slides/cern/atlas.jpg)
 
@@ -80,40 +120,51 @@ before being collided. These collisions recreate conditions just after the Big B
 
 ![bg contain](assets/slides/cern/higgs.webp)
 
-<!-- # The Higgs Boson discovery -->
+<!--
+# The Higgs Boson discovery
 
-<!-- The missing piece the Standard Model of Particle physics
-
-Particle reponsible for giving mass to other particles
-Theorized in the 50s, finally observed by CERN in 2012 (Nobel Prize awarded a year later) Probably the biggest achievemnt of CERN to date -->
-
-
-<!-- ![bg](assets/slides/cern/particles.png) -->
-<!-- ![bg](assets/slides/cern/higgs.jpg) -->
+- Most famous discovery
+- The missing piece the Standard Model of Particle physics
+- Theorized to exist decades ago, finally observed by CERN in 2012
+-->
 
 ---
 
-<!-- # The Computing Grid
+<!--
+CERN is not just doing Physics!
 
-The LHC generates Petabytes of data which need to be processed and analyzed.
-To that end, CERN built the Worldwide LHC Computing Grid.
+# The Computing Grid
 
+- LHC generates Petabytes of data which need to be processed and analyzed
+- CERN built the Worldwide LHC Computing Grid.
+
+- To quote the official website:
 > The world's largest computing grid comprising over 170 computing facilities in a worldwide network across 42 countries
 
-More than 1.4 million cores and 1.5 exabytes of storage  -->
+- More than 1.4 million cores and 1.5 exabytes of storage
+-->
 
 ![bg contain](assets/slides/cern/wlcg.png)
 
 ---
 
-<!-- # The Birth of the Web -->
+<!--
+# The Birth of the Web
 
-<!-- Invented by Tim Berners-Lee at CERN (1989)
-It’s a great example of fundamental science leading to unexpected innovation. -->
+- Invented by Tim Berners-Lee at CERN (1989)
+- great example of fundamental science leading to unexpected innovation
+- really cool to just randomly stubmle upon this plaque while going for lunch
+-->
 
 ![bg](assets/slides/cern/web.jpg)
 
 ---
+
+<!--
+
+- Tim is the only one who can righfully call himself a web developer
+
+-->
 
 ![bg](assets/slides/cern/web.webp)
 
