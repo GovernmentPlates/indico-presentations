@@ -172,13 +172,55 @@ CERN is not just doing Physics!
 
 # Open Source at CERN
 
-CERN has a long tradition of open science and open software
+<style scoped>
+    .flex {
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        margin-bottom: 2em;
+    }
 
-Open Data Portal,
-ROOT, EOS, CTA, Zenodo, White Rabbit, Open Hardware License, ..
+    .flex img {
+        height: auto;
+        width: auto;
+        max-width: 300px;
+        max-height: 300px;
+    }
+</style>
 
-Many tools created at and for CERN find uses elsewhere
-All research done at CERN is open and available
+<div class="flex">
+
+<div>
+  <img src="assets/slides/cern/opendata.png"></img>
+</div>
+<div>
+  <img src="assets/slides/cern/whiterabbit.jpg"></img>
+</div>
+<div>
+  <img src="assets/slides/cern/root.png"></img>
+  <img src="assets/slides/cern/zenodo.png"></img>
+</div>
+<div>
+</div>
+  <img src="assets/slides/cern/ohl.png"></img>
+</div>
+
+☛ https://github.com/CERN/awesome-cern
+
+#TODO waiting for Giacomo to get back with a list
+
+<!--
+- All research done at CERN is open and available
+- Long tradition of open science and open source
+
+- Open Data Portal - All collision data available for researchers
+- ROOT - data analysis framework for HEP and more
+- White Rabbit - Sub-nanosecond synchronization of large distributed systems
+
+- Many tools created at and for CERN find uses elsewhere
+- Check out the link to see more
+
+-->
 
 ---
 
