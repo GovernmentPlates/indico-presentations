@@ -29,19 +29,10 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 
 #TODO: Here be intro
 
+
 ---
 
-<!--
 # What is CERN?
-
-- Stands for the European Organization for Nuclear Research
-- Largest particle-physics laboratory in the world
-- CERN's mission: study of fundamental particles that make up matter (and antimatter)
-
--->
-
-![bg](assets/slides/cern/lhc.jpg)
-![bg](assets/slides/cern/cern.jpg)
 
 ---
 
@@ -61,22 +52,30 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 ---
 
 <!--
-- Founded in 1954, located near Geneva, Switzerland
-- Grown to be a large international collaboration
-- 25 member states, 10 associate member states and over 100 nationalities.
+# What is CERN?
+
+- European Organization for Nuclear Research
+
+- Largest particle-physics laboratory in the world
+- Located near Geneva, Switzerland
 - 2500+ members of staff and more than 12,000 visiting scientists
+
+- CERN's mission: study of fundamental particles that make up matter (and antimatter)
+
 -->
 
-![bg](assets/slides/cern/geneva.jpg)
-![bg](assets/slides/cern/flags.jpg)
+![bg](assets/slides/cern/lhc.jpg)
+![bg](assets/slides/cern/cern.jpg)
+
+---
+
+# What exactly does CERN do?
 
 ---
 
 <!--
-# But what exactly do we do at CERN?
-
-- Summarizes it in one picture
-- Accelerate particles to almost the speed of light and make them collide
+- This summarizes CERN in one picture
+- Take two particles and collide them with another
 - Study the aftermath of the collision
 -->
 
@@ -87,7 +86,7 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 ![bg contain](assets/slides/cern/lhcmap.png)
 
 <!--
-# But how do we accelerate the particles?
+# How do we make the particles collide?
 
 - Using something called a Particle Accelerator
 - Specifically, the LHC - Large Hadron Collider
@@ -131,25 +130,7 @@ before being collided.
 ---
 
 <!--
-CERN is not just doing Physics!
-
-# The Computing Grid
-
-- LHC generates Petabytes of data which need to be processed and analyzed
-- CERN built the Worldwide LHC Computing Grid.
-
-- To quote the official website:
-> The world's largest computing grid comprising over 170 computing facilities in a worldwide network across 42 countries
-
-- More than 1.4 million cores and 1.5 exabytes of storage
--->
-
-![bg contain](assets/slides/cern/wlcg.png)
-
----
-
-<!--
-# The Birth of the Web
+# CERN is not just doing Physics!
 
 - Invented by Tim Berners-Lee at CERN (1989)
 - great example of fundamental science leading to unexpected innovation
@@ -240,7 +221,7 @@ Born out of the need to manage scientific collaboration at an unprecedented scal
 
 # Indico's evolution through the years
 
-<!-- 
+<!--
 Indico has changed a lot over the last >20 years
 -->
 
@@ -287,7 +268,7 @@ function changePassword($userid, $password)
     $db->query($sql);
 }
 ```
-<!-- 
+<!--
 
 - What's wrong with this code?
 
@@ -378,7 +359,7 @@ UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
 
 # Code Archeology - Early Python days
 
-<!-- 
+<!--
 Constructing HTML by hand
 
 The dark ages before templating engines
@@ -571,19 +552,31 @@ return (
 
 # What we're using these days
 
-- #TODO React, flask, Postgres
+- Happily using React, flask and Postgres
+
+<!--
+- Prefer stable and realiable tech
+
+ -->
 
 ---
 
 # Adopting React
 
-<!-- Before: Jinja, reactivity handled by jQuery -->
+<!--
+Before: Jinja templates, reactivity handled by jQuery
+
+Around 2018 when React started to take off
+-->
 
 ![bg right:60%](assets/slides/react/react.svg)
 
 ---
 
-<!-- "early adopters" - back when class components were the (only) standard -->
+<!--
+"early adopters" - back when class components were the (only) standard
+
+-->
 
 ![bg](assets/slides/react/classes.png)
 
@@ -593,18 +586,32 @@ return (
 
 **First steps**: Rewriting a separate module
 
-<!-- self-contained SPA, great for testing out stuff -->
-<!-- The team liked it so we decided to stick with it -->
-<!-- Since then, all new features use React if possible -->
-<!-- It was not possible rewrite all of Indico to React in one go, the switch is happening gradually -->
-<!-- What helped a lot, is being able to mix Jinja and React on the same page -->
+<!--
+Indico's room booking module
+
+- Self-contained SPA, allows us to test stuff in isolation
+- The team liked it so we decided to stick with it
+
+- All new features use React if possible
+- Not possible rewrite all of Indico to React in one go, the switch is happening gradually
+
+-->
 
 ![bg right](assets/slides/react/rb.png)
 
 ---
 
-<!-- Header + sidebar rendered with Jinja, profile itself is written in React -->
-<!-- React code also uses Rest endpoints returning JSON -->
+<!--
+- Needed to find a way to mix Jinja and React on the same page
+- Typically react apps are SPAs but that was not feasible in our case
+
+Example:
+- Header + sidebar rendered with Jinja
+- Profile itself is written in React
+- React code uses REST APIs returning JSON
+- Will make it easier to switch to something else if needed
+
+-->
 
 ![bg contain](assets/slides/react/profile.png)
 
@@ -612,8 +619,12 @@ return (
 
 # Jinja + React?
 
-<!-- Jinja is used to render the header and sidebar -->
-<!-- It also renders a container element with a predefined id -->
+<!--
+- This is the profile page expressed in code
+
+- Jinja is used to render the header and sidebar
+- A container with a unique id is added
+-->
 
 ```html
 <!-- user_profile.html -->
@@ -628,7 +639,14 @@ return (
 
 # Jinja + React?
 
-<!-- The id is used by React to render inside the container element -->
+<!--
+- Script tag with minimal JS that sets up React
+- Id is used by React to render inside the container element
+
+- Simple way to start using React
+- Lets you inject more complex functionality where needed without having to rearchitect the whole app
+
+-->
 
 ```html
 <!-- user_profile.html -->
@@ -650,9 +668,11 @@ return (
 
 ---
 
-<!-- Very successful adoption -->
+<!--
+Very successful adoption
+-->
 
-![bg contain](assets/slides/react/react_prominence.png)
+![bg contain](assets/slides/react/react_use.png)
 
 ---
 ![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/indico_main_page.png)
@@ -689,7 +709,23 @@ Code in Git since 2009. Migrated to GitHub in early 2015.
 
 ---
 
-![bg contain](assets/slides/stats/stats2.png)
+<!--
+LOC
+
+- Huge drop around 2014: went from 500k down to less than 250k at some point
+- Recently passed the LOC back from 2010
+
+
+Language composition over time
+
+- Python dominates ever since the switch from PHP
+- Huge drop in JS code around 2014
+- Jinja/CSS stable
+- Lots of JSON around 2022 for some reason
+- React keep growing
+-->
+
+![bg contain](assets/slides/stats/languages.png)
 
 ---
 
@@ -707,11 +743,29 @@ Code in Git since 2009. Migrated to GitHub in early 2015.
 
 ![bg contain](assets/slides/stats/overtime_commits.png)
 
+<!--
+- Very happy I wasn't around at that time
+ -->
+
+---
+
+![bg contain](assets/slides/stats/vietnam.jpeg)
+
 ---
 
 ![bg contain](assets/slides/stats/merge_stats.png)
 
 ---
+
+<!--
+- Far from the likes of Sqlite which have 10x the test as source code
+- Clear upward movement
+
+- Most of our code tests backend (i.e. Python)
+- Used to have frontend tests based on Selenium
+- Huge pain to maintain
+
+ -->
 
 ![bg contain](assets/slides/stats/test_ratio.png)
 

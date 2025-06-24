@@ -1,0 +1,17 @@
+[project]
+name = "stats"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aquarel>=0.0.7",
+    "matplotlib>=3.10.3",
+    "nltk>=3.9.1",
+    "pandas>=2.3.0",
+    "pygithub>=2.6.1",
+    "python-dateutil>=2.9.0.post0",
+    "pytz>=2025.2",
+    "seaborn>=0.13.2",
+    "wordcloud>=1.9.4",
+]
