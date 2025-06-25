@@ -308,7 +308,7 @@ class GitLOCAnalyzer:
         languages = [col.replace("_lines", "") for col in language_cols]
 
         # Create subplots
-        fig, axes = plt.subplots(2, 1, figsize=(16, 12))
+        fig, axes = plt.subplots(2, 1, figsize=(16, 9))
         # fig.suptitle("Repository Lines of Code and Language Evolution", fontsize=16)
 
         # Plot 1: Total lines over time

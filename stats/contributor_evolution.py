@@ -18,7 +18,6 @@ from collections import defaultdict
 from aquarel import load_theme
 
 
-
 class GitContributorAnalyzer:
     def __init__(self, repo_path="."):
         self.repo_path = repo_path
@@ -180,68 +179,40 @@ class GitContributorAnalyzer:
             print("No data to plot")
             return
 
-        fig, axes = plt.subplots(2, 2, figsize=(15, 10))
-        fig.suptitle(
-            f"Git Repository Contributor Evolution ({period.title()})", fontsize=16
-        )
+        fig, axes = plt.subplots(2, 1, figsize=(16, 9))
+        # fig.suptitle(
+        #     f"Git Repository Contributor Evolution ({period.title()})", fontsize=16
+        # )
 
         # Convert period to string for plotting if it's a Period object
         plot_data = data.copy()
         plot_data["period_str"] = plot_data["period"].astype(str)
 
         # Plot 1: Cumulative contributors over time
-        axes[0, 0].plot(
+        axes[0].plot(
             plot_data["period_str"],
             plot_data["cumulative_contributors"],
             marker="o",
             linewidth=2,
             markersize=4,
         )
-        axes[0, 0].set_title("All Contributors (Cumulative)")
-        axes[0, 0].set_ylabel("Total Contributors")
-        axes[0, 0].tick_params(axis="x", rotation=45)
-        axes[0, 0].grid(True, alpha=0.3)
+        axes[0].set_title("All Contributors (Cumulative)")
+        axes[0].set_ylabel("Total Contributors")
+        axes[0].tick_params(axis="x", rotation=45)
+        axes[0].grid(True, alpha=0.3)
 
         # Plot 2: New contributors per period
-        axes[0, 1].bar(
+        axes[1].bar(
             plot_data["period_str"], plot_data["new_contributors"], alpha=0.7
         )
-        axes[0, 1].set_title("New Contributors Per Period")
-        axes[0, 1].set_ylabel("New Contributors")
-        axes[0, 1].tick_params(axis="x", rotation=45)
-        axes[0, 1].grid(True, alpha=0.3)
-
-        # Plot 3: Active contributors per period
-        axes[1, 0].plot(
-            plot_data["period_str"],
-            plot_data["active_contributors"],
-            marker="s",
-            color="green",
-            linewidth=2,
-            markersize=4,
-        )
-        axes[1, 0].set_title("Active Contributors Per Period")
-        axes[1, 0].set_ylabel("Active Contributors")
-        axes[1, 0].tick_params(axis="x", rotation=45)
-        axes[1, 0].grid(True, alpha=0.3)
-
-        # Plot 4: Commits per period
-        axes[1, 1].bar(
-            plot_data["period_str"],
-            plot_data["total_commits"],
-            alpha=0.7,
-            color="orange",
-        )
-        axes[1, 1].set_title("Commits Per Period")
-        axes[1, 1].set_ylabel("Number of Commits")
-        axes[1, 1].tick_params(axis="x", rotation=45)
-        axes[1, 1].grid(True, alpha=0.3)
+        axes[1].set_title("New Contributors")
+        axes[1].set_ylabel("New Contributors")
+        axes[1].tick_params(axis="x", rotation=45)
+        axes[1].grid(True, alpha=0.3)
 
         plt.tight_layout()
 
-        if save_path:
-            plt.savefig(save_path, dpi=300, bbox_inches="tight")
-            print(f"Plot saved to {save_path}")
+        plt.savefig('../assets/slides/stats/stats1.png', dpi=300, bbox_inches="tight")
 
         plt.show()
 

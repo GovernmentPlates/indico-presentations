@@ -705,6 +705,14 @@ Code in Git since 2009. Migrated to GitHub in early 2015.
 
 ---
 
+#TODO funny commits?
+
+https://github.com/indico/indico/commit/d03345b6678d725ee90c58d1d6433195e3153719
+
+917ee29cb522e67ef88dbbad281d4bc2658cd8c9
+
+---
+
 ![bg contain](assets/slides/stats/stats1.png)
 
 ---
@@ -729,14 +737,6 @@ Language composition over time
 
 ---
 
-![bg contain](assets/slides/stats/commit_length.png)
-
----
-
-![bg contain](assets/slides/stats/contrib_absence.png)
-
----
-
 ![bg contain](assets/slides/stats/time_to_first_response.png)
 
 ---
@@ -750,10 +750,6 @@ Language composition over time
 ---
 
 ![bg contain](assets/slides/stats/vietnam.jpeg)
-
----
-
-![bg contain](assets/slides/stats/merge_stats.png)
 
 ---
 
@@ -775,14 +771,10 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 <!--
 - Nowadays we do manual testing
 - We always release new features to our users at CERN first before making a public release
-- ~10k people are very good at finding bugs
+- ~10k daily users are very good at finding bugs
 -->
 
 ![bg contain](assets/slides/stats/prod.webp)
-
----
-
-![bg contain](assets/slides/stats/change_request_closure_ratio.png)
 
 ---
 
