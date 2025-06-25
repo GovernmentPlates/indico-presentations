@@ -151,28 +151,33 @@ before being collided.
 
 ---
 
-# Open Source at CERN
+# CERN ❤️ Open Source
 
 <style scoped>
     .flex {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: .5em;
-        margin-bottom: 2em;
     }
 
     .flex img {
         height: auto;
         width: auto;
-        max-width: 300px;
-        max-height: 300px;
+        max-width: 250px;
+        max-height: 250px;
+    }
+
+    .smaller {
+        max-width: 150px !important;
+        max-height: 150px !important;
     }
 </style>
 
 <div class="flex">
 
 <div>
-  <img src="assets/slides/cern/opendata.png"></img>
+  <img class="smaller" src="assets/slides/cern/opendata.png"></img>
 </div>
 <div>
   <img src="assets/slides/cern/whiterabbit.jpg"></img>
@@ -183,12 +188,25 @@ before being collided.
 </div>
 <div>
 </div>
-  <img src="assets/slides/cern/ohl.png"></img>
+  <img src="assets/slides/cern/openstack.png"></img>
 </div>
 
-☛ https://github.com/CERN/awesome-cern
+<div class="flex">
 
-#TODO waiting for Giacomo to get back with a list
+<div>
+  <img src="assets/slides/cern/python.png"></img>
+</div>
+<div>
+  <img src="assets/slides/cern/conda.png"></img>
+</div>
+<div>
+  <img src="assets/slides/cern/matplotlib.png"></img>
+</div>
+<div>
+</div>
+  <img src="assets/slides/cern/kicad.png"></img>
+</div>
+
 
 <!--
 - All research done at CERN is open and available
@@ -202,6 +220,18 @@ before being collided.
 - Check out the link to see more
 
 -->
+
+---
+
+# CERN ❤️ Open Source
+
+☛ https://opensource.cern/
+☛ https://github.com/CERN/awesome-cern
+
+<!--
+If you wanna learn more about CERN and open source
+Yes, CERN has the .cern TLD
+ -->
 
 ---
 
