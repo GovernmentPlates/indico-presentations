@@ -352,72 +352,33 @@ UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
 
 ---
 
-# Code Archeology
-
-## Late 90’s/Early 00’s
-
-<style scoped>
-    .flex {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-
-    .center {
-        justify-content: center;
-        margin-bottom: 2em;
-    }
-
-    .flex img {
-        height: auto;
-        width: auto;
-        max-width: 500px;
-        max-height: 300px;
-    }
-</style>
-
-<div class="flex center">
-  <img src="assets/slides/tech/apache.png"></img>
-</div>
-
-<div class="flex">
-
-<div>
-  <img src="assets/slides/tech/modpython.gif"></img>
-</div>
-<div>
-  <img src="assets/slides/tech/zope.png"></img>
-</div>
-</div>
+# Code Archeology - Early Python days
 
 <!--
 Started using Python
 
 - Still very early days before flask, Jinja, etc..
 
- -->
-
----
-
-# Code Archeology - Early Python days
-
-<!--
 Constructing HTML by hand
 
 The dark ages before templating engines
 
 If you can't read it, that's the point
 
-And we used to use camelCase
+Good luck with
+    - escaping HTML properly and preventing code injection
+    - making sure all tags are properly closed
+    - keeping track of everything inside conditionals
+    - consstructing more complex HTML like tables
 -->
 
 
 ```python
 edit = []
 edit.append("""<a href='""")
-edit.append(str(urlHandlers.UHConfModifBadgeDesign.getURL(dconf, templateId)))
+edit.append(url)
 edit.append("""'><img src='""")
-edit.append(str(Config.getInstance().getSystemIconURL("file_edit")))
+edit.append(src)
 edit.append("""' border='0'></a>&nbsp;""")
 templateListHTML.append("".join(edit))
 ```
@@ -434,9 +395,9 @@ The whole thing can just be replaced with a bit of React (or Jinja) nowadays
 ```python
 edit = []
 edit.append("""<a href='""")
-edit.append(str(urlHandlers.UHConfModifBadgeDesign.getURL(dconf, templateId)))
+edit.append(url)
 edit.append("""'><img src='""")
-edit.append(str(Config.getInstance().getSystemIconURL("file_edit")))
+edit.append(src)
 edit.append("""' border='0'></a>&nbsp;""")
 templateListHTML.append("".join(edit))
 ```
