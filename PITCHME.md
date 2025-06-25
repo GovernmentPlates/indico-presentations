@@ -765,9 +765,20 @@ Language composition over time
 - Used to have frontend tests based on Selenium
 - Huge pain to maintain
 
+https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
  -->
 
 ![bg contain](assets/slides/stats/test_ratio.png)
+
+---
+
+<!--
+- Nowadays we do manual testing
+- We always release new features to our users at CERN first before making a public release
+- ~10k people are very good at finding bugs
+-->
+
+![bg contain](assets/slides/stats/prod.webp)
 
 ---
 

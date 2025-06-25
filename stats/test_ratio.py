@@ -7,7 +7,7 @@ from aquarel import load_theme
 
 
 
-REPO_PATH = "/home/tomas/dev/indico"  # ✅ Replace with your repo path
+REPO_PATH = "/home/troun/dev/indico"
 TEST_SUFFIX = "_test.py"
 
 
@@ -78,6 +78,7 @@ def plot_ratios(ratios):
     plt.ylabel("Test Code Ratio")
     plt.grid(True)
     plt.tight_layout()
+    plt.savefig("../assets/slides/stats/test_ratio.png", dpi=300)
     plt.show()
 
 

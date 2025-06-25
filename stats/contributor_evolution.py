@@ -33,7 +33,7 @@ class GitContributorAnalyzer:
                 "log",
                 "--pretty=format:%H|%an|%ae|%ad|%s",
                 "--date=iso",
-                "--all",  # Include all branches
+                # "--all",  # Include all branches
             ]
 
             result = subprocess.run(
