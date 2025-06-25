@@ -455,38 +455,12 @@ templateListHTML.append("".join(edit))
 Before: Jinja templates, reactivity handled by jQuery
 
 Around 2018 when React started to take off
--->
-
-![bg right:60%](assets/slides/react/react.svg)
-
----
-
-<!--
-"early adopters" - back when class components were the (only) standard
-
--->
-
-![bg](assets/slides/react/classes.png)
-
----
-
-# Adopting React
-
-**First steps**: Rewriting a separate module
-
-<!--
-Indico's room booking module
-
-- Self-contained SPA, allows us to test stuff in isolation
-- The team liked it so we decided to stick with it
 
 - All new features use React if possible
 - Not possible rewrite all of Indico to React in one go, the switch is happening gradually
-
 -->
 
-
-![bg right](assets/slides/react/rb.png)
+![bg right:60%](assets/slides/react/react.svg)
 
 ---
 
@@ -602,6 +576,16 @@ https://github.com/indico/indico/commit/d03345b6678d725ee90c58d1d6433195e3153719
 
 ---
 
+<!--
+- To date almost 200 unique contributors
+- Steady growth, 2025 is not over yet
+- Averaging more than 10 new contributors per year for the last few years
+- Great given that Indico is a fairly complex application
+- We will also gladly take your patches if it fixes a bug or adds a nice new feature
+- Being on GitHub definitely helps visibility
+
+ -->
+
 ![bg contain](assets/slides/stats/stats1.png)
 
 ---
@@ -626,7 +610,16 @@ Language composition over time
 
 ---
 
-![bg contain](assets/slides/stats/time_to_first_response.png)
+<!--
+- This is how long it takes after you open an issue to get a comment on it (or before it's closed ;))
+- The y-axis is in log scale because the most recent years we are approaching zero
+- In 2025 the median response time was 4.2. Hours? no, 4.2 minutes
+- For the data nerds, there are some box plots on the right
+- Extrapolating, by next year we will reply to you before you an open issue
+
+ -->
+
+![bg contain](assets/slides/stats/ttfr.png)
 
 ---
 
@@ -637,6 +630,10 @@ Language composition over time
  -->
 
 ---
+
+<!--
+This is what our senior colleagues look like when we mention 2015
+ -->
 
 ![bg contain](assets/slides/stats/vietnam.jpeg)
 
