@@ -219,15 +219,20 @@ Born out of the need to manage scientific collaboration at an unprecedented scal
 
 ---
 
-# Indico's evolution through the years
+# Code Archeology
 
 <!--
 Indico has changed a lot over the last >20 years
+
+- Share some horrifying from back in the day
+- Show how the best practises have changed and how good we have it nowadays
 -->
 
 ---
 
-# Late 90’s/Early 00’s
+# Code Archeology
+
+## Late 90’s/Early 00’s
 
 <style scoped>
     .flex {
@@ -256,8 +261,6 @@ Indico has changed a lot over the last >20 years
 </div>
 
 ---
-
-# Code Archeology
 
 ```php
 function changePassword($userid, $password)
@@ -319,7 +322,9 @@ UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
 
 ---
 
-# Early 00’s/Late 00’s
+# Code Archeology
+
+## Late 90’s/Early 00’s
 
 <style scoped>
     .flex {
@@ -355,6 +360,13 @@ UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
 </div>
 </div>
 
+<!--
+Started using Python
+
+- Still very early days before flask, Jinja, etc..
+
+ -->
+
 ---
 
 # Code Archeology - Early Python days
@@ -382,182 +394,28 @@ templateListHTML.append("".join(edit))
 
 ---
 
-# Code Archeology - ZODB
+# Code Archeology - Early Python days
 
 <!--
-#TODO go trough the recording and see what P&A said about it
-
-- Quite popular at the time, around Python 2.5/2.6
-- Essentially a Python pickle store
-- Very easy to store Python objects
-
-Some downsides (at least at the time)
-- No indexes
-- No replication
-- No fixed schema
-- Changing the implementation (adding/removing attributes, renaming classes) can cause unpickling to fail
-
+The whole thing can just be replaced with a bit of React (or Jinja) nowadays
 -->
+
 
 ```python
-class Account(Persistent):
-    def __init__(self, balance):
-        self.balance = balance
-
-account = Account(42)
-root.account = account
+edit = []
+edit.append("""<a href='""")
+edit.append(str(urlHandlers.UHConfModifBadgeDesign.getURL(dconf, templateId)))
+edit.append("""'><img src='""")
+edit.append(str(Config.getInstance().getSystemIconURL("file_edit")))
+edit.append("""' border='0'></a>&nbsp;""")
+templateListHTML.append("".join(edit))
 ```
-
----
-
-# Homegrown reactive UI framework
-
-* Similar to React (predates it by ~7 years)
-* Different terminology:
-    - __Draw__ vs __Render__
-    - __WatchValue__ vs __State__
-
-<!--
-Otherwise very similar under the hood
--->
-
----
-
-# Quick demo
-
-###### Create observable values
-```js
-// Can also watch arrays, objects, etc..
-const count = new WatchValue(0)
-
-// Update value
-count.set(1)
-
-// Watch for changes
-count.observe(v => console.log(v))
-```
-
----
-
-###### Construct HTML elements
-```js
-const count = new WatchValue(0)
-
-Html.span(
-    {style: {color: 'red'}},
-    'The count is: ',
-    count
-)
-```
-
----
-
-# Simple click counter
-
-```js
-const count = new WatchValue(0)
-
-const span = Html.span(
-    {className: 'red'},
-    'The count is: ',
-    count
-)
-
-const btn = Html.button('Click me!')
-btn.observeClick(() => {
-    value.set(value.get() + 1)
-})
-
-value.observe(() => {
-    console.log('Value changed')
-})
-
-return Html.span({}, span, btn)
-```
-
----
-
-<style scoped>
-    .flex {
-        margin: -40px;
-        display: flex;
-        justify-content: space-between;
-        gap: 1em;
-    }
-
-    .flex > div {
-        flex: 50%;
-    }
-</style>
-
-<div class="flex">
-<div>
-
-```js
-const count = new WatchValue(0)
-
-const span = Html.span(
-    {className: 'red'},
-    'The count is: ',
-    count
-)
-
-const btn = Html.button('Click me!')
-btn.observeClick(() => {
-    value.set(value.get() + 1)
-})
-
-value.observe(() => {
-    console.log('Value changed')
-})
-
-return Html.span({}, span, btn)
-```
-
-</div>
-
-<div>
 
 ```jsx
-const [count, setCount] = useState(0)
-
-useEffect(() => {
-    console.log('Value changed')
-}, [count])
-
-return (
-    <>
-        <span>
-            The count is: {count}
-        </span>
-        <button onClick={
-            () => setCount(c => c+1)
-        }>
-            Click me!
-        </button>
-    </>
-)
+<a href={url}>
+    <img src={src}></img>
+</a>
 ```
-
-</div>
-</div>
-
----
-
-# Late 00’s/Early 10’s
-
-- #TODO something about flask?
-
----
-
-# What we're using these days
-
-- Happily using React, flask and Postgres
-
-<!--
-- Prefer stable and realiable tech
-
- -->
 
 ---
 
@@ -597,6 +455,7 @@ Indico's room booking module
 
 -->
 
+
 ![bg right](assets/slides/react/rb.png)
 
 ---
@@ -613,7 +472,9 @@ Example:
 
 -->
 
-![bg contain](assets/slides/react/profile.png)
+# Jinja + React?
+
+![bg right contain](assets/slides/react/profile.png)
 
 ---
 
@@ -634,6 +495,8 @@ Example:
     <div id="user-profile"></div>
 </div>
 ```
+
+![bg right contain](assets/slides/react/profile.png)
 
 ---
 
@@ -657,7 +520,8 @@ Example:
 </div>
 
 <script>
-    const container = document.querySelector('#user-profile')
+    const container =
+        document.querySelector('#user-profile')
 
     ReactDOM.render(
         <UserProfile/>,
@@ -666,15 +530,10 @@ Example:
 </script>
 ```
 
----
-
-<!--
-Very successful adoption
--->
-
-![bg contain](assets/slides/react/react_use.png)
+![bg right contain](assets/slides/react/profile.png)
 
 ---
+
 ![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/indico_main_page.png)
 
  - **Event Management** System
