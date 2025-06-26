@@ -26,6 +26,11 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
     }
 </style>
 ---
+<!-- TODO: Move this (start w/ CERN first - move Indico stuff at CERN :heart: Open Source and remove other Indico stuff there) -->
+
+<!-- TODO: Add a graphic of the timeline from CDSAgenda -> InDiCO -> Indico (today) -->
+
+<!-- TODO: Add a slide on Flask-Multipass (and other specific Indico plugins) -->
 
 # What is Indico?
 
