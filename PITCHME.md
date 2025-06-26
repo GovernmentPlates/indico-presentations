@@ -27,8 +27,102 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 </style>
 ---
 
-#TODO: Here be intro
+# What is Indico?
 
+
+---
+
+<!--
+# Indico is a web application for managing events
+- It is used to manage conferences, workshops, meetings, and other events
+- It is used by CERN and many other institutions around the world
+- It is open source and available on GitHub
+
+-->
+
+<style scoped>
+    img {
+        width: 50%;
+        height: auto;
+        margin-left: 25%;
+    }
+</style>
+
+![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/indico_main_page.png)
+
+### ![](assets/theme/logo.svg)
+
+ - **Event Management** System
+ - **Collaborative effort** - MIT License
+ - Core Developed at **CERN**
+ - With contributions from the **United Nations**, **Max-Planck Institute for Physics** and many others!
+ - **70+ developers** over the years
+
+---
+<!--
+# Indico by the numbers
+- 300+ servers
+- 350K+ users
+- 20 years of development
+-->
+<style scoped>
+    i {
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+        display: block;
+        margin-bottom: 1em;
+    }
+</style>
+
+<i>The most popular event management system you never heard about</i>
+
+![bg left 90](assets/slides/community_map.png)
+
+ - **300+ servers**
+ - **> 350K users**
+ - **20+ years** of development
+ - Initial growth in research, but growing beyond it
+   - [indico.un.org](https://indico.un.org)
+   - [events.canonical.org](https://events.canonical.com/)
+   - [indico.gnome.org](https://indico.gnome.org)
+   - [lpc.events](https://lpc.events)
+
+---
+
+# Under the hood
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    h3 {
+        font-size: 2em;
+        background: #000000;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+</style>
+<!--
+# What powers Indico?
+- Python 3
+- Flask
+- SQLAlchemy
+- Jinja2
+- PostgreSQL
+- React (and a lot of JavaScript)
+- And much much more!
+-->
+
+### We ❤️ Python
+
+![height:400px](assets/slides/stack.png)
 
 ---
 
@@ -565,7 +659,7 @@ Dealing with technical debt
 
 ---
 
-![bg 100% left](assets/slides/community_map.png)
+![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/community_map.png)
 
 *The most popular event management system you never heard about*
 
