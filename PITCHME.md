@@ -372,6 +372,26 @@ Code in Git since 2009. Migrated to GitHub in early 2015.
 
 ---
 
+<!--
+LOC
+
+- Huge drop around 2014: went from 500k down to less than 250k at some point
+- Recently passed the LOC back from 2010
+
+
+Language composition over time
+
+- Python dominates ever since the switch from PHP
+- Huge drop in JS code around 2014
+- Jinja/CSS stable
+- Lots of JSON around 2022 for some reason
+- React keep growing
+-->
+
+![bg contain](assets/slides/stats/languages.png)
+
+---
+
 # Dealing with Technical Debt
 
 ---
@@ -400,6 +420,10 @@ Dealing with technical debt
 
 ---
 
+# Contributors
+
+---
+
 <!--
 - To date almost 200 unique contributors
 - Steady growth, 2025 is not over yet
@@ -414,23 +438,7 @@ Dealing with technical debt
 
 ---
 
-<!--
-LOC
-
-- Huge drop around 2014: went from 500k down to less than 250k at some point
-- Recently passed the LOC back from 2010
-
-
-Language composition over time
-
-- Python dominates ever since the switch from PHP
-- Huge drop in JS code around 2014
-- Jinja/CSS stable
-- Lots of JSON around 2022 for some reason
-- React keep growing
--->
-
-![bg contain](assets/slides/stats/languages.png)
+# Response time
 
 ---
 
@@ -447,19 +455,7 @@ Language composition over time
 
 ---
 
-![bg contain](assets/slides/stats/overtime_commits.png)
-
-<!--
-- Very happy I wasn't around at that time
- -->
-
----
-
-<!--
-This is what our senior colleagues look like when we mention 2015
- -->
-
-![bg contain](assets/slides/stats/vietnam.jpeg)
+# Tests
 
 ---
 
@@ -480,11 +476,27 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 
 <!--
 - Nowadays we do manual testing
-- We always release new features to our users at CERN first before making a public release
+- We always release new features to our users at CERN fFirst before making a public release
 - ~10k daily users are very good at finding bugs
 -->
 
 ![bg contain](assets/slides/stats/prod.webp)
+
+---
+
+![bg contain](assets/slides/stats/overtime_commits.png)
+
+<!--
+- Very happy I wasn't around at that time
+ -->
+
+---
+
+<!--
+This is what our senior colleagues look like when we mention 2015
+ -->
+
+![bg contain](assets/slides/stats/vietnam.jpeg)
 
 ---
 

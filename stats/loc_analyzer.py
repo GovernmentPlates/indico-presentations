@@ -97,6 +97,9 @@ class GitLOCAnalyzer:
             r"target/",
             r"\.DS_Store$",
             r"thumbs\.db$",
+            # Indico specific patterns
+            r"indico/vendor/",
+            r"vendor/",
         ]
 
     def get_commits_timeline(self, sample_commits=50):

@@ -4,6 +4,7 @@ from datetime import datetime
 from collections import OrderedDict
 import matplotlib.pyplot as plt
 from aquarel import load_theme
+import matplotlib.ticker as mtick
 
 
 
@@ -70,9 +71,10 @@ def analyze_test_ratio():
 
 def plot_ratios(ratios):
     years = list(ratios.keys())
-    values = list(ratios.values())
-    plt.figure(figsize=(10, 5))
-    plt.plot(years, values, marker="o", linestyle="-", color="purple")
+    values = [100*v for v in list(ratios.values())]
+    plt.figure(figsize=(16, 9))
+    plt.gca().yaxis.set_major_formatter(mtick.PercentFormatter())
+    plt.plot(years, values, marker="o", linestyle="-", color="coral")
     plt.title("Test Code Ratio Over Time")
     plt.xlabel("Year")
     plt.ylabel("Test Code Ratio")
