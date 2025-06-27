@@ -334,323 +334,11 @@ Yes, CERN has the .cern TLD
 
 ---
 
-# Where does Indico fit in?
-
-Born out of the need to manage scientific collaboration at an unprecedented scale
-
-- TODO: Here we can continue with introducing Indico
-
----
-
-# Indico
-
-#TODO
-
----
-
-# Code Archeology
-
-<!--
-Indico has changed a lot over the last >20 years
-
-- We were curious as to what the codebase looked like 15/20 years ago
-- And we want to share some interesting code we found from back in the day
-- Not to shame the old developers, but to show how the best practises have changed
-and how good we have it nowadays
--->
-
----
-
-# Code Archeology
-
-## Late 90’s/Early 00’s
-
-<style scoped>
-    .flex {
-        display: flex;
-        align-items: center;
-        gap: .5em;
-        margin-bottom: 2em;
-    }
-
-    .flex img {
-        height: auto;
-        width: auto;
-        max-width: 500px;
-        max-height: 300px;
-    }
-</style>
-
-<div class="flex">
-
-<div>
-  <img src="assets/slides/tech/php.png"></img>
-</div>
-<div>
-  <img src="assets/slides/tech/mysql.png"></img>
-</div>
-</div>
-
----
-
-```php
-function changePassword($userid, $password)
-{
-    $sql = "UPDATE user
-            SET password='$password'
-            WHERE id='$userid'";
-    $db->query($sql);
-}
-```
-<!--
-- Here's a function from the original PHP sources that changes a user's password
-- What's wrong with this code?
-
-- No ORM, this late 90's so raw strings it is
-- building raw SQL without escaping -> SQL injection!
-
--->
-
----
-
-```php
-function changePassword($userid, $password)
-{
-    $sql = "UPDATE user
-            SET password='$password'
-            WHERE id='$userid'";
-    $db->query($sql);
-}
-```
-
-Set `$password` to `' OR '1'='1' --` to change everyone's password:
-
-```sql
-UPDATE user SET password='' OR '1'='1' --' WHERE id='$userid'
-```
-
----
-
-```php
-function changePassword($userid, $password)
-{
-    $sql = "UPDATE user
-            SET password='$password'
-            WHERE id='$userid'";
-    $db->query($sql);
-}
-```
-
-Or be a good hacker and drop the table to prevent leaking passwords:
-
-```sql
-UPDATE user SET password=''; DROP TABLE user; --' WHERE id='$userid'
-```
-
-<!--
-This is _NOT_ a password hash, it is the actual password!
--->
-
----
-
-```php
-function changePassword($userid, $password)
-{
-    $sql = "UPDATE user
-            SET password='$password'
-            WHERE id='$userid'";
-    $db->query($sql);
-}
-```
-
-```python
-def change_password(user_id, password):
-    User.get(user_id).password = password
-```
-
-
----
-
 <!--
 This is a Python conference so of course we eventually switched to Python
  -->
 
 ![bg contain](assets/slides/tech/php.jpg)
-
----
-
-# Code Archeology - Early Python days
-
-<!--
-- Still very early days before Jinja
-- The dark ages before templating engines
-
-Constructing HTML by hand
-
-If you can't read it, that's the point
-
-Good luck with
-    - escaping HTML properly and preventing code injection
-    - making sure all tags are properly closed
-    - keeping track of everything inside conditionals
-    - consstructing more complex HTML like tables
--->
-
-
-```python
-edit = []
-edit.append("""<a href='""")
-edit.append(url)
-edit.append("""'><img src='""")
-edit.append(src)
-edit.append("""' border='0'></a>&nbsp;""")
-templateListHTML.append("".join(edit))
-```
-
----
-
-# Code Archeology - Early Python days
-
-<!--
-The whole thing can just be replaced with a bit of React (or Jinja) nowadays
-
-Interesting how a lot of things what would have been done in a more imperative manner
-are these days abstracted behind a more declarative interface like ORMs, JSX, ...
--->
-
-
-```python
-edit = []
-edit.append("""<a href='""")
-edit.append(url)
-edit.append("""'><img src='""")
-edit.append(src)
-edit.append("""' border='0'></a>&nbsp;""")
-templateListHTML.append("".join(edit))
-```
-
-```jsx
-<a href={url}>
-    <img src={src}></img>
-</a>
-```
-
----
-
-# Adopting React
-
-<!--
-Before: Jinja templates, reactivity handled by jQuery
-
-Around 2018 when React started to take off
-
-- All new features use React if possible
-- Not possible rewrite all of Indico to React in one go, the switch is happening gradually
--->
-
-![bg right:60%](assets/slides/react/react.svg)
-
----
-
-<!--
-- Needed to find a way to mix Jinja and React on the same page
-- Typically react apps are SPAs but that was not feasible in our case
-
-Example:
-- Header + sidebar rendered with Jinja
-- Profile itself is written in React
-- React code uses REST APIs returning JSON
-- Will make it easier to switch to something else if needed
-
--->
-
-# Jinja + React?
-
-![bg right contain](assets/slides/react/profile.png)
-
----
-
-# Jinja + React?
-
-<!--
-- This is the profile page expressed in code
-
-- Jinja is used to render the header and sidebar
-- A container with a unique id is added
--->
-
-```html
-<!-- user_profile.html -->
-{{ render_header() }}
-<div>
-    {{ render_sidebar() }}
-    <div id="user-profile"></div>
-</div>
-```
-
-![bg right contain](assets/slides/react/profile.png)
-
----
-
-# Jinja + React?
-
-<!--
-- Script tag with minimal JS that sets up React
-- Id is used by React to render inside the container element
-
-- Simple way to start using React
-- Lets you inject more complex functionality where needed without having to rearchitect the whole app
-
--->
-
-```html
-<!-- user_profile.html -->
-{{ render_header() }}
-<div>
-    {{ render_sidebar() }}
-    <div id="user-profile"></div>
-</div>
-
-<script>
-    const container =
-        document.querySelector('#user-profile')
-
-    ReactDOM.render(
-        <UserProfile/>,
-        container
-    )
-</script>
-```
-
-![bg right contain](assets/slides/react/profile.png)
-
----
-
-# Dealing with Technical Debt
-
----
-
-<!--
-- Graph showing how long a line of code survives before it is removed or changed
-- Every ~6 years Indico is rewritten
-- Ship of Theseus - Indico of 6 years ago is not the Indico of today
-- 6 years is a good number -> not too much code churn but at the same we're able to keep the codebase relatively modern
-
-Dealing with technical debt
-- Context matters -> Indico is a large and mature applications that has been around for 20 years and probably will be here in another 20
-- For such applications it's best to stick with proven and mature technologies as opposed to the hottest new framework
-- e.g. we're using flask despite there being arguably more modern frameworks these days
-- same for React, there are newer UI frameworks but we need to look 5/10/15 years in the future
-- at the same, pragmatism beats purity
-    - we still use jQuery in some parts, we'd like to get rid of it eventually but it works and the maintenance burden is low
-
-- Cannot afford to rewrite everything
-- Lack of manpower
-- Risk of intrducing new bugs, especially for something that has been battle-tested by thousands of users over many years
-- The old code has already worked all the kinks and bugs that you don't even know about
- -->
-
-![bg](assets/slides/stats/tech_debt.png)
 
 ---
 
@@ -684,11 +372,31 @@ Code in Git since 2009. Migrated to GitHub in early 2015.
 
 ---
 
-#TODO funny commits?
+# Dealing with Technical Debt
 
-https://github.com/indico/indico/commit/d03345b6678d725ee90c58d1d6433195e3153719
+---
 
-917ee29cb522e67ef88dbbad281d4bc2658cd8c9
+<!--
+- Graph showing how long a line of code survives before it is removed or changed
+- Every ~6 years Indico is rewritten
+- Ship of Theseus - Indico of 6 years ago is not the Indico of today
+- 6 years is a good number -> not too much code churn but at the same we're able to keep the codebase relatively modern
+
+Dealing with technical debt
+- Context matters -> Indico is a large and mature applications that has been around for 20 years and probably will be here in another 20
+- For such applications it's best to stick with proven and mature technologies as opposed to the hottest new framework
+- e.g. we're using flask despite there being arguably more modern frameworks these days
+- same for React, there are newer UI frameworks but we need to look 5/10/15 years in the future
+- at the same, pragmatism beats purity
+    - we still use jQuery in some parts, we'd like to get rid of it eventually but it works and the maintenance burden is low
+
+- Cannot afford to rewrite everything
+- Lack of manpower
+- Risk of intrducing new bugs, especially for something that has been battle-tested by thousands of users over many years
+- The old code has already worked all the kinks and bugs that you don't even know about
+ -->
+
+![bg](assets/slides/stats/tech_debt.png)
 
 ---
 
