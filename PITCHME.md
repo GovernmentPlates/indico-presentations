@@ -420,24 +420,6 @@ Dealing with technical debt
 
 ---
 
-# Contributors
-
----
-
-<!--
-- To date almost 200 unique contributors
-- Steady growth, 2025 is not over yet
-- Averaging more than 10 new contributors per year for the last few years
-- Great given that Indico is a fairly complex application
-- We will also gladly take your patches if it fixes a bug or adds a nice new feature
-- Being on GitHub definitely helps visibility
-
- -->
-
-![bg contain](assets/slides/stats/stats1.png)
-
----
-
 # Tests
 
 ---
@@ -454,6 +436,24 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
  -->
 
 ![bg contain](assets/slides/stats/test_ratio.png)
+
+---
+
+# Contributors
+
+---
+
+<!--
+- To date almost 200 unique contributors
+- Steady growth, 2025 is not over yet
+- Averaging more than 10 new contributors per year for the last few years
+- Great given that Indico is a fairly complex application
+- We will also gladly take your patches if it fixes a bug or adds a nice new feature
+- Being on GitHub definitely helps visibility
+
+ -->
+
+![bg contain](assets/slides/stats/stats1.png)
 
 ---
 
