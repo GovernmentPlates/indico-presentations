@@ -512,19 +512,7 @@ This is what our senior colleagues look like when we mention 2015
 
 # How do you stay motivated after so many years?
 
-> Indico's codebase is large and varied so no two days are the same
-
----
-
-# How do you stay motivated after so many years?
-
 > By seeing the impact of your work. Seeing people use your project and appreciate the work you've done.
-
----
-
-# What advice would you give to other maintainers?
-
-> Don’t underestimate the impact of writing that blog post, social media post or attending a conference
 
 ---
 
