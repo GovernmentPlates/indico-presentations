@@ -16,6 +16,8 @@ import os
 import sys
 from pathlib import Path
 from aquarel import load_theme
+import matplotlib.dates as mdates
+import matplotlib.ticker as ticker
 
 
 class GitTechDebtAnalyzer:
@@ -52,35 +54,6 @@ class GitTechDebtAnalyzer:
             print(f"Error: {e.stderr}")
             return ""
 
-    def get_file_history(self, file_path):
-        """Get the commit history for a specific file"""
-        cmd = (
-            f'git log --follow --pretty=format:"%H|%ad|%an" --date=iso -- "{file_path}"'
-        )
-        output = self.run_git_command(cmd)
-
-        commits = []
-        for line in output.split("\n"):
-            if line.strip():
-                parts = line.split("|")
-                if len(parts) == 3:
-                    hash_val, date_str, author = parts
-                    try:
-                        date = datetime.fromisoformat(
-                            date_str.replace(" ", "T", 1).rsplit(" ", 1)[0]
-                        )
-                        commits.append(
-                            {
-                                "hash": hash_val,
-                                "date": date,
-                                "author": author,
-                                "file": file_path,
-                            }
-                        )
-                    except ValueError:
-                        continue
-        return commits
-
     def get_all_tracked_files(self):
         """Get all tracked files with relevant extensions"""
         cmd = "git ls-files"
@@ -96,17 +69,9 @@ class GitTechDebtAnalyzer:
 
     def analyze_line_survival(self):
         """Analyze how long lines of code survive before being changed"""
+        now = datetime.now()
         files = self.get_all_tracked_files()
-
-        # Limit analysis to avoid overwhelming the system
-        # if len(files) > max_files:
-        #     files = files[:max_files]
-        #     print(
-        #         f"Analyzing sample of {max_files} files out of {len(self.get_all_tracked_files())} total files"
-        #     )
-
         line_lifespans = []
-        file_stats = []
 
         for i, file_path in enumerate(files):
             print(f"Analyzing {file_path} ({i + 1}/{len(files)})")
@@ -117,43 +82,20 @@ class GitTechDebtAnalyzer:
 
             if not blame_output:
                 continue
-
-            commit_dates = {}
-            current_commit = None
+                # raise ValueError(f"Failed to get blame information for {file_path}. ")
 
             for line in blame_output.split("\n"):
-                if re.match(r"^[a-f0-9]{40}", line):
-                    current_commit = line.split()[0]
-                elif line.startswith("committer-time "):
-                    timestamp = int(line.split()[1])
-                    commit_dates[current_commit] = datetime.fromtimestamp(timestamp)
+                if line.startswith("committer-time "):
+                    timestamp = datetime.fromtimestamp(int(line.split()[1]))
+                    line_lifespans.append(
+                        {
+                            "file": file_path,
+                            "age_days": (now - timestamp).days,
+                            "commit_date": timestamp,
+                        }
+                    )
 
-            # Calculate line ages
-            now = datetime.now()
-            ages = []
-            for commit_hash, commit_date in commit_dates.items():
-                age_days = (now - commit_date).days
-                ages.append(age_days)
-                line_lifespans.append(
-                    {
-                        "file": file_path,
-                        "age_days": age_days,
-                        "commit_date": commit_date,
-                    }
-                )
-
-            if ages:
-                file_stats.append(
-                    {
-                        "file": file_path,
-                        "avg_line_age": np.mean(ages),
-                        "median_line_age": np.median(ages),
-                        "max_line_age": max(ages),
-                        "total_lines": len(ages),
-                    }
-                )
-
-        return pd.DataFrame(line_lifespans), pd.DataFrame(file_stats)
+        return pd.DataFrame(line_lifespans)
 
     def create_visualizations(self, line_data):
         """Create comprehensive visualizations of tech debt metrics"""
@@ -161,19 +103,24 @@ class GitTechDebtAnalyzer:
 
         # 1. Line Age Distribution
         # ax1 = plt.subplot(1, 2, 1)
-        if not line_data.empty:
-            plt.hist(line_data["age_days"], bins=50, alpha=0.7, edgecolor="black")
-            plt.axvline(
-                line_data["age_days"].mean(),
-                color="red",
-                linestyle="--",
-                label=f"Mean: {line_data['age_days'].mean():.0f} days",
-            )
-            plt.xlabel("Line Age (days)")
-            plt.ylabel("Frequency")
-            plt.title("Line Age Distribution")
-            plt.legend()
-            plt.grid(True, alpha=0.3)
+        plt.gca().xaxis.set(
+            # major_locator=mdates.YearLocator(),
+            major_formatter=ticker.FuncFormatter(lambda x, _: f"{int(x)} ({2025-int(x)})")
+        )
+        plt.hist(line_data["age_days"] / 365, bins=50, alpha=0.7, edgecolor="black")
+        plt.axvline(
+            line_data["age_days"].mean() / 365,
+            color="red",
+            linestyle="--",
+            label=f"Mean: {line_data['age_days'].mean() / 365:.0f} years",
+        )
+        plt.xlabel("Line Age (years)")
+        # hide y-axis ticks
+        plt.gca().yaxis.set_visible(False)
+        # plt.ylabel("Frequency")
+        plt.title("Line Age Distribution")
+        plt.legend()
+        plt.grid(True, alpha=0.3)
 
         plt.tight_layout()
         plt.savefig(
@@ -201,7 +148,7 @@ def main():
         return
 
     print("\n1. Analyzing line survival rates...")
-    line_data, file_stats = analyzer.analyze_line_survival()
+    line_data = analyzer.analyze_line_survival()
 
     print("\n4. Creating visualizations...")
     analyzer.create_visualizations(line_data)

@@ -193,8 +193,9 @@ class GitContributorAnalyzer:
             plot_data["period_str"],
             plot_data["cumulative_contributors"],
             marker="o",
-            linewidth=2,
-            markersize=4,
+            linewidth=3,
+            markersize=5,
+            color="#A23B72",
         )
         axes[0].set_title("All Contributors (Cumulative)")
         axes[0].set_ylabel("Total Contributors")
@@ -202,13 +203,20 @@ class GitContributorAnalyzer:
         axes[0].grid(True, alpha=0.3)
 
         # Plot 2: New contributors per period
-        axes[1].bar(
-            plot_data["period_str"], plot_data["new_contributors"], alpha=0.7
+        p = axes[1].bar(
+            plot_data["period_str"], plot_data["active_contributors"], alpha=0.7
         )
+        axes[1].bar_label(p, label_type='center')
+        p = axes[1].bar(
+            plot_data["period_str"], plot_data["new_contributors"], alpha=0.7, bottom=plot_data["active_contributors"]
+        )
+        axes[1].bar_label(p, label_type='center')
+
         axes[1].set_title("New Contributors")
-        axes[1].set_ylabel("New Contributors")
+        axes[1].set_ylabel("Active and New Contributors")
         axes[1].tick_params(axis="x", rotation=45)
         axes[1].grid(True, alpha=0.3)
+        axes[1].legend(["Existing Contributors", "New Contributors"], loc="upper left")
 
         plt.tight_layout()
 

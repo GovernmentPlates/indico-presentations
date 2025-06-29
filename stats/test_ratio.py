@@ -8,7 +8,7 @@ import matplotlib.ticker as mtick
 
 
 
-REPO_PATH = "/home/troun/dev/indico"
+REPO_PATH = "/home/tomas/dev/indico"
 TEST_SUFFIX = "_test.py"
 
 
@@ -25,6 +25,8 @@ def get_yearly_commits():
     for commit_hash, timestamp in commits:
         year = datetime.utcfromtimestamp(int(timestamp)).year
         years[year] = commit_hash  # Keep latest per year
+    for year, hash in years.items():
+        print(f"{year}: {hash}")
     return OrderedDict(sorted(years.items()))
 
 
@@ -73,6 +75,8 @@ def plot_ratios(ratios):
     years = list(ratios.keys())
     values = [100*v for v in list(ratios.values())]
     plt.figure(figsize=(16, 9))
+    plt.gca().spines["top"].set_visible(False)
+    plt.gca().spines["right"].set_visible(False)
     plt.gca().yaxis.set_major_formatter(mtick.PercentFormatter())
     plt.plot(years, values, marker="o", linestyle="-", color="coral")
     plt.title("Test Code Ratio Over Time")

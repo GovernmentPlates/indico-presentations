@@ -370,6 +370,10 @@ This is a Python conference so of course we eventually switched to Python
 
 Code in Git since 2009. Migrated to GitHub in early 2015.
 
+<!--
+- Repository health metrics - Dawn Foster
+-->
+
 ---
 
 <!--
@@ -378,13 +382,16 @@ LOC
 - Huge drop around 2014: went from 500k down to less than 250k at some point
 - Recently passed the LOC back from 2010
 
-
 Language composition over time
+
+interesting to try to reverse-engineer what happened
 
 - Python dominates ever since the switch from PHP
 - Huge drop in JS code around 2014
 - Jinja/CSS stable
-- Lots of JSON around 2022 for some reason
+- Lots of JSON around 2022 for some reason -> lockfile version upgrade from 2 to 3
+https://github.com/indico/indico/pull/6225/files
+
 - React keep growing
 -->
 
@@ -439,6 +446,16 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 
 ---
 
+<!--
+- Nowadays we do manual testing
+- We always release new features to our users at CERN fFirst before making a public release
+- ~10k daily users are very good at finding bugs
+-->
+
+![bg contain](assets/slides/stats/prod.webp)
+
+---
+
 # Contributors
 
 ---
@@ -447,9 +464,11 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 - To date almost 200 unique contributors
 - Steady growth, 2025 is not over yet
 - Averaging more than 10 new contributors per year for the last few years
+- Started around 2020 == COVID confirmed
 - Great given that Indico is a fairly complex application
 - We will also gladly take your patches if it fixes a bug or adds a nice new feature
-- Being on GitHub definitely helps visibility
+
+- Writing code and submitting pull requests is not the only way to contribute
 
  -->
 
@@ -457,13 +476,48 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 
 ---
 
-<!--
-- Nowadays we do manual testing
-- We always release new features to our users at CERN fFirst before making a public release
-- ~10k daily users are very good at finding bugs
--->
+# Translations
 
-![bg contain](assets/slides/stats/prod.webp)
+<style scoped>
+    .flex {
+        display: flex;
+        gap: 3em;
+    }
+</style>
+
+<!-- ![](assets/slides/stats/balls.png) -->
+
+<div class="flex">
+<div>
+<div>🇬🇧 Welcome to Indico</div>
+<div>🇩🇪 Willkommen bei Indico</div>
+<div>🇪🇸 Bienvenidos a Indico</div>
+<div>🇫🇷 Bienvenue dans Indico</div>
+<div>🇮🇹 Benvenuti in Indico</div>
+<div>🇭🇺 Üdvözöljük az Indico-ban</div>
+<div>🇵🇱 Witaj w Indico</div>
+<div>🇧🇷 Bem vindo ao Indico</div>
+</div>
+
+<div>
+<div>🇸🇪 Välkommen till Indico</div>
+<div>🇹🇷 Indico'ya hoşgeldiniz</div>
+<div>🇨🇿 Vítejte v Indicu</div>
+<div>🇲🇳 Индикод тавтай морил</div>
+<div>🇺🇦 Ласкаво просимо до Indico</div>
+<div>🇨🇳 欢迎使用 Indico。</div>
+<div>🇯🇵 Indicoへようこそ。</div>
+</div>
+</div>
+
+
+---
+
+![bg contain](assets/slides/stats/translations_over_time.png)
+
+<!--
+Over 6000 phrases
+ -->
 
 ---
 
