@@ -438,23 +438,6 @@ Dealing with technical debt
 
 ---
 
-# Response time
-
----
-
-<!--
-- This is how long it takes after you open an issue to get a comment on it (or before it's closed ;))
-- The y-axis is in log scale because the most recent years we are approaching zero
-- In 2025 the median response time was 4.2. Hours? no, 4.2 minutes
-- For the data nerds, there are some box plots on the right
-- Extrapolating, by next year we will reply to you before you an open issue
-
- -->
-
-![bg contain](assets/slides/stats/ttfr.png)
-
----
-
 # Tests
 
 ---
