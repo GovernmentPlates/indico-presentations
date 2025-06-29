@@ -311,17 +311,17 @@ class GitLOCAnalyzer:
         languages = [col.replace("_lines", "") for col in language_cols]
 
         # Create subplots
-        fig, axes = plt.subplots(2, 1, figsize=(16, 9))
+        fig, ax = plt.subplots(figsize=(16, 9))
         # fig.suptitle("Repository Lines of Code and Language Evolution", fontsize=16)
 
         # Plot 1: Total lines over time
-        axes[0].plot(
-            df["date"], df["total_lines"], marker="o", linewidth=2, markersize=4
-        )
-        axes[0].set_title("Total Lines of Code Over Time")
-        axes[0].set_ylabel("Lines of Code")
-        axes[0].tick_params(axis="x", rotation=45)
-        axes[0].grid(True, alpha=0.3)
+        # axes[0].plot(
+        #     df["date"], df["total_lines"], marker="o", linewidth=2, markersize=4
+        # )
+        # axes[0].set_title("Total Lines of Code Over Time")
+        # axes[0].set_ylabel("Lines of Code")
+        # axes[0].tick_params(axis="x", rotation=45)
+        # axes[0].grid(True, alpha=0.3)
 
         # Plot 2: Language composition over time (stacked area)
         if languages:
@@ -345,16 +345,16 @@ class GitLOCAnalyzer:
             for dt, perc, tot in zip(df["date"], language_data['React'], total_sum):
                 print(f"({dt.strftime('%Y-%m-%d')}, {perc}, {tot}),")
 
-            axes[1].stackplot(
+            ax.stackplot(
                 df["date"],
                 *[language_data[lang] for lang in top_languages],
                 labels=top_languages,
                 alpha=0.7,
             )
-            axes[1].set_title("Language Composition Over Time")
-            axes[1].set_ylabel("Lines of Code")
-            axes[1].legend(loc="upper left", bbox_to_anchor=(1, 1))
-            axes[1].tick_params(axis="x", rotation=45)
+            ax.set_title("Language Composition Over Time")
+            ax.set_ylabel("Lines of Code")
+            ax.legend(loc="upper left", bbox_to_anchor=(1, 1))
+            ax.tick_params(axis="x", rotation=45)
 
         # Plot 3: Number of files over time
         # axes[1, 0].plot(
