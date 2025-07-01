@@ -158,12 +158,11 @@ before being collided.
 ![bg contain](assets/slides/cern/higgs.webp)
 
 <!--
-# The Higgs Boson discovery
-
 - Most famous discovery and of the most important scientific discoveries of this century.
 - awarded with a Nobel prize
 - The missing piece the Standard Model of Particle physics
 - Theorized to exist decades ago, finally observed by CERN in 2012
+- Only the LHC was large and powerful enugh to observe 'the Higgs' directly
 -->
 
 ---
@@ -410,11 +409,36 @@ This is a Python conference so of course we eventually switched to Python
 
 ---
 
-# Stats
+# WIP: The Story Hidden in the Code
 
-Code in Git since 2009. Migrated to GitHub in early 2015.
+<!-- `c5f733` awful hack, but it's only used in tests..
+`bb23d2` A bit hacky, but the only quick way to do it now;
+`d03345` Remove a rather terrible and unused JS file
+`dc541e` Yes, we should use a proper extension point instead, but for now this fixes half the problem -->
+
 
 <!--
+WIP:
+
+Now that we’ve looked at what Indico is and how it works under the hood,
+let’s take a step back and look at the bigger picture.
+
+A project like Indico, with over 20 years of development behind it, carries with it a lot of history
+not just in terms of features, but also in its codebase and its contributors.
+
+There is a lot of things you can learn and a lot of trends you can spot by analyzing the git repository
+I wanted to share a few graphs with you that we find interesting
+
+It can tells us something about the the growth, challenges, and evolution of the project.
+
+Git since 2009 -> migrated from CVS
+
+there are many things you can learn from your git repo about your project and your contributors
+for a project as old as Indico it is interesting to see the trends and how the project has evolved over 
+the years, both in terms of the code but also the community and contributors.
+
+We're gonna explore a bit of that now.
+
 - Repository health metrics - Dawn Foster
 -->
 
@@ -468,6 +492,33 @@ Dealing with technical debt
  -->
 
 ![bg](assets/slides/stats/tech_debt.png)
+
+---
+
+# Maintaining a healthy work-life balance
+
+---
+
+![bg contain](assets/slides/stats/overtime_commits.png)
+
+<!--
+- Maintaining a healthy work-life balance can be difficult at times
+- We can get a good estimation of that by analyzing at what time code is committed throughout the day
+- The main graph shows how many commits were made outside the regular working hours (basically 9-5)
+- 2015 was a particulary difficult year, with a big rewrite of the app and a lot of all-nighters
+- Happy to say that we have improved quite a lot since then and 2025 is looking much better
+
+- it's also interesting to see breakdown of exactly when people tend to commit
+- two times jump out -> just before lunch and just before going home
+ -->
+
+---
+
+<!--
+This is what our senior colleagues look like when we mention 2015
+ -->
+
+![bg contain](assets/slides/stats/vietnam.jpeg)
 
 ---
 
@@ -527,11 +578,15 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
         display: flex;
         gap: 3em;
     }
+
+    .margin {
+      margin-bottom: 2em;
+    }
 </style>
 
 <!-- ![](assets/slides/stats/balls.png) -->
 
-<div class="flex">
+<div class="flex margin">
 <div>
 <div>🇬🇧 Welcome to Indico</div>
 <div>🇩🇪 Willkommen bei Indico</div>
@@ -554,58 +609,42 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 </div>
 </div>
 
-
----
-
-![bg contain](assets/slides/stats/translations_over_time.png)
+![](assets/slides/stats/balls_linear.png)
 
 <!--
-Over 6000 phrases
+Indico has a very active community of volunteer translators
+it is thanks to them that Indico is available in more than 15 languages!
+it is no small feat -> we have more than 6000 strings
+
+There are also many languages that are currently in progress
+
+We are always for volunteers to help out with the translations so if you
+happen to be using Indico or you are just curious and want to help we'd
+very grateful.
+
+- mention community in general? Indico workshops?
+
  -->
 
----
 
-![bg contain](assets/slides/stats/overtime_commits.png)
+<!-- ---
 
-<!--
-- Very happy I wasn't around at that time
- -->
+![bg contain](assets/slides/stats/translations_over_time.png) -->
 
 ---
 
-<!--
-This is what our senior colleagues look like when we mention 2015
- -->
+# WIP: To close it off..
 
-![bg contain](assets/slides/stats/vietnam.jpeg)
+- Indico has been through many changes over the last (more than) two decades
+- We've switched languages, technologies and databases countless times
+- Some changes were more drastic than others
 
----
+- what makes this really worth it is seeing the impact of our work
+- Do not blindy accept everything people ask for, especially if the maintenance burden is large.
 
-# Lessons learned & Advice
+- we're looking forward to the next 20 years
 
-![bg right:60%](assets/slides/advice/advice.jpeg)
-
----
-
-# How do you stay motivated after so many years?
-
----
-
-# How do you stay motivated after so many years?
-
-> By seeing the impact of your work. Seeing people use your project and appreciate the work you've done.
-
----
-
-# What advice would you give to other maintainers?
-
-> Keep the scope of the project in-mind. Do not blindy accept everything people ask for, especially if the maintenance burden is large.
-
----
-
-# What advice would you give to other maintainers?
-
-> Get some help - even if it is someone just looking at/filtering PRs, it can help a lot
+- we have some merch!
 
 ---
 

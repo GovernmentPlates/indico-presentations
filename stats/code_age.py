@@ -103,9 +103,17 @@ class GitTechDebtAnalyzer:
 
         # 1. Line Age Distribution
         # ax1 = plt.subplot(1, 2, 1)
+
+        def _formatter(x, _):
+            """Format x-axis ticks as years"""
+            x = int(x)
+            if x == 0:
+                return "Now\n(2025)"
+            return f"{int(x)} years\n({2025-x})"
+
         plt.gca().xaxis.set(
             # major_locator=mdates.YearLocator(),
-            major_formatter=ticker.FuncFormatter(lambda x, _: f"{int(x)} ({2025-int(x)})")
+            major_formatter=ticker.FuncFormatter(_formatter)
         )
         plt.hist(line_data["age_days"] / 365, bins=50, alpha=0.7, edgecolor="black")
         plt.axvline(
@@ -114,7 +122,7 @@ class GitTechDebtAnalyzer:
             linestyle="--",
             label=f"Mean: {line_data['age_days'].mean() / 365:.0f} years",
         )
-        plt.xlabel("Line Age (years)")
+        plt.xlabel("Line Age")
         # hide y-axis ticks
         plt.gca().yaxis.set_visible(False)
         # plt.ylabel("Frequency")
@@ -138,7 +146,7 @@ def main():
     #     "Enter repository path (or press Enter for current directory): "
     # ).strip()
     # if not repo_path:
-    repo_path = "/home/tomas/dev/indico"
+    repo_path = "/home/troun/dev/indico"
 
     analyzer = GitTechDebtAnalyzer(repo_path)
 

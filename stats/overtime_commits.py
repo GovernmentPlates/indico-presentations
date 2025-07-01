@@ -72,7 +72,7 @@ def plot_after_hours_commits(year_counts, hour_counts):
     # plt.bar(years, values, color="coral")
     ax.bar(years, values, color=colors)
 
-    ax.set_title("After-hours Commits")
+    ax.set_title("After-hours Commits (commits made outside regular working hours)")
     # plt.xlabel("Year")
     ax.set_ylabel("Commits")
 
@@ -142,7 +142,7 @@ def plot_after_hours_commits(year_counts, hour_counts):
 
 # ---------- USAGE ----------
 if __name__ == "__main__":
-    repo_path = "/home/tomas/dev/indico"  # Default path, can be overridden
+    repo_path = "/home/troun/dev/indico"  # Default path, can be overridden
 
     timestamps = run_git_log(repo_path)
     year_counts, hour_counts = count_after_hours_commits(timestamps)
