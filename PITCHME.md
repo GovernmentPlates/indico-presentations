@@ -214,36 +214,39 @@ before being collided.
 </style>
 
 <div class="flex">
-
-<div>
-  <img class="smaller" src="assets/slides/cern/opendata.png"></img>
-</div>
-<div>
-  <img src="assets/slides/cern/whiterabbit.jpg"></img>
-</div>
-<div>
-  <img src="assets/slides/cern/root.png"></img>
-  <img src="assets/slides/cern/zenodo.png"></img>
-</div>
-<div>
-</div>
-  <img src="assets/slides/cern/openstack.png"></img>
+  <div>
+    <img class="smaller" src="assets/slides/cern/opendata.png"></img>
+  </div>
+  <div>
+    <img class="smaller" src="assets/slides/cern/whiterabbit.jpg"></img>
+  </div>
+  <div>
+    <img src="assets/slides/cern/root.png"></img>
+    <img src="assets/slides/cern/zenodo.png"></img>
+  </div>
+  <div>
+  </div>
+    <img class="smaller" src="assets/slides/cern/invenio.png"></img>
+  </div>
 </div>
 
 <div class="flex">
-
-<div>
-  <img src="assets/slides/cern/python.png"></img>
-</div>
-<div>
-  <img src="assets/slides/cern/conda.png"></img>
-</div>
-<div>
-  <img src="assets/slides/cern/matplotlib.png"></img>
-</div>
-<div>
-</div>
-  <img src="assets/slides/cern/kicad.png"></img>
+  <div>
+    <img class="smaller" src="assets/slides/cern/openstack.png"></img>
+  </div>
+  <div>
+    <img class="smaller" src="assets/slides/cern/python.png"></img>
+  </div>
+  <div>
+    <img class="smaller" src="assets/slides/cern/conda.png"></img>
+  </div>
+  <div>
+    <img class="smaller" src="assets/slides/cern/matplotlib.png"></img>
+  </div>
+  <div>
+  </div>
+    <img class="smaller" src="assets/slides/cern/kicad.png"></img>
+  </div>
 </div>
 
 
