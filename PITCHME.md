@@ -38,9 +38,11 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 - Completely unrealistic, not possible to manufacture or store that amount of antimatter for that long
 
 - In Steins Gate as a secret organization and the main antagonist
+- Flashforwad - Sci-Fi novel about a an experiment at CERN going wrong which allows everybody to see themselves 20 years in the future
 
  -->
 
+![bg contain](assets/slides/cern/flash.jpg)
 ![bg contain](assets/slides/cern/angelsdemons.jpg)
 ![bg contain](assets/slides/cern/steinsgate.jpg)
 
@@ -50,17 +52,28 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 # What is CERN?
 
 - European Organization for Nuclear Research
+- Located near Geneva, Switzerland
 
 - Largest particle-physics laboratory in the world
-- Located near Geneva, Switzerland
+- Mission: study of fundamental particles that make up matter
 - 2500+ members of staff and more than 12,000 visiting scientists
+- ~700 buildings
 
-- CERN's mission: study of fundamental particles that make up matter (and antimatter)
+
+https://sce-dep.web.cern.ch/knowledge-centre/cern-numbers
 
 -->
 
-![bg](assets/slides/cern/lhc.jpg)
-![bg](assets/slides/cern/cern.jpg)
+<!-- ![bg right](assets/slides/cern/lhc.jpg) -->
+![bg right](assets/slides/cern/cern.jpg)
+
+__Largest__ particle physics lab in the world
+
+- __~6.2__ Square kilometers
+- __~700__ buildings on multiple sites
+- __2500+__ members of staff
+- __12000+__ visiting scientists
+- __150'000+__ visitors each year
 
 ---
 
@@ -78,7 +91,37 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 
 ---
 
-![bg contain](assets/slides/cern/lhcmap.png)
+<!-- <style scoped>
+  .bg {
+    margin: -3em -5em;
+    display: flex;
+  }
+
+  .right {
+    max-width: 30%;
+  }
+</style>
+
+<div class="bg">
+
+<div>
+
+<img src="assets/slides/cern/lhcmap.png"></img>
+
+</div>
+
+<div class="right">
+
+<img src="assets/slides/cern/lhc.jpg"></img>
+
+</div>
+
+</div> -->
+
+
+![bg](assets/slides/cern/lhcmap.png)
+![bg](assets/slides/cern/lhc.jpg)
+
 
 <!--
 # How do we make the particles collide?
@@ -95,9 +138,9 @@ before being collided.
 
 ---
 
-![bg contain](assets/slides/cern/lhc.png)
+<!-- ![bg contain](assets/slides/cern/lhc.png)
 
----
+--- -->
 
 <!--
 # Detectors
@@ -117,7 +160,8 @@ before being collided.
 <!--
 # The Higgs Boson discovery
 
-- Most famous discovery
+- Most famous discovery and of the most important scientific discoveries of this century.
+- awarded with a Nobel prize
 - The missing piece the Standard Model of Particle physics
 - Theorized to exist decades ago, finally observed by CERN in 2012
 -->
