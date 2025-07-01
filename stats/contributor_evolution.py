@@ -213,10 +213,10 @@ class GitContributorAnalyzer:
         axes[1].bar_label(p, label_type='center')
 
         axes[1].set_title("New Contributors")
-        axes[1].set_ylabel("Active and New Contributors")
+        axes[1].set_ylabel("New and Existing Contributors")
         axes[1].tick_params(axis="x", rotation=45)
         axes[1].grid(True, alpha=0.3)
-        axes[1].legend(["Existing Contributors", "New Contributors"], loc="upper left")
+        axes[1].legend(["Existing Contributors (previously contributed)", "New Contributors (first contribution this year)"], loc="upper left")
 
         plt.tight_layout()
 
