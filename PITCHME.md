@@ -178,15 +178,13 @@ before being collided.
 
 ![bg](assets/slides/cern/web.jpg)
 
----
+<!-- ---
 
-<!--
 
 - Tim is the only one who can righfully call himself a web developer
 
--->
 
-![bg](assets/slides/cern/web.webp)
+![bg](assets/slides/cern/web.webp) -->
 
 ---
 
