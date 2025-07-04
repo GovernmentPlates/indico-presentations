@@ -384,7 +384,7 @@ Yes, CERN has the .cern TLD
 
 ### We ❤️ Python
 
-![height:400px](assets/slides/stack.png)
+![height:400px](assets/slides/tech/stack.png)
 
 ---
 
@@ -392,31 +392,112 @@ Yes, CERN has the .cern TLD
 This is a Python conference so of course we eventually switched to Python
  -->
 
+# How did we get here?
+
+---
+
+![](assets/slides/tech/timeline.png)
+
+---
+<!--
+# 1990s: CDSAgenda (AgendaMaker)
+- CDSAgenda was the first event management system at CERN
+- It was called AgendaMaker at the time
+- It was used to manage conferences and meetings at CERN
+-->
+
+# 1990s: CDSAgenda (AgendaMaker)
+
+- The go-to tool for managing conferences at CERN
+- Written in PHP 🤢
+- Used MySQL as a database
+- Developed and maintained by a small in-house team at CERN (Circa 1999)
+
+---
+
+![bg height: 90%](assets/slides/tech/cds-collage.png)
+
+---
+
 ![bg contain](assets/slides/tech/php.jpg)
 
 ---
+<!--
+# 2000s: CDSAgenda -> InDiCO
+- CDSAgenda was a great tool, but it was not flexible enough for the needs of CERN
+- In 2002, the decision was made to rewrite it from scratch
+- The new system was called InDiCO (Integrated Digital COnference)
 
-![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/indico_main_page.png)
+-->
 
- - **Event Management** System
- - **Collaborative effort** - MIT License
- - Core Developed at **CERN**
- - With contributions from the **United Nations**, **Max-Planck Institute for Physics** and many others!
- - **70+ developers** over the years
+
+# 2000s: InDiCO (**In**tegrated **Di**gital **CO**nference)
+
+- Wanted: a flexible "catch-all" event management system
+- 🇪🇺 EU funded the development of InDiCO in 2002
+- Written in Python
+- `mod_python` + `mod_wsgi` (Apache) + ZODB (Zope Object Database)
+- Pure JS & Mako templates for the frontend
+- First event in 2003: CHEP 2003 (Known as "Event 0")
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding-bottom: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    small {
+        margin: 0;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+</style>
+### We hosted EuroPython 🤯
+
+![height:550px](assets/slides/tech/europyindico.png)
+
+<small>Source: https://indico.cern.ch/e/430372 and https://indico.cern.ch/e/13919/</small>
 
 ---
 
-![bg left 90% drop-shadow:0,5px,10px,rgba(0,0,0,.4)](assets/slides/community_map.png)
+![bg contain](assets/slides/tech/byezodb.jpg)
 
-*The most popular event management system you never heard about*
+---
 
- - **300+ servers**
- - **> 350K users**
- - Initial growth in research, but growing beyond it
-   - [indico.un.org](https://indico.un.org)
-   - [events.canonical.org](https://events.canonical.com/)
-   - [indico.gnome.org](https://indico.gnome.org)
-   - [lpc.events](https://lpc.events)
+# 2010s - Today: Indico
+
+- InDiCO became Indico in 2010
+- Rewritten in Flask + SQLAlchemy + Jinja2
+- PostgreSQL as the database
+- React for the frontend
+- Indico is now a mature and feature-rich event management system
+
+---
+
+# But wait, there's more!
+
+---
+
+![bg left](assets/slides/tech/multipass.png)
+### Flask-Multipass
+- Configure multiple user authentication methods simultaneously
+- Supports OAuth, LDAP, SAML, Shibboleth and more
+- Ships with Indico, but can be used independently
+
+---
+
+![bg right](assets/slides/tech/urlmagic.png)
+### Flask URLs in JavaScript (`js-flask-urls`)
+- Lets you use Flask URLs in JavaScript
+- No need to hardcode URLs in your JS code
 
 ---
 
