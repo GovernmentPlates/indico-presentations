@@ -27,6 +27,16 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 </style>
 ---
 
+<!--
+
+- We'll talk about Indico which is an open-source tool we use at CERN for managing meeting and conferences
+- We're going to take a look at its long history, show some cool tech that we are using and look at its evolution
+through some fancy graphs
+
+- But, first I wanted to tell you a bit about CERN, which is not only a really cool place to work but also a really interesting place to visit if you are into science.
+
+ -->
+
 # What is CERN?
 
 ---
@@ -34,9 +44,7 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 <!--
 # CERN in pop culture
 
-- In the opening scene of Angels and Demons when they steal the anitmatter to blow up the Vatican
-- Completely unrealistic, not possible to manufacture or store that amount of antimatter for that long
-
+- In the opening scene of Angels and Demons when they steal the antimatter to blow up the Vatican
 - In Steins Gate as a secret organization and the main antagonist
 - Flashforwad - Sci-Fi novel about a an experiment at CERN going wrong which allows everybody to see themselves 20 years in the future
 
@@ -248,15 +256,18 @@ before being collided.
 
 
 <!--
-- All research done at CERN is open and available
+- All research done at CERN is open and available - collistion data is freely available
 - Long tradition of open science and open source
 
-- Open Data Portal - All collision data available for researchers
 - ROOT - data analysis framework for HEP and more
-- White Rabbit - Sub-nanosecond synchronization of large distributed systems
+- Zenodo - open source research repository
 
+- CERN also contributes to a lot of projects that we rely on - OpenStack, KiCAD, matplotlib, ..
+- We also rely heavily on Python for all sorts of things -> web applications, desktop applications, Machine learning, analyzing data from experiments and
+random scripts that hold everything together
+
+- White Rabbit - Sub-nanosecond synchronization of large distributed systems
 - Many tools created at and for CERN find uses elsewhere
-- Check out the link to see more
 
 -->
 
@@ -434,7 +445,7 @@ It can tells us something about the the growth, challenges, and evolution of the
 Git since 2009 -> migrated from CVS
 
 there are many things you can learn from your git repo about your project and your contributors
-for a project as old as Indico it is interesting to see the trends and how the project has evolved over 
+for a project as old as Indico it is interesting to see the trends and how the project has evolved over
 the years, both in terms of the code but also the community and contributors.
 
 We're gonna explore a bit of that now.
@@ -635,16 +646,21 @@ very grateful.
 
 # WIP: To close it off..
 
+<!--
 - Indico has been through many changes over the last (more than) two decades
 - We've switched languages, technologies and databases countless times
 - Some changes were more drastic than others
 
+- We have some exciting ahead of us
+
 - what makes this really worth it is seeing the impact of our work
 - Do not blindy accept everything people ask for, especially if the maintenance burden is large.
 
+- Indico's success would've have been hard to pull off without the support from the community
 - we're looking forward to the next 20 years
 
 - we have some merch!
+-->
 
 ---
 
