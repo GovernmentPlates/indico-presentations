@@ -56,6 +56,20 @@ through some fancy graphs
 
 ---
 
+![bg contain](assets/slides/cern/ad.jpg)
+
+<!--
+We do have an Antimatter factory though!
+ -->
+
+---
+
+![bg contain](assets/slides/cern/flash.jpg)
+![bg contain](assets/slides/cern/angelsdemons.jpg)
+![bg contain](assets/slides/cern/steinsgate.jpg)
+
+---
+
 <!--
 # What is CERN?
 
@@ -77,7 +91,7 @@ https://sce-dep.web.cern.ch/knowledge-centre/cern-numbers
 
 __Largest__ particle physics lab in the world
 
-- __~6.2__ Square kilometers
+- __~6.2__ km² total area
 - __~700__ buildings on multiple sites
 - __2500+__ members of staff
 - __12000+__ visiting scientists
@@ -195,7 +209,7 @@ before being collided.
 
 ---
 
-# CERN ❤️ Open Source
+# CERN ❤️ Open Source & Open Science
 
 <style scoped>
     .flex {
