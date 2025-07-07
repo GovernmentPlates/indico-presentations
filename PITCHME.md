@@ -561,8 +561,7 @@ Language composition over time
 interesting to try to reverse-engineer what happened
 
 - Python dominates ever since the switch from PHP
-- Huge drop in JS code around 2014
-- Jinja/CSS stable
+- Huge drop in JS code around 2014 -> stopped vendoring JS dependencies and instead started using npm
 - Lots of JSON around 2022 for some reason -> lockfile version upgrade from 2 to 3
 https://github.com/indico/indico/pull/6225/files
 
@@ -599,40 +598,13 @@ Dealing with technical debt
 
 ![bg](assets/slides/stats/tech_debt.png)
 
----
 
-# Maintaining a healthy work-life balance
-
----
-
-![bg contain](assets/slides/stats/overtime_commits.png)
-
-<!--
-- Maintaining a healthy work-life balance can be difficult at times
-- We can get a good estimation of that by analyzing at what time code is committed throughout the day
-- The main graph shows how many commits were made outside the regular working hours (basically 9-5)
-- 2015 was a particulary difficult year, with a big rewrite of the app and a lot of all-nighters
-- Happy to say that we have improved quite a lot since then and 2025 is looking much better
-
-- it's also interesting to see breakdown of exactly when people tend to commit
-- two times jump out -> just before lunch and just before going home
- -->
-
----
-
-<!--
-This is what our senior colleagues look like when we mention 2015
- -->
-
-![bg contain](assets/slides/stats/vietnam.jpeg)
-
----
+<!-- ---
 
 # Tests
 
 ---
 
-<!--
 - Far from the likes of Sqlite which have 10x the test as source code
 - Clear upward movement
 
@@ -641,19 +613,16 @@ This is what our senior colleagues look like when we mention 2015
 - Huge pain to maintain
 
 https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
- -->
 
 ![bg contain](assets/slides/stats/test_ratio.png)
 
 ---
 
-<!--
 - Nowadays we do manual testing
 - We always release new features to our users at CERN fFirst before making a public release
 - ~10k daily users are very good at finding bugs
--->
 
-![bg contain](assets/slides/stats/prod.webp)
+![bg contain](assets/slides/stats/prod.webp) -->
 
 ---
 
@@ -716,6 +685,7 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 </div>
 
 ![](assets/slides/stats/balls_linear.png)
+![width:50px](assets/slides/cern/cernball.png)
 
 <!--
 Indico has a very active community of volunteer translators
@@ -736,6 +706,39 @@ very grateful.
 <!-- ---
 
 ![bg contain](assets/slides/stats/translations_over_time.png) -->
+
+---
+
+# Maintaining a healthy work-life balance
+
+---
+
+![bg contain](assets/slides/stats/overtime_commits.png)
+
+<!--
+- Maintaining a healthy work-life balance can be difficult at times
+- We can get a good estimation of that by analyzing at what time code is committed throughout the day
+- The main graph shows how many commits were made outside the regular working hours (basically 9-5)
+- 2015 was a particulary difficult year, with a big rewrite of the app and a lot of all-nighters
+
+Reasons:
+- keep uptime high and not take indico down
+- long DB migrations taking hours
+- work on weekends was not common as people didnt normally work from home
+
+- Happy to say that we have improved quite a lot since then and 2025 is looking much better
+
+- it's also interesting to see breakdown of exactly when people tend to commit
+- two times jump out -> just before lunch and just before going home
+ -->
+
+---
+
+<!--
+This is what our senior colleagues look like when we mention 2015
+ -->
+
+![bg contain](assets/slides/stats/vietnam.jpeg)
 
 ---
 

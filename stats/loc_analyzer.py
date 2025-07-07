@@ -329,7 +329,7 @@ class GitLOCAnalyzer:
             final_counts = df.iloc[-1][[f"{lang}_lines" for lang in languages]]
             # Convert to numeric and handle any non-numeric values
             final_counts = pd.to_numeric(final_counts, errors="coerce").fillna(0)
-            top_languages = final_counts.nlargest(6).index
+            top_languages = final_counts.nlargest(5).index
             top_languages = [col.replace("_lines", "") for col in top_languages]
 
             language_data = df[[f"{lang}_lines" for lang in top_languages]]
