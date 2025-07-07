@@ -3,13 +3,14 @@ import subprocess
 from collections import defaultdict
 from datetime import datetime
 import matplotlib.pyplot as plt
+from aquarel import load_theme
 
 
 def run_git_log(repo_path):
     if not os.path.exists(repo_path):
         raise FileNotFoundError(f"The path '{repo_path}' does not exist.")
 
-    cmd = ["git", "-C", repo_path, "log", "--pretty=format:%ae|%ct"]
+    cmd = ["git", "-C", repo_path, "log", "master", "--pretty=format:%ae|%ct"]
     result = subprocess.run(cmd, capture_output=True, text=True)
 
     if result.returncode != 0:
@@ -54,13 +55,41 @@ def plot_contributor_absence(factor_by_year):
     years = sorted(factor_by_year.keys())
     factors = [factor_by_year[year] for year in years]
 
-    plt.figure(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(16, 9))
     plt.plot(years, factors, marker="o", linestyle="-", color="teal")
-    plt.title("Contributor Absence Factor by Year")
+    plt.title("Bus Factor by Year")
     plt.xlabel("Year")
-    plt.ylabel("# Contributors for 50% of commits")
-    plt.grid(True)
+    plt.ylabel("# contributors with >50% of commits")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+
+    ax.set_xticks(
+        [
+            2009,
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+        ]
+    )
+
+    ax.set_yticks([0, 1, 2, 3])
+
+    ax.grid(axis="y", linestyle="--", alpha=0.7)
     plt.tight_layout()
+    plt.savefig("../assets/slides/stats/bus_factor.png", dpi=300)
     plt.show()
 
 
@@ -77,4 +106,5 @@ if __name__ == "__main__":
     log_lines = run_git_log(args.repo_path)
     yearly_commit_data = parse_commit_data(log_lines)
     caf_by_year = calculate_contributor_absence_factor(yearly_commit_data)
-    plot_contributor_absence(caf_by_year)
+    with load_theme("gruvbox_dark"):
+        plot_contributor_absence(caf_by_year)

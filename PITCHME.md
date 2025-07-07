@@ -709,6 +709,14 @@ very grateful.
 
 ---
 
+![bg contain](assets/slides/stats/busfactor.png)
+
+---
+
+![bg contain](assets/slides/stats/bus_factor.png)
+
+---
+
 # Maintaining a healthy work-life balance
 
 ---
