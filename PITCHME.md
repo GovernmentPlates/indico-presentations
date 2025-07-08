@@ -517,38 +517,29 @@ This is a Python conference so of course we eventually switched to Python
 
 ---
 
-# WIP: The Story Hidden in the Code
+# The Story Hidden in the `Code`
+
+![bg contain right](assets/slides/stats/git.png)
+
+What skeletons are hiding in our git repo?
+
+<!--
+Now that we’ve looked at what Indico is and how it works under the hood,
+let’s see what we can learn from at our git repository.
+
+Git since 2009 -> migrated from CVS -> more than 15 years worth of data
+
+There is a lot of things you can learn and a lot of trends you can spot by analyzing the git repository
+I wanted to share a few graphs with you that we find interesting
+
+- Repository health metrics - Dawn Foster
+https://opensource.net/measure-open-source-project-health/
+-->
 
 <!-- `c5f733` awful hack, but it's only used in tests..
 `bb23d2` A bit hacky, but the only quick way to do it now;
 `d03345` Remove a rather terrible and unused JS file
 `dc541e` Yes, we should use a proper extension point instead, but for now this fixes half the problem -->
-
-
-<!--
-WIP:
-
-Now that we’ve looked at what Indico is and how it works under the hood,
-let’s take a step back and look at the bigger picture.
-
-A project like Indico, with over 20 years of development behind it, carries with it a lot of history
-not just in terms of features, but also in its codebase and its contributors.
-
-There is a lot of things you can learn and a lot of trends you can spot by analyzing the git repository
-I wanted to share a few graphs with you that we find interesting
-
-It can tells us something about the the growth, challenges, and evolution of the project.
-
-Git since 2009 -> migrated from CVS
-
-there are many things you can learn from your git repo about your project and your contributors
-for a project as old as Indico it is interesting to see the trends and how the project has evolved over
-the years, both in terms of the code but also the community and contributors.
-
-We're gonna explore a bit of that now.
-
-- Repository health metrics - Dawn Foster
--->
 
 ---
 
@@ -711,9 +702,18 @@ very grateful.
 
 ---
 
+<!--
+What happens if the project lead gets hit by a bus or wins a lottery?
+ -->
+
 ![bg contain](assets/slides/stats/busfactor.png)
 
 ---
+
+<!--
+- Recently the bus factor is strictly more than 1 which is not terrible
+-
+ -->
 
 ![bg contain](assets/slides/stats/bus_factor.png)
 
@@ -752,22 +752,22 @@ This is what our senior colleagues look like when we mention 2015
 
 ---
 
-# WIP: To close it off..
+# To close it off..
+
+![bg contain right](assets/slides/stats/indico_20.jpeg)
 
 <!--
 - Indico has been through many changes over the last (more than) two decades
 - We've switched languages, technologies and databases countless times
-- Some changes were more drastic than others
 
-- We have some exciting ahead of us
-
-- what makes this really worth it is seeing the impact of our work
-- Do not blindy accept everything people ask for, especially if the maintenance burden is large.
+- We started with PHP, no we're using Python
+- We started with MySQL then switched to ZODB and now we're using Postgres
+- We even have some JS from before jQuery existed but these days we all in on React and TypeScript
+- Who knows what we'll be using in 5, 10 years (going back to PHP? :D)
 
 - Indico's success would've have been hard to pull off without the support from the community
-- we're looking forward to the next 20 years
-
-- we have some merch!
+- (It' been really great to see the growth of Indico and the community that formed around it)
+- And we are especially thankful to all the people that contributed in some shape or form/
 -->
 
 ---
@@ -777,6 +777,7 @@ This is what our senior colleagues look like when we mention 2015
 ![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
 
 ### 🌐 [getindico.io](https://getindico.io)
+### ![github width:40px](assets/theme/gh.svg) [github.com/indico](https://github.com/indico/indico)
 ### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
 ### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
 ### ![matrix width:40px](assets/theme/matrix_bw.svg) [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
@@ -795,3 +796,8 @@ This is what our senior colleagues look like when we mention 2015
         text-decoration: none;
     }
 </style>
+
+<!--
+- Socials
+- We have some merch!
+ -->
