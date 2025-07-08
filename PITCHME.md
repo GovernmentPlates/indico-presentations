@@ -29,9 +29,11 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 
 <!--
 
-- We'll talk about Indico which is an open-source tool we use at CERN for managing meeting and conferences
-- We're going to take a look at its long history, show some cool tech that we are using and look at its evolution
-through some fancy graphs
+- We'll talk about Indico which is an open-source tool we are developing at CERN for managing meetings and conferences
+- Fun fact, back in 2006 and 2007, Indico was used to run EuroPython
+- Indico runs on Python and flask (and a lot of coffee) and today
+- We're going to tell you about at its more than 20 year-long history as an open source project, show some cool tech that we are using and look at its evolution
+with some fancy graphs
 
 - But, first I wanted to tell you a bit about CERN, which is not only a really cool place to work but also a really interesting place to visit if you are into science.
 
