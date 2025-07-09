@@ -25,7 +25,6 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
         font-weight: normal;
     }
 </style>
----
 
 <!--
 
@@ -38,6 +37,8 @@ with some fancy graphs
 - But, first I wanted to tell you a bit about CERN, which is not only a really cool place to work but also a really interesting place to visit if you are into science.
 
  -->
+
+---
 
 # What is CERN?
 
@@ -107,8 +108,9 @@ __Largest__ particle physics lab in the world
 
 <!--
 - This summarizes CERN in one picture
-- Take two particles and collide them with another
-- Study the aftermath of the collision
+- Make particles like protons go very fast
+- Make them collide
+- Study what happens after
 -->
 
 ![bg contain](assets/slides/cern/cerndoge.jpg)
@@ -148,7 +150,7 @@ __Largest__ particle physics lab in the world
 
 
 <!--
-# How do we make the particles collide?
+# How do we accelerate and make the particles collide?
 
 - Using something called a Particle Accelerator
 - Specifically, the LHC - Large Hadron Collider
@@ -195,6 +197,7 @@ before being collided.
 # CERN is not just doing Physics!
 
 - Invented by Tim Berners-Lee at CERN (1989)
+- Motivation was storing and finding documents and being able to share them with his collaborators
 - great example of fundamental science leading to unexpected innovation
 - really cool to just randomly stubmle upon this plaque while going for lunch
 -->
