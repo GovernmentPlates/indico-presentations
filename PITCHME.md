@@ -42,6 +42,14 @@ with some fancy graphs
 
 # What is CERN?
 
+
+```
+TODO (Tomas):
+- Hype it up a little
+- Really sell that Indico 20 years old
+- Maybe(?): Add a slide with Indico showing something with what Indico is (as we are talking about it) right after the CERN intro
+```
+
 ---
 
 <!--
@@ -310,6 +318,25 @@ Yes, CERN has the .cern TLD
 
 # What is Indico?
 
+
+---
+
+# Meetings, conferences and more
+
+```
+TODO (Dom):
+- Add a collage of Indico screenshots (3 images stacked)
+```
+
+---
+
+# As well as other interesting usecases...
+
+```
+TODO (Dom):
+- Add some of the more interesting usecases (CERN70 T-Shirt Shop, etc.)
+- but really really explain what Indico is first so that the audience doesn't get the wrong idea with what Indico actually is!
+```
 
 ---
 
@@ -807,6 +834,14 @@ Reasons:
 - (It' been really great to see the growth of Indico and the community that formed around it)
 - And we are especially thankful to all the people that contributed in some shape or form/
 -->
+
+---
+
+# Get involved!
+
+`
+TODO: Add a slide with links to GitHub, Transifex, etc. and explain how they can get involved.
+`
 
 ---
 
