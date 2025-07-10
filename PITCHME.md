@@ -419,13 +419,13 @@ This is a Python conference so of course we eventually switched to Python
 
 ---
 <!--
-# 1990s: CDSAgenda (AgendaMaker)
+# 1999: CDSAgenda (AgendaMaker)
 - CDSAgenda was the first event management system at CERN
 - It was called AgendaMaker at the time
 - It was used to manage conferences and meetings at CERN
 -->
 
-# 1990s: CDSAgenda (AgendaMaker)
+# 1999: CDSAgenda (AgendaMaker)
 
 - The go-to tool for managing conferences at CERN
 - Written in PHP 🤢
@@ -442,22 +442,22 @@ This is a Python conference so of course we eventually switched to Python
 
 ---
 <!--
-# 2000s: CDSAgenda -> InDiCO
+# 2000s: CDSAgenda -> InDiCo
 - CDSAgenda was a great tool, but it was not flexible enough for the needs of CERN
 - In 2002, the decision was made to rewrite it from scratch
-- The new system was called InDiCO (Integrated Digital COnference)
+- The new system was called InDiCo (Integrated Digital Conference)
 
 -->
 
 
-# 2000s: InDiCO (**In**tegrated **Di**gital **CO**nference)
+# 2000s: InDiCo (**In**tegrated **Di**gital **Co**nference)
 
 - Wanted: a flexible "catch-all" event management system
-- 🇪🇺 EU funded the development of InDiCO in 2002
+- 🇪🇺 EU funded the development of InDiCo in 2002
 - Written in Python
 - `mod_python` + `mod_wsgi` (Apache) + ZODB (Zope Object Database)
-- Pure JS & Mako templates for the frontend
-- First event in 2003: CHEP 2003 (Known as "Event 0")
+- Super-limited homemade templating engine
+- First event in 2004: CHEP 2004 in 🇨🇭 Interlaken (Known as "Event 0")
 
 ---
 <style scoped>
@@ -487,35 +487,72 @@ This is a Python conference so of course we eventually switched to Python
 
 ---
 
-![bg contain](assets/slides/tech/byezodb.jpg)
+# 2010 - 2013: Indico
+
+- InDiCo became Indico around 2010 <!-- Ask Pedro for the exact date when this happened -->
+- Adopted Flask
+- Start using Flask sessions with Redis (less pressure on ZODB)
 
 ---
 
-# 2010s - Today: Indico
+![bg contain](assets/slides/tech/byezodb.jpg)
 
-- InDiCO became Indico in 2010
-- Rewritten in Flask + SQLAlchemy + Jinja2
-- PostgreSQL as the database
-- React for the frontend
-- Indico is now a mature and feature-rich event management system
+---
+<!--
+- We embraced PEP8
+- Got rid of non-pythonic stuff (camelCase etc.)
+- Legacy codebase was approx. 200K LOC
+-->
+
+# 2014 - 2017: Indico reborn
+
+- ZODB was replaced with SQLAlchemy + PostgreSQL
+- Replaced the old templating engine with Jinja2
+- Rewrote 98% of the Python codebase
+
+---
+
+![bg contain](assets/slides/tech/rewrite-poster.svg)
+
+---
+<!--
+2021: In addition to Py 2->Py 3; we cleaned up the codebase a bit, this includes:
+  - Modernizing OAuth authentication and token system using authlib
+  - Introduced PAT (Personal Access Tokens) for API access in Indico
+
+-->
+# 2017 - Present: Highlights (Abridged)
+- 2019: React added (🏠 New room booking interface)
+- 2020: 🐍 Python 2 -> Python 3
+- 2022: ⚖️ Better privacy features (🇪🇺 GDPR)
+- 2023: Document generation with `weasyprint`
 
 ---
 
 # But wait, there's more!
 
 ---
-
-![bg left](assets/slides/tech/multipass.png)
+<!--
+# Flask-Multipass
+- Written by the lead developer of Indico (Adrian Mönnich)
+- Using `authlib` under the hood (anything OAuth related will work with it)
+- Not specific to Indico, but used in Indico
+-->
+![bg left](assets/slides/tech/multipass.jpg)
 ### Flask-Multipass
 - Configure multiple user authentication methods simultaneously
 - Supports OAuth, LDAP, SAML, Shibboleth and more
-- Ships with Indico, but can be used independently
 
 ---
-
-![bg right](assets/slides/tech/urlmagic.png)
-### Flask URLs in JavaScript (`js-flask-urls`)
-- Lets you use Flask URLs in JavaScript
+<!--
+# js-flask-urls
+- Demo'd at EuroPython 2019 (`useflask` or how to use a react frontend for your flask app)
+- Small Python script to dump the URLs -> uses Babel to convert the import (JS) into a function definition
+- You can learn more from Adrian's talk at EuroPython 2019 (Google/Bing/DuckDuckGo it)
+-->
+![bg right:60%](assets/slides/tech/urlmagic.png)
+### js-flask-urls
+- Generate URLs for your Flask routes in JavaScript
 - No need to hardcode URLs in your JS code
 
 ---
@@ -588,7 +625,7 @@ Dealing with technical debt
 
 - Cannot afford to rewrite everything
 - Lack of manpower
-- Risk of intrducing new bugs, especially for something that has been battle-tested by thousands of users over many years
+- Risk of introducing new bugs, especially for something that has been battle-tested by thousands of users over many years
 - The old code has already worked all the kinks and bugs that you don't even know about
  -->
 
