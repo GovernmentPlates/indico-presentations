@@ -747,13 +747,11 @@ Reasons:
 
 ---
 
-<!--
-This is what our senior colleagues look like when we mention 2015
- -->
+<!-- This is what our senior colleagues look like when we mention 2015
 
 ![bg contain](assets/slides/stats/vietnam.jpeg)
 
----
+--- -->
 
 # To close it off..
 
