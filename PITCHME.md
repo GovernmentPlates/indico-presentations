@@ -27,10 +27,27 @@ _**Indico**: the 20 year history and evolution of an open-source project at **CE
 </style>
 
 <!--
+We'll tell you about Indico which is a large open-source
+project we've been actively developing at CERN for more than two decades.
 
-- We'll talk about Indico which is an open-source tool we are developing at CERN for managing meetings and conferences
-- Fun fact, back in 2006 and 2007, Indico was used to run EuroPython
-- Indico runs on Python and flask (and a lot of coffee) and today
+Indico is a general-purpose event management tool running
+on Python and flask that lets
+you organize all sorts of events, from meetings, lectures,
+workshops, all the way to large conferences.
+
+In fact, back in 2006 and 2007, Indico was used to EuroPython.
+The one in 2006 was actually even hosted at CERN.
+-->
+
+---
+
+# In this talk:
+
+* What is Indico and what it can offer you
+* How we've managed to keep up over the last 20 years
+* A look at some stats and what we can learn from them
+
+<!--
 - We're going to tell you about at its more than 20 year-long history as an open source project, show some cool tech that we are using and look at its evolution
 with some fancy graphs
 
@@ -41,14 +58,6 @@ with some fancy graphs
 ---
 
 # What is CERN?
-
-
-```
-TODO (Tomas):
-- Hype it up a little
-- Really sell that Indico 20 years old
-- Maybe(?): Add a slide with Indico showing something with what Indico is (as we are talking about it) right after the CERN intro
-```
 
 ---
 
@@ -104,13 +113,13 @@ __Largest__ particle physics lab in the world
 
 - __~6.2__ km² total area
 - __~700__ buildings on multiple sites
-- __2500+__ members of staff
-- __12000+__ visiting scientists
+- __2'500+__ members of staff
+- __12'000+__ visiting scientists
 - __150'000+__ visitors each year
 
 ---
 
-# What exactly does CERN do?
+# What exactly do we do at CERN?
 
 ---
 
@@ -125,36 +134,16 @@ __Largest__ particle physics lab in the world
 
 ---
 
-<!-- <style scoped>
-  .bg {
-    margin: -3em -5em;
-    display: flex;
-  }
+# The Large Hadron Collider
 
-  .right {
-    max-width: 30%;
-  }
-</style>
-
-<div class="bg">
-
-<div>
-
-<img src="assets/slides/cern/lhcmap.png"></img>
-
-</div>
-
-<div class="right">
-
-<img src="assets/slides/cern/lhc.jpg"></img>
-
-</div>
-
-</div> -->
+* The largest machine ever built
+* __27km__ circumference
+* __600 GWh__ per year power consumption
+* __1.9 K (-271.3°C)__ operating temperature
 
 
-![bg](assets/slides/cern/lhcmap.png)
-![bg](assets/slides/cern/lhc.jpg)
+<!-- ![bg](assets/slides/cern/lhcmap.png) -->
+![bg right](assets/slides/cern/lhc.jpg)
 
 
 <!--
@@ -182,6 +171,9 @@ before being collided.
 - Collisions are analyzed using four detectors
 - The detectors can be thought of as giant cameras that allow us to take pictures of the collisions and reconstruct what happened.
 - During the collisions, new particles are created and sometimes we are lucky and see a new particle.
+
+This is one of the 4 main detectors called ATLAS.
+Person for scale
 
 -->
 
@@ -610,6 +602,14 @@ https://opensource.net/measure-open-source-project-health/
 
 ---
 
+* Code evolution (size, composition)
+* Technical debt and legacy code
+* Contributors
+* Bus factor
+* Work-life balance
+
+---
+
 <!--
 LOC
 
@@ -838,6 +838,10 @@ Reasons:
 ---
 
 # Get involved!
+
+* [getindico.io](https://getindico.io)
+* [github.com/indico](github.com/indico)
+* [explore.transifex.com/indico/indico](https://explore.transifex.com/indico/indico/)
 
 `
 TODO: Add a slide with links to GitHub, Transifex, etc. and explain how they can get involved.

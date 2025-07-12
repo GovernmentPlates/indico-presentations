@@ -22,7 +22,6 @@ import json
 from aquarel import load_theme
 
 
-
 class GitLOCAnalyzer:
     def __init__(self, repo_path="."):
         self.repo_path = repo_path
@@ -32,25 +31,26 @@ class GitLOCAnalyzer:
             "JavaScript": [".js", ".mjs", ".cjs"],
             "TypeScript": [".ts"],
             "React": [".jsx", ".tsx"],
-            "PHP": [".php", ".php3", ".php4", ".php5", ".phtml"],
-            "Shell": [".sh", ".bash", ".zsh", ".fish", ".ksh"],
-            "PowerShell": [".ps1", ".psm1", ".psd1"],
+            # "PHP": [".php", ".php3", ".php4", ".php5", ".phtml"],
+            # "Shell": [".sh", ".bash", ".zsh", ".fish", ".ksh"],
+            # "PowerShell": [".ps1", ".psm1", ".psd1"],
             # Web technologies
             "Jinja": [".html", ".htm", ".xhtml"],
+            "Homegrown/Mako templates": [".tpl"],
             "CSS": [".css", ".scss", ".sass", ".less"],
             # Data and config
-            "JSON": [".json"],
-            "XML": [".xml", ".xsl", ".xsd"],
-            "YAML": [".yml", ".yaml"],
-            "TOML": [".toml"],
-            "SQL": [".sql"],
+            # "JSON": [".json"],
+            # "XML": [".xml", ".xsl", ".xsd"],
+            # "YAML": [".yml", ".yaml"],
+            # "TOML": [".toml"],
+            # "SQL": [".sql"],
             # Documentation
-            "Markdown": [".md", ".markdown", ".mdown", ".mkd"],
+            # "Markdown": [".md", ".markdown", ".mdown", ".mkd"],
             "reStructuredText": [".rst"],
-            "LaTeX": [".tex", ".latex"],
+            # "LaTeX": [".tex", ".latex"],
             # Other
-            "Dockerfile": ["dockerfile", "Dockerfile"],
-            "Makefile": ["makefile", "Makefile", "GNUmakefile"],
+            # "Dockerfile": ["dockerfile", "Dockerfile"],
+            # "Makefile": ["makefile", "Makefile", "GNUmakefile"],
         }
 
         # Reverse mapping for quick lookup
@@ -155,10 +155,10 @@ class GitLOCAnalyzer:
         if self.should_ignore_file(filepath):
             return None
 
-        # Handle special cases first
-        filename = os.path.basename(filepath).lower()
-        if filename in ["dockerfile", "makefile", "gnumakefile"]:
-            return self.ext_to_language.get(filename, "Other")
+        if filepath.endswith(".html"):
+            if "templates/" in filepath:
+                return "Jinja"
+            return "Other"        
 
         # Check file extension
         _, ext = os.path.splitext(filepath)
@@ -329,7 +329,7 @@ class GitLOCAnalyzer:
             final_counts = df.iloc[-1][[f"{lang}_lines" for lang in languages]]
             # Convert to numeric and handle any non-numeric values
             final_counts = pd.to_numeric(final_counts, errors="coerce").fillna(0)
-            top_languages = final_counts.nlargest(5).index
+            top_languages = final_counts.nlargest(9).index
             top_languages = [col.replace("_lines", "") for col in top_languages]
 
             language_data = df[[f"{lang}_lines" for lang in top_languages]]
@@ -342,7 +342,7 @@ class GitLOCAnalyzer:
             # Sum all languages for percentage calculation
             total_sum = language_data.sum(axis=1)
 
-            for dt, perc, tot in zip(df["date"], language_data['React'], total_sum):
+            for dt, perc, tot in zip(df["date"], language_data["React"], total_sum):
                 print(f"({dt.strftime('%Y-%m-%d')}, {perc}, {tot}),")
 
             ax.stackplot(
@@ -356,38 +356,12 @@ class GitLOCAnalyzer:
             ax.legend(loc="upper left", bbox_to_anchor=(1, 1))
             ax.tick_params(axis="x", rotation=45)
 
-        # Plot 3: Number of files over time
-        # axes[1, 0].plot(
-        #     df["date"],
-        #     df["total_files"],
-        #     marker="s",
-        #     color="green",
-        #     linewidth=2,
-        #     markersize=4,
-        # )
-        # axes[1, 0].set_title("Total Files Over Time")
-        # axes[1, 0].set_ylabel("Number of Files")
-        # axes[1, 0].tick_params(axis="x", rotation=45)
-        # axes[1, 0].grid(True, alpha=0.3)
-
-        # Plot 4: Language diversity
-        # axes[1, 1].plot(
-        #     df["date"],
-        #     df["languages_count"],
-        #     marker="^",
-        #     color="red",
-        #     linewidth=2,
-        #     markersize=4,
-        # )
-        # axes[1, 1].set_title("Programming Language Diversity")
-        # axes[1, 1].set_ylabel("Number of Languages")
-        # axes[1, 1].tick_params(axis="x", rotation=45)
-        # axes[1, 1].grid(True, alpha=0.3)
-
         plt.tight_layout()
 
         # if save_path:
-        plt.savefig('../assets/slides/stats/languages.png', dpi=300, bbox_inches="tight")
+        plt.savefig(
+            "../assets/slides/stats/languages.png", dpi=300, bbox_inches="tight"
+        )
 
         plt.show()
 
