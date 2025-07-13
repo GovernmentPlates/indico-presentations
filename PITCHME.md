@@ -606,13 +606,19 @@ https://opensource.net/measure-open-source-project-health/
 
 ---
 
-* Code evolution (size, composition)
+# Metrics
+
+![](assets/slides/stats/metrics.png)
+
+---
+
+* Code evolution (size, languages)
 * Technical debt and legacy code
 * Contributors
 * Bus factor
 * Work-life balance
 
-Picked out some metrics whic are very easy to measure but you
+Picked out some metrics which are very easy to measure (just need your git repo) but you
 can still valuable insights from them
 
 ---
@@ -633,6 +639,11 @@ interesting to try to reverse-engineer what happened
 https://github.com/indico/indico/pull/6225/files
 
 - React keep growing
+
+- Cannot afford to rewrite everything
+- Lack of manpower
+- Risk of introducing new bugs, especially for something that has been battle-tested by thousands of users over many years
+- The old code has already worked all the kinks and bugs that you don't even know about
 -->
 
 ![bg contain](assets/slides/stats/languages.png)
@@ -662,11 +673,6 @@ Dealing with technical debt
 - same for React, there are newer UI frameworks but we need to look 5/10/15 years in the future
 - at the same, pragmatism beats purity
     - we still use jQuery in some parts, we'd like to get rid of it eventually but it works and the maintenance burden is low
-
-- Cannot afford to rewrite everything
-- Lack of manpower
-- Risk of introducing new bugs, especially for something that has been battle-tested by thousands of users over many years
-- The old code has already worked all the kinks and bugs that you don't even know about
  -->
 
 ![bg](assets/slides/stats/tech_debt.png)
@@ -701,6 +707,10 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
 
 # Contributors
 
+* Mainly developed by CERN
+* We are on GitHub
+* Lots of contributions from other organizations & individuals
+
 ---
 
 <!--
@@ -716,6 +726,16 @@ https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
  -->
 
 ![bg contain](assets/slides/stats/stats1.png)
+
+---
+
+# There are many ways to contribute!
+
+* Code
+* Docs
+* Design & Artwork
+* Community building
+* Just spreading the word
 
 ---
 
@@ -773,6 +793,7 @@ very grateful.
 
 - mention community in general? Indico workshops?
 
+- If any of the translations are wrong, you can help us fix them!
  -->
 
 
@@ -786,7 +807,13 @@ very grateful.
 What happens if the project lead gets hit by a bus or wins a lottery?
  -->
 
-![bg contain](assets/slides/stats/busfactor.png)
+# Bus Factor
+
+* Single point of failure
+* Proxy for knowledge distribution within the team
+* What we're doing: encourage more prople to review code
+
+![bg right contain](assets/slides/stats/busfactor.png)
 
 ---
 
@@ -800,6 +827,8 @@ What happens if the project lead gets hit by a bus or wins a lottery?
 ---
 
 # Maintaining a healthy work-life balance
+
+* A bit specific
 
 ---
 

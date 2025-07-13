@@ -56,7 +56,16 @@ def plot_contributor_absence(factor_by_year):
     factors = [factor_by_year[year] for year in years]
 
     fig, ax = plt.subplots(figsize=(16, 9))
-    plt.plot(years, factors, marker="o", linestyle="-", color="teal")
+    plt.plot(
+        years,
+        factors,
+        marker="o",
+        markersize=10,
+        markerfacecolor="coral",
+        linestyle="-",
+        linewidth=4,
+        color="teal",
+    )
     plt.title("Bus Factor by Year")
     plt.xlabel("Year")
     plt.ylabel("# contributors with >50% of commits")

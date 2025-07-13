@@ -193,8 +193,9 @@ class GitContributorAnalyzer:
             plot_data["period_str"],
             plot_data["cumulative_contributors"],
             marker="o",
-            linewidth=3,
-            markersize=5,
+            linewidth=4,
+            markersize=10,
+            markerfacecolor="coral",
             color="#A23B72",
         )
         axes[0].set_title("All Contributors (Cumulative)")
