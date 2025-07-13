@@ -582,6 +582,10 @@ This is a Python conference so of course we eventually switched to Python
 
 What skeletons are hiding in our git repo?
 
+https://chaoss.community
+
+- lots of different metrics
+
 <!--
 Now that we’ve looked at what Indico is and how it works under the hood,
 let’s see what we can learn from at our git repository.
@@ -608,6 +612,9 @@ https://opensource.net/measure-open-source-project-health/
 * Bus factor
 * Work-life balance
 
+Picked out some metrics whic are very easy to measure but you
+can still valuable insights from them
+
 ---
 
 <!--
@@ -632,7 +639,13 @@ https://github.com/indico/indico/pull/6225/files
 
 ---
 
-# Dealing with Technical Debt
+# Dealing with Technical Debt & Legacy Code
+
+- Adding dependencies is easy, removing them is hard
+
+---
+
+![bg contain](assets/slides/stats/legacy.jpg)
 
 ---
 
