@@ -29,7 +29,7 @@ class GitLOCAnalyzer:
             # Programming languages
             "Python": [".py", ".pyx", ".pxd", ".pxi", ".pyw"],
             "JavaScript": [".js", ".mjs", ".cjs"],
-            "TypeScript": [".ts"],
+            # "TypeScript": [".ts"],
             "React": [".jsx", ".tsx"],
             # "PHP": [".php", ".php3", ".php4", ".php5", ".phtml"],
             # "Shell": [".sh", ".bash", ".zsh", ".fish", ".ksh"],
@@ -46,7 +46,7 @@ class GitLOCAnalyzer:
             # "SQL": [".sql"],
             # Documentation
             # "Markdown": [".md", ".markdown", ".mdown", ".mkd"],
-            "reStructuredText": [".rst"],
+            # "reStructuredText": [".rst"],
             # "LaTeX": [".tex", ".latex"],
             # Other
             # "Dockerfile": ["dockerfile", "Dockerfile"],

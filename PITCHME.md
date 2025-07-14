@@ -576,15 +576,11 @@ This is a Python conference so of course we eventually switched to Python
 
 ---
 
-# The Story Hidden in the `Code`
+# Measuring Open Source Project Health
 
 ![bg contain right](assets/slides/stats/git.png)
 
-What skeletons are hiding in our git repo?
-
-https://chaoss.community
-
-- lots of different metrics
+What can we learn from our git repo?
 
 <!--
 Now that we’ve looked at what Indico is and how it works under the hood,
@@ -606,11 +602,13 @@ https://opensource.net/measure-open-source-project-health/
 
 ---
 
-# Metrics
+# [chaoss.community](https://chaoss.community)
 
 ![](assets/slides/stats/metrics.png)
 
 ---
+
+# Metrics
 
 * Code evolution (size, languages)
 * Technical debt and legacy code
@@ -618,8 +616,10 @@ https://opensource.net/measure-open-source-project-health/
 * Bus factor
 * Work-life balance
 
-Picked out some metrics which are very easy to measure (just need your git repo) but you
-can still valuable insights from them
+<!--
+Picked out some metrics which are relevant to us but also very easy to measure (just need your git repo) and you
+can still gain valuable insights from them
+-->
 
 ---
 
@@ -652,7 +652,15 @@ https://github.com/indico/indico/pull/6225/files
 
 # Dealing with Technical Debt & Legacy Code
 
-- Adding dependencies is easy, removing them is hard
+* How much legacy code do we have?
+* How often does the code change?
+* What are the modules that nobody wants to touch?
+
+<!-- 
+A project as old as Indico is bound to have some legacy code
+
+Adding dependencies is easy, removing them is hard
+-->
 
 ---
 
@@ -665,51 +673,16 @@ https://github.com/indico/indico/pull/6225/files
 - Every ~6 years Indico is rewritten
 - Ship of Theseus - Indico of 6 years ago is not the Indico of today
 - 6 years is a good number -> not too much code churn but at the same we're able to keep the codebase relatively modern
-
-Dealing with technical debt
-- Context matters -> Indico is a large and mature applications that has been around for 20 years and probably will be here in another 20
-- For such applications it's best to stick with proven and mature technologies as opposed to the hottest new framework
-- e.g. we're using flask despite there being arguably more modern frameworks these days
-- same for React, there are newer UI frameworks but we need to look 5/10/15 years in the future
-- at the same, pragmatism beats purity
-    - we still use jQuery in some parts, we'd like to get rid of it eventually but it works and the maintenance burden is low
  -->
 
 ![bg](assets/slides/stats/tech_debt.png)
-
-
-<!-- ---
-
-# Tests
-
----
-
-- Far from the likes of Sqlite which have 10x the test as source code
-- Clear upward movement
-
-- Most of our code tests backend (i.e. Python)
-- Used to have frontend tests based on Selenium
-- Huge pain to maintain
-
-https://github.com/indico/indico/commit/b1a3e14b90d16ad7883ed550081af54bdbb69bf8
-
-![bg contain](assets/slides/stats/test_ratio.png)
-
----
-
-- Nowadays we do manual testing
-- We always release new features to our users at CERN fFirst before making a public release
-- ~10k daily users are very good at finding bugs
-
-![bg contain](assets/slides/stats/prod.webp) -->
 
 ---
 
 # Contributors
 
-* Mainly developed by CERN
-* We are on GitHub
-* Lots of contributions from other organizations & individuals
+* Mainly developed by CERN, but..
+* We get lots of contributions from other organizations & individuals
 
 ---
 
@@ -811,15 +784,14 @@ What happens if the project lead gets hit by a bus or wins a lottery?
 
 * Single point of failure
 * Proxy for knowledge distribution within the team
-* What we're doing: encourage more prople to review code
 
 ![bg right contain](assets/slides/stats/busfactor.png)
 
 ---
 
 <!--
-- Recently the bus factor is strictly more than 1 which is not terrible
--
+- Started at 3 then 2 then 1 and recently we managed to get back to 2
+- We recognize that we could be doing better in terms of diffusing institutional knowledge across multiple team members
  -->
 
 ![bg contain](assets/slides/stats/bus_factor.png)
@@ -828,13 +800,16 @@ What happens if the project lead gets hit by a bus or wins a lottery?
 
 # Maintaining a healthy work-life balance
 
-* A bit specific
+* Pressure to respond to issues/PRs
+* Difficulty saying no to feature requests
 
 ---
 
 ![bg contain](assets/slides/stats/overtime_commits.png)
 
 <!--
+Doing good now but it wasn't always the case
+
 - Maintaining a healthy work-life balance can be difficult at times
 - We can get a good estimation of that by analyzing at what time code is committed throughout the day
 - The main graph shows how many commits were made outside the regular working hours (basically 9-5)
@@ -853,12 +828,6 @@ Reasons:
 
 ---
 
-<!-- This is what our senior colleagues look like when we mention 2015
-
-![bg contain](assets/slides/stats/vietnam.jpeg)
-
---- -->
-
 # To close it off..
 
 ![bg contain right](assets/slides/stats/indico_20.jpeg)
@@ -866,28 +835,18 @@ Reasons:
 <!--
 - Indico has been through many changes over the last (more than) two decades
 - We've switched languages, technologies and databases countless times
-
-- We started with PHP, no we're using Python
-- We started with MySQL then switched to ZODB and now we're using Postgres
-- We even have some JS from before jQuery existed but these days we all in on React and TypeScript
 - Who knows what we'll be using in 5, 10 years (going back to PHP? :D)
 
 - Indico's success would've have been hard to pull off without the support from the community
-- (It' been really great to see the growth of Indico and the community that formed around it)
-- And we are especially thankful to all the people that contributed in some shape or form/
+and everybody who contributed in any shape or form
 -->
 
 ---
 
 # Get involved!
 
-* [getindico.io](https://getindico.io)
-* [github.com/indico](github.com/indico)
-* [explore.transifex.com/indico/indico](https://explore.transifex.com/indico/indico/)
-
-`
-TODO: Add a slide with links to GitHub, Transifex, etc. and explain how they can get involved.
-`
+- Our GitHub ☛ [github.com/indico](github.com/indico)
+- Translations ☛ [explore.transifex.com/indico/indico](https://explore.transifex.com/indico/indico/)
 
 ---
 
