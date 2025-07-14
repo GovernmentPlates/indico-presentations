@@ -43,9 +43,9 @@ The one in 2006 was actually even hosted at CERN.
 
 # In this talk:
 
-* What is Indico and what it can offer you
-* How we've managed to keep up over the last 20 years
-* A look at some stats and what we can learn from them
+* What is Indico and what it can offer
+* The tech behind Indico and how it's evolved
+* A look at some community metrics and what we can learn from them
 
 <!--
 - We're going to tell you about at its more than 20 year-long history as an open source project, show some cool tech that we are using and look at its evolution
@@ -57,7 +57,7 @@ with some fancy graphs
 
 ---
 
-# What is CERN?
+# But first.. what is CERN?
 
 ---
 
@@ -96,11 +96,7 @@ We do have an Antimatter factory though!
 - European Organization for Nuclear Research
 - Located near Geneva, Switzerland
 
-- Largest particle-physics laboratory in the world
 - Mission: study of fundamental particles that make up matter
-- 2500+ members of staff and more than 12,000 visiting scientists
-- ~700 buildings
-
 
 https://sce-dep.web.cern.ch/knowledge-centre/cern-numbers
 
@@ -119,7 +115,7 @@ __Largest__ particle physics lab in the world
 
 ---
 
-# What exactly do we do at CERN?
+# What do we do at CERN?
 
 ---
 
@@ -136,10 +132,10 @@ __Largest__ particle physics lab in the world
 
 # The Large Hadron Collider
 
-* The largest machine ever built
-* __27km__ circumference
-* __600 GWh__ per year power consumption
-* __1.9 K (-271.3°C)__ operating temperature
+- The largest machine ever built
+- __27km__ circumference
+- __600 GWh__ per year power consumption
+- __1.9 K (-271.3°C)__ operating temperature
 
 
 <!-- ![bg](assets/slides/cern/lhcmap.png) -->
@@ -157,7 +153,11 @@ __Largest__ particle physics lab in the world
 
 - Particles such as protons are accelerated to almost the speed of light
 before being collided.
-- These collisions recreate conditions just after the Big Bang. -->
+- These collisions recreate conditions just after the Big Bang. 
+
+We even shut it down over Christmas
+
+-->
 
 ---
 
@@ -292,7 +292,7 @@ random scripts that hold everything together
 
 ---
 
-# CERN ❤️ Open Source
+# CERN ❤️ Open Source & Open Science
 
 ☛ https://opensource.cern/
 ☛ https://github.com/CERN/awesome-cern
