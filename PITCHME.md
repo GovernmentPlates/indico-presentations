@@ -57,7 +57,7 @@ with some fancy graphs
 
 ---
 
-# But first.. what is CERN?
+# But first... what is CERN?
 
 ---
 
@@ -294,8 +294,8 @@ random scripts that hold everything together
 
 # CERN ❤️ Open Source & Open Science
 
-☛ https://opensource.cern/
-☛ https://github.com/CERN/awesome-cern
+👉 https://opensource.cern/
+👉 https://github.com/CERN/awesome-cern
 
 <!--
 If you wanna learn more about CERN and open source
@@ -310,25 +310,90 @@ Yes, CERN has the .cern TLD
 
 # What is Indico?
 
-
 ---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
 
+    h3 {
+        font-size: 1.5em;
+        color: #aaa;
+    }
+</style>
 # Meetings, conferences and more
 
-```
-TODO (Dom):
-- Add a collage of Indico screenshots (3 images stacked)
-```
+![height:550px](assets/slides/indico-collage-1.png)
 
 ---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
 
+    h3 {
+        font-size: 1.5em;
+        color: #aaa;
+    }
+</style>
+# Meetings, conferences and more
+
+![height:550px](assets/slides/indico-collage-2.png)
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        color: #aaa;
+    }
+</style>
+# Meetings, conferences and more
+
+![height:550px](assets/slides/indico-collage-3.png)
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        color: #aaa;
+    }
+</style>
+# Meetings, conferences and more
+
+![height:550px](assets/slides/indico-collage-4.png)
+
+---
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    h3 {
+        font-size: 1.5em;
+        color: #aaa;
+    }
+</style>
 # As well as other interesting usecases...
 
-```
-TODO (Dom):
-- Add some of the more interesting usecases (CERN70 T-Shirt Shop, etc.)
-- but really really explain what Indico is first so that the audience doesn't get the wrong idea with what Indico actually is!
-```
+![height:550px](assets/slides/cern70-tshirts.png)
 
 ---
 
@@ -404,9 +469,7 @@ TODO (Dom):
 
     h3 {
         font-size: 2em;
-        background: #000000;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: #224466;
     }
 </style>
 <!--
@@ -440,6 +503,7 @@ This is a Python conference so of course we eventually switched to Python
 <!--
 # 1999: CDSAgenda (AgendaMaker)
 - CDSAgenda was the first event management system at CERN
+- A solution to a problem of handling conferences and meetings by the different scientific collaborations at CERN
 - It was called AgendaMaker at the time
 - It was used to manage conferences and meetings at CERN
 -->
@@ -447,9 +511,9 @@ This is a Python conference so of course we eventually switched to Python
 # 1999: CDSAgenda (AgendaMaker)
 
 - The go-to tool for managing conferences at CERN
-- Written in PHP 🤢
+- Written in PHP
 - Used MySQL as a database
-- Developed and maintained by a small in-house team at CERN (Circa 1999)
+- Developed and maintained by a small in-house team at CERN (circa 1999)
 
 ---
 
@@ -467,18 +531,27 @@ This is a Python conference so of course we eventually switched to Python
 - The new system was called InDiCo (Integrated Digital Conference)
 
 -->
-
+<style scoped>
+  small {
+        margin: 0;
+        font-size: 0.8em;
+        color: #aaa;
+    }
+</style>
 
 # 2000s: InDiCo (**In**tegrated **Di**gital **Co**nference)
 
 - Wanted: a flexible "catch-all" event management system
 - 🇪🇺 EU funded the development of InDiCo in 2002
 - Written in Python
-- `mod_python` + `mod_wsgi` (Apache) + ZODB (Zope Object Database)
+- `mod_python` ➡️ `mod_wsgi` (Apache) + ZODB (Zope* Object Database)
 - Super-limited homemade templating engine
 - First event in 2004: CHEP 2004 in 🇨🇭 Interlaken (Known as "Event 0")
 
+<small>*Indico was the flagship Zope application of its time</small>
+
 ---
+
 <style scoped>
     section {
         justify-content: center !important;
@@ -490,6 +563,7 @@ This is a Python conference so of course we eventually switched to Python
 
     h3 {
         font-size: 1.5em;
+        color: #224466;
     }
 
     small {
@@ -513,10 +587,6 @@ This is a Python conference so of course we eventually switched to Python
 - Start using Flask sessions with Redis (less pressure on ZODB)
 
 ---
-
-![bg contain](assets/slides/tech/byezodb.jpg)
-
----
 <!--
 - We embraced PEP8
 - Got rid of non-pythonic stuff (camelCase etc.)
@@ -526,6 +596,8 @@ This is a Python conference so of course we eventually switched to Python
 # 2014 - 2017: Indico reborn
 
 - ZODB was replaced with SQLAlchemy + PostgreSQL
+  - Running ZODB & Postgres in parallel for a while
+  - Storing users in Postgres and events in ZODB
 - Replaced the old templating engine with Jinja2
 - Rewrote 98% of the Python codebase
 
@@ -542,7 +614,7 @@ This is a Python conference so of course we eventually switched to Python
 -->
 # 2017 - Present: Highlights (Abridged)
 - 2019: React added (🏠 New room booking interface)
-- 2020: 🐍 Python 2 -> Python 3
+- 2020: 🐍 Python 2 ➡️ Python 3
 - 2022: ⚖️ Better privacy features (🇪🇺 GDPR)
 - 2023: Document generation with `weasyprint`
 
@@ -573,6 +645,14 @@ This is a Python conference so of course we eventually switched to Python
 ### js-flask-urls
 - Generate URLs for your Flask routes in JavaScript
 - No need to hardcode URLs in your JS code
+
+---
+![bg left:50%](assets/slides/indico-shell.png)
+### Indico CLI (`indico`)
+- Command-line interface for Indico
+- Manage events, users, and more from the terminal
+- A powerful tool for administrators and developers (e.g. `indico shell`)
+
 
 ---
 
@@ -681,7 +761,7 @@ Adding dependencies is easy, removing them is hard
 
 # Contributors
 
-* Mainly developed by CERN, but..
+* Mainly developed by CERN, but...
 * We get lots of contributions from other organizations & individuals
 
 ---
@@ -828,7 +908,7 @@ Reasons:
 
 ---
 
-# To close it off..
+# To close it off...
 
 ![bg contain right](assets/slides/stats/indico_20.jpeg)
 
@@ -845,8 +925,8 @@ and everybody who contributed in any shape or form
 
 # Get involved!
 
-- Our GitHub ☛ [github.com/indico](github.com/indico)
-- Translations ☛ [explore.transifex.com/indico/indico](https://explore.transifex.com/indico/indico/)
+- Our GitHub 👉 [github.com/indico](github.com/indico)
+- Translations 👉 [explore.transifex.com/indico/indico](https://explore.transifex.com/indico/indico/)
 
 ---
 
@@ -855,7 +935,6 @@ and everybody who contributed in any shape or form
 ![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
 
 ### 🌐 [getindico.io](https://getindico.io)
-### ![github width:40px](assets/theme/gh.svg) [github.com/indico](https://github.com/indico/indico)
 ### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
 ### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
 ### ![matrix width:40px](assets/theme/matrix_bw.svg) [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
