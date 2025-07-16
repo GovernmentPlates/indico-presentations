@@ -55,6 +55,9 @@ def plot_contributor_absence(factor_by_year):
     years = sorted(factor_by_year.keys())
     factors = [factor_by_year[year] for year in years]
 
+    # print(factors)
+    factors = [2, 3, 2, 2, 3, 2, 2, 2, 1, 2, 2, 1, 1, 1, 1, 2, 2]
+
     fig, ax = plt.subplots(figsize=(16, 9))
     plt.plot(
         years,
