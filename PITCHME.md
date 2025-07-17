@@ -529,26 +529,17 @@ This is a Python conference so of course we eventually switched to Python
 - CDSAgenda was a great tool, but it was not flexible enough for the needs of CERN
 - In 2002, the decision was made to rewrite it from scratch
 - The new system was called InDiCo (Integrated Digital Conference)
+- I believe it was one of the "more" flagship projects using Zope at the time
 
 -->
-<style scoped>
-  small {
-        margin: 0;
-        font-size: 0.8em;
-        color: #aaa;
-    }
-</style>
-
 # 2000s: InDiCo (**In**tegrated **Di**gital **Co**nference)
 
 - Wanted: a flexible "catch-all" event management system
 - 🇪🇺 EU funded the development of InDiCo in 2002
 - Written in Python
-- `mod_python` ➡️ `mod_wsgi` (Apache) + ZODB (Zope* Object Database)
+- `mod_python` ➡️ `mod_wsgi` (Apache) + ZODB (Zope Object Database)
 - Super-limited homemade templating engine
 - First event in 2004: CHEP 2004 in 🇨🇭 Interlaken (Known as "Event 0")
-
-<small>*Indico was the flagship Zope application of its time</small>
 
 ---
 
