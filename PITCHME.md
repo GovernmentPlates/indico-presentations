@@ -952,7 +952,7 @@ and everybody who contributed in any shape or form
 <!-- _paginate: false -->
 ![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
 
-### 🌐 [getindico.io](https://getindico.io)
+### ![getindico.io width:40px](assets/slides/indico-icon.ico) [getindico.io](https://getindico.io)
 ### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
 ### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
 ### ![matrix width:40px](assets/theme/matrix_bw.svg) [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
