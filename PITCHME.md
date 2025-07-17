@@ -45,7 +45,7 @@ The one in 2006 was actually even hosted at CERN.
 
 * What is Indico and what it can offer
 * The tech behind Indico and how it's evolved
-* A look at some repository metrics and what we can learn from them
+* A look at some repository and community metrics and what we can learn from them
 
 <!--
 - We're going to tell you about at its more than 20 year-long history as an open source project, show some cool tech that we are using and look at its evolution
