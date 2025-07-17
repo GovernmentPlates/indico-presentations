@@ -629,6 +629,12 @@ This is a Python conference so of course we eventually switched to Python
 - Using `authlib` under the hood (anything OAuth related will work with it)
 - Not specific to Indico, but used in Indico
 -->
+<style scoped>
+    h3 {
+        font-size: 1.5em;
+        color: #224466;
+    }
+</style>
 ![bg left](assets/slides/tech/multipass.jpg)
 ### Flask-Multipass
 - Configure multiple user authentication methods simultaneously
@@ -641,12 +647,24 @@ This is a Python conference so of course we eventually switched to Python
 - Small Python script to dump the URLs -> uses Babel to convert the import (JS) into a function definition
 - You can learn more from Adrian's talk at EuroPython 2019 (Google/Bing/DuckDuckGo it)
 -->
+<style scoped>
+    h3 {
+        font-size: 1.5em;
+        color: #224466;
+    }
+</style>
 ![bg right:60%](assets/slides/tech/urlmagic.png)
 ### js-flask-urls
 - Generate URLs for your Flask routes in JavaScript
 - No need to hardcode URLs in your JS code
 
 ---
+<style scoped>
+    h3 {
+        font-size: 1.5em;
+        color: #224466;
+    }
+</style>
 ![bg left:50%](assets/slides/indico-shell.png)
 ### Indico CLI (`indico`)
 - Command-line interface for Indico
