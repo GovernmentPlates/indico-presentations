@@ -539,7 +539,7 @@ This is a Python conference so of course we eventually switched to Python
 - Written in Python
 - `mod_python` ➡️ `mod_wsgi` (Apache) + ZODB (Zope Object Database)
 - Super-limited homemade templating engine
-- First event in 2004: CHEP 2004 in 🇨🇭 Interlaken (Known as "Event 0")
+- First event in 2004: CHEP 2004 in 🇨🇭 Interlaken (known as "Event 0")
 
 ---
 
@@ -567,7 +567,7 @@ This is a Python conference so of course we eventually switched to Python
 
 ![height:550px](assets/slides/tech/europyindico.png)
 
-<small>Source: https://indico.cern.ch/e/430372 and https://indico.cern.ch/e/13919/</small>
+<small>See: https://indico.cern.ch/e/430372 and https://indico.cern.ch/e/13919/</small>
 
 ---
 
@@ -604,10 +604,11 @@ This is a Python conference so of course we eventually switched to Python
 
 -->
 # 2017 - Present: Highlights (Abridged)
-- 2019: React added (🏠 New room booking interface)
+- 2019: ⚛️ React added (🏠 New room booking interface)
 - 2020: 🐍 Python 2 ➡️ Python 3
+- 2021: 🔐 Modernizing OAuth & PATs for API access (🧹 as well as some cleaning)
 - 2022: ⚖️ Better privacy features (🇪🇺 GDPR)
-- 2023: Document generation with `weasyprint`
+- 2023: 🧾 Document generation with `weasyprint`
 
 ---
 
@@ -654,6 +655,10 @@ This is a Python conference so of course we eventually switched to Python
     h3 {
         font-size: 1.5em;
         color: #224466;
+    }
+
+    code {
+      color: #000 !important;
     }
 </style>
 ![bg left:50%](assets/slides/indico-shell.png)
