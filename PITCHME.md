@@ -677,28 +677,29 @@ This is a Python conference so of course we eventually switched to Python
 What can we learn from our git repo?
 
 <!--
-Now that we’ve looked at what Indico is and how it works under the hood,
-let’s see what we can learn from at our git repository.
+Now that we’ve looked at what Indico is
+how it works under the hood,
+how it's evolved
 
-Git since 2009 -> migrated from CVS -> more than 15 years worth of data
+code
+contributors
+sustainability
 
-There is a lot of things you can learn and a lot of trends you can spot by analyzing the git repository
-I wanted to share a few graphs with you that we find interesting
+let’s see what we can learn from our git repository.
 
-- Repository health metrics - Dawn Foster
-https://opensource.net/measure-open-source-project-health/
 -->
-
-<!-- `c5f733` awful hack, but it's only used in tests..
-`bb23d2` A bit hacky, but the only quick way to do it now;
-`d03345` Remove a rather terrible and unused JS file
-`dc541e` Yes, we should use a proper extension point instead, but for now this fixes half the problem -->
 
 ---
 
 # [chaoss.community](https://chaoss.community)
 
 ![](assets/slides/stats/metrics.png)
+
+<!--
+Linux Foundation project
+
+provides dozens of metrics related to open source project health
+ -->
 
 ---
 
