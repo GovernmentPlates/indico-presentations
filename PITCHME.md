@@ -30,7 +30,7 @@ footer: ''
 *Using LLMs: Summarization of meeting minutes in Indico*
 
 ### Dominic Hollis & Tomas Roun - Indico Team
-### IT-CA Group Meeting - 21st Oct. 2025
+### IT-CA Group Meeting - 21st October 2025
 
 <style scoped>
     section {
@@ -184,6 +184,7 @@ footer: ''
 - Get this on prod by late 2025/early 2026
 - Tweak mode (take a generated summary and ask for modifications)
 - Maybe something else? 🤔
+    - Suggestions welcome!
 
 ---
 <!-- _backgroundColor: "#002939ff" -->
