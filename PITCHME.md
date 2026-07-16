@@ -1,6 +1,6 @@
 ---
 marp: true
-title: flask-selfheal - Self-Healing URLs for the Web
+title: The self-healing web
 theme: selfheal
 paginate: true
 _paginate: false
@@ -36,7 +36,7 @@ html: true
 ![bg right:40% fit](assets/images/disappearing.png)
 
 - Users hit a wall over a poorly formatted URL - a typo, wrong case, a missing word
-- Developers lose the visit: a bounce, a lost referral, a support ticket
+- Developers (You) lose the visit: a bounce, a lost referral, a support ticket
 - The web forgives fuzzy input everywhere else (search boxes, autocomplete) - except the address bar
 
 ---
@@ -94,14 +94,11 @@ html: true
 
 **Off limits:** auth-gated routes, destructive actions, admin paths - anywhere "close enough" is a security risk
 
-- Healing is about *forgiveness*, not *guessing* your way somewhere you shouldn't be*
-
-<small><sup>*</sup>Unless you want to be hacked.</small>
-
 ---
 <!-- _paginate: false -->
 
 ## Techniques for implementing self-healing URLs
+<small>+ Using flask-selfheal</small>
 
 <style scoped>
     section {
@@ -174,6 +171,9 @@ def home(): ...
 @app.route("/about")
 def about(): ...
 
+@app.route("/contact")
+def contact(): ...
+
 SelfHeal(app, resolvers=[FlaskRoutesResolver()])
 ```
 
@@ -197,6 +197,7 @@ resolvers = [
     AliasMappingResolver({"old-path": "new-path"}),
     FuzzyMappingResolver(["home", "new-path"]),
 ]
+
 SelfHeal(app, resolvers=resolvers)
 ```
 
@@ -224,6 +225,7 @@ resolver = DatabaseResolver(
     enable_partial_matching=True,
     custom_normalizers={"0": "o", "ph": "f"},
 )
+
 SelfHeal(app, resolvers=[resolver], redirect_pattern="/articles/{slug}")
 ```
 
@@ -295,10 +297,10 @@ Resolvers are tried in the order you configure them - first match wins.
 ---
 <!-- _paginate: false -->
 
+![width:350px](assets/images/pypi-qr.png)
+
 ### 🔗 [github.com/GovernmentPlates/flask-selfheal](https://github.com/GovernmentPlates/flask-selfheal)
 ### 📦 [pypi.org/project/flask-selfheal](https://pypi.org/project/flask-selfheal/)
-### 🐍 MIT licensed
-### Special thanks: Maxim Danilov
 
 <style scoped>
     section {
