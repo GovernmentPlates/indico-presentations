@@ -1,0 +1,150 @@
+/* @theme selfheal */
+
+@import 'uncover';
+
+section {
+    /* Soft dark palette - not pure black, easier on the eyes under a projector.
+       Defined on `section` (not `:root`): Marpit scopes theme rules per-slide by
+       rewriting `:root` to `section :root`, which never matches anything since
+       :root only matches the real document root, an ancestor of section. */
+    --sh-bg: #1a1b23;
+    --sh-code-bg: #22232d;
+    --sh-fg: #e7e6ee;
+    --sh-accent: #58a6ff;
+    --sh-accent-light: #79c0ff;
+    --sh-muted: #9a99a8;
+
+    font-size: 1.7em;
+    background: var(--sh-bg);
+    color: var(--sh-fg);
+}
+section::after {
+    color: var(--sh-muted);
+    text-shadow: none;
+}
+section footer,
+section header {
+    color: var(--sh-muted);
+    text-shadow: none;
+}
+h3 {
+    color: var(--sh-accent);
+}
+em {
+    color: var(--sh-muted);
+    font-weight: normal;
+}
+a {
+    color: var(--sh-accent);
+}
+a:hover {
+    color: var(--sh-accent-light);
+}
+mark {
+    color: var(--sh-accent);
+}
+
+/* Slightly smaller type + tighter code blocks for code-heavy slides */
+section.code {
+    font-size: 1.4em;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+}
+section code,
+section pre {
+    background: var(--sh-code-bg);
+}
+pre {
+    font-size: 0.9em;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    color: var(--sh-fg);
+    margin: 15px 0 30px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+code {
+    color: var(--sh-accent-light);
+}
+pre code {
+    color: inherit;
+}
+
+/* Dark-friendly syntax highlighting (uncover's default hljs colors assume a
+   light code background, so they need overriding for our dark theme). */
+section:not(.invert) .hljs,
+section:not(.invert) .hljs-subst {
+    color: var(--sh-fg);
+}
+section:not(.invert) .hljs-comment,
+section:not(.invert) .hljs-quote {
+    color: var(--sh-muted);
+}
+section:not(.invert) .hljs-addition,
+section:not(.invert) .hljs-meta,
+section:not(.invert) .hljs-string,
+section:not(.invert) .hljs-symbol,
+section:not(.invert) .hljs-template-tag,
+section:not(.invert) .hljs-template-variable {
+    color: #9cdcfe;
+}
+section:not(.invert) .hljs-bullet,
+section:not(.invert) .hljs-link,
+section:not(.invert) .hljs-literal,
+section:not(.invert) .hljs-number,
+section:not(.invert) .hljs-regexp {
+    color: #7ee787;
+}
+section:not(.invert) .hljs-deletion,
+section:not(.invert) .hljs-variable {
+    color: #ffa198;
+}
+section:not(.invert) .hljs-built_in,
+section:not(.invert) .hljs-doctag,
+section:not(.invert) .hljs-keyword,
+section:not(.invert) .hljs-name,
+section:not(.invert) .hljs-section,
+section:not(.invert) .hljs-selector-class,
+section:not(.invert) .hljs-selector-id,
+section:not(.invert) .hljs-selector-tag,
+section:not(.invert) .hljs-strong,
+section:not(.invert) .hljs-tag,
+section:not(.invert) .hljs-title,
+section:not(.invert) .hljs-type {
+    color: var(--sh-accent-light);
+}
+section:not(.invert) .hljs-attribute {
+    color: #ffab70;
+}
+
+/* Simple box + arrow diagram building blocks, used for the resolver-chain
+   and request-lifecycle slides instead of images/Mermaid. */
+.flow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    flex-wrap: wrap;
+    margin: 0.5em 0;
+}
+.flow .step {
+    border: 2px solid var(--sh-accent);
+    border-radius: 8px;
+    padding: 0.3em 0.7em;
+    font-size: 0.6em;
+    line-height: 1.3;
+    background: rgba(124, 58, 237, 0.12);
+}
+.flow .step.miss {
+    border: 2px solid #444654;
+    color: var(--sh-muted);
+    background: rgba(255, 255, 255, 0.05);
+}
+.flow .arrow {
+    font-size: 0.6em;
+    font-weight: bold;
+    color: var(--sh-muted);
+}

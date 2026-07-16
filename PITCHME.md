@@ -1,34 +1,20 @@
 ---
 marp: true
-title: Rewriting the check-in app
-theme: indico
+title: flask-selfheal - Self-Healing URLs for the Web
+theme: selfheal
 paginate: true
 _paginate: false
 footer: ''
+html: true
 ---
 <!-- _footer: '' -->
-![bg](assets/slides/splash.png)
-
-![](assets/theme/cern_bw.svg)
-
-<style scoped>
-    img {
-        margin-left: 15px;
-        margin-bottom: 15px;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 60px;
-    }
-</style>
-
----
 <!-- _paginate: false -->
-![width:400px right:50% left:50%](assets/theme/logo.svg)
-*Rewriting the Indico check-in app*
 
-### Dominic Hollis - Indico Team (CERN)
+# The Self-Healing Web
+### Designing Resilient, Typo-Proof URLs
+
+**Dominic Hollis**
+*EuroPython 2026*
 
 <style scoped>
     section {
@@ -38,251 +24,286 @@ footer: ''
     }
 
     h3 {
-        color: #aaa;
-        font-size: 0.8em;
         font-weight: normal;
-    }
-</style>
----
-![bg left](assets/slides/seats.jpg)
-
-### What is the check-in app?
-
- - For organizers to check-in attendees at events
- - Used at CERN for (major) events and beyond
- - Does what it says on the tin
-
----
-![bg right](assets/slides/old-engine.jpg)
-
-### Legacy check-in app
-
- - Built in 2013 (and continued to be developed till 2015)
- - AngularJS
- - Cordova to build for iOS and Android
- - Showing its age
- - Hard to maintain
-
----
-
-### The legacy check-in app
-🪦 2013 - 2023
-
-![height:460px](assets/slides/checkin-legacy-app.png)
-
-<small>GPlay listing removed as of early 2024, App Store listing removed in early April 2025</small>
-
-<style scoped>
-    section {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding-bottom: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    h3 {
-        font-size: 1.5em;
-        margin-bottom: 0;
-    }
-
-    small {
-        margin: 0;
-        font-size: 0.8em;
-        color: #aaa;
+        margin-top: 0;
     }
 </style>
 
 ---
-![bg left](assets/slides/gears.jpg)
-### What is a Progressive Web App (PWA)?
-- PWAs are web applications that behave like native apps
-- They can work offline and can be installed on devices
-- Built using standard web technologies (HTML, CSS, JS)
-- Provide a seamless, app-like experience across platforms
+
+### 404: a dead end for everyone
+
+![bg right:40% fit](assets/images/disappearing.png)
+
+- Users hit a wall over a poorly formatted URL - a typo, wrong case, a missing word
+- Developers lose the visit: a bounce, a lost referral, a support ticket
+- The web forgives fuzzy input everywhere else (search boxes, autocomplete) - except the address bar
 
 ---
-![bg right](assets/slides/planning.jpg)
 
-### The rewrite
+### Defining "self-healing"
 
-- Idea floated in 2023
-- Summer student project (João Mesquita & Tomáš Roun)
-- Early ideas involved using React Native, but...
-- PWA was chosen instead (more on that later)
-
----
-<style scoped>
-    section {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding-bottom: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    h3 {
-        font-size: 1.75em;
-        background: linear-gradient(to right,rgb(0, 255, 255),rgb(9, 19, 216));
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-</style>
-
-### The new check-in app
-https://checkin.getindico.io
-
-![height:500px](assets/slides/checkin_app.png)
-
----
-![bg right](assets/slides/stack.jpg)
-### App Stack
-- React (Typescript/TSX)
-- Vite (Build)
-- Tailwind CSS
-- Openshift (Deployment)
-
----
-![bg left](assets/slides/thumbs-up.jpg)
-### PWA > React Native
-
-- Single, uniform codebase for both iOS and Android
-- Lightweight, easy to develop and maintain
-- No need to publish to GPlay/App Store (although, we could in theory)
-- Modern PWAs are pretty great these days 👍 (mobile browsers are packing more functionality with each release)
-
----
-![bg right](assets/slides/lighthouse.jpg)
-
-### Lighthouse reporting (Chrome)
-
-- Performance, accessibility, SEO (Search Engine Optimization) and general best practices
-- Used to (roughly) test the app on different devices
-- Integrated into the CI pipeline
-- Helped to pinpoint issues in the PWA (e.g. getting the 'install' prompt to appear etc.)
-- Some issues are not relevant to our use case (e.g. SEO)
-
----
-### Vite
-![bg left](assets/slides/saw.jpg)
-
-- Our replacement for the deprecated Create React App (CRA) boilerplate
-- Fast, modern frontend build tool (leverages Rollup under the hood)
-- Fast Hot Module Reloading (HMR) for development - changes are reflected in the browser almost instantly
-- Out-of-the-box support for TypeScript, JSX, CSS and more
-
----
-![bg right](assets/slides/road-issues.jpg)
-
-### Challenges
-- Modifying Indico's API to support the new app
-- Building a new UI from scratch
-- Learning curve for the team
-- Deprecation of React CRA (Create React App) ➡️ Vite
-- Browser/Device compatibility (especially Safari/Apple in general)
-
----
-### Apple 💔 PWAs
-
-<style scoped>
-    section {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding-bottom: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    h3 {
-        font-size: 1.5em;
-    }
-
-    small {
-        margin: 0;
-        font-size: 0.8em;
-        color: #aaa;
-    }
-</style>
-
-![height:550px](assets/slides/apple-pwa-fuckery.png)
-
-<small>Sources: The Register (Thomas C.) on [8 Feb. 2024](https://www.theregister.com/2024/02/08/apple_web_apps_eu/) and [16 Feb. 2024](https://www.theregister.com/2024/02/16/apple_web_apps/)</small>
-
----
-### Apple ❤️‍🩹 PWAs
-
-<style scoped>
-    section {
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center !important;
-        padding-bottom: 0 !important;
-        padding-top: 0 !important;
-    }
-
-    h3 {
-        font-size: 1.5em;
-    }
-
-    small {
-        margin: 0;
-        font-size: 0.8em;
-        color: #aaa;
-    }
-</style>
-
-![height:500px](assets/slides/apple-pwa-uturn.png)
-
-<small>Source: TechCrunch (Ivan M.) on [1 Mar. 2024](https://techcrunch.com/2024/03/01/apple-reverses-decision-about-blocking-web-apps-on-iphones-in-the-eu/)</small>
-
----
-<!-- _backgroundColor: "#002939ff" -->
-<!-- _paginate: false -->
-![bg right:50% width:60%](assets/theme/logo_indico_bw.svg)
-
-### 🌐 [getindico.io](https://getindico.io)
-### ![checkin width:40px](assets/theme/checkin.png) [checkin.getindico.io](https://checkin.getindico.io)
-### ![mastodon width:40px](assets/theme/mastodon.svg) [@getindico](https://fosstodon.org/@getindico)
-### ![twitter width:40px](assets/theme/twitter.svg) [@getindico](https://twitter.com/getindico)
-### ![matrix width:40px](assets/theme/matrix_bw.svg) [#indico:matrix.org](https://matrix.to/#/#indico:matrix.org)
-
-<style scoped>
-    p {
-        text-align: middle;
-    }
-
-    img {
-        vertical-align: middle;
-    }
-
-    a {
-        color: #ffffff;
-        text-decoration: none;
-    }
-</style>
+- Moving on from **strict routing** to a **resilient, user-friendly** one
+- The **unique identifier** (id / primary key / slug suffix) is the *source of truth*
+- The **human-readable** portion (slug text, casing, word order) is allowed to be flexible - or even missing
+- Goal: resolve the user's *intent*, not just match a string
 
 ---
 <!-- _paginate: false -->
+
+## Who is using self-healing URLs?
+
 <style scoped>
     section {
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
     }
+</style>
 
-    h3 {
-        font-size: 1.5em;
-    }
+---
 
+### You've probably used one already
+
+- `github.com/user/renamed-repo` → old repo name still redirects to the new one
+- `stackoverflow.com/questions/12345/anything-here` → the slug text is decorative, the id is truth
+- `amazon.de/dp/B0FH23F6SB/something` → same pattern: the product id (after `/dp/`) is the truth, the rest is cosmetic
+- Wikipedia: case-insensitive first letter, redirects for common aliases/misspellings
+
+---
+
+### The resilience mindset
+
+- Old mindset: **"I can't find that"** → 404, dead end, blame the user
+- New mindset: **"I know what you meant - let me find and fix it for you"**
+- A redirect costs one extra request; a lost user can cost a customer
+
+---
+
+<style scoped>
     small {
+        margin: 0;
         font-size: 0.8em;
-        color: #aaa;
+        color: #888;
     }
 </style>
 
-### 📷 Image sources disclaimer
-Images used in this talk - apart from screenshots of the old and new check-in app, Indico/CERN logos/branding, social media logos, and press extracts from The Register and TechCrunch - are licensed under the [Unsplash License (longform below)](https://unsplash.com/license) and are free to use for commercial and non-commercial purposes.
+### What should (and shouldn't) be healed
 
-> Unsplash grants you an irrevocable, nonexclusive, worldwide copyright license to download, copy, modify, distribute, perform, and use images from Unsplash for free, including for commercial purposes, without permission from or attributing the photographer or Unsplash. This license does not include the right to compile images from Unsplash to replicate a similar or competing service.
+**Fair game:** typos, casing, word order, missing slug words, renamed-but-tracked resources
 
-<small>Information correct at the time of writing (2nd May 2025)</small>
+**Off limits:** auth-gated routes, destructive actions, admin paths - anywhere "close enough" is a security risk
+
+- Healing is about *forgiveness*, not *guessing* your way somewhere you shouldn't be*
+
+<small><sup>*</sup>Unless you want to be hacked.</small>
+
+---
+<!-- _paginate: false -->
+
+## Techniques for implementing self-healing URLs
+
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+</style>
+
+---
+
+### Technique 1: Partial string matching
+
+![bg right:40% fit](assets/images/brain-1.png)
+
+- Cheapest first: exact match, then substring / `LIKE`-style matches
+- `WHERE slug LIKE '%term%'` - fast, index-friendly, easy to reason about
+- Good for: missing or extra words, partial slugs, reordered fragments
+- Limit: doesn't help with genuine typos or misspellings
+
+---
+
+### Technique 2: Fuzzy matching
+
+![bg right:40% fit](assets/images/brain-2.png)
+
+- Handles typos & near-misses that substring matching can't
+- Similarity scoring (e.g. Python's `difflib.SequenceMatcher`) between the requested path and known candidates
+- A configurable **cutoff** threshold decides "close enough" vs. "not a match"
+- Trade-off: more forgiving, but more expensive and more prone to false positives
+
+---
+
+### Technique 3: Hybrid, chained resolution
+
+![bg right:40% fit](assets/images/brain-3.png)
+
+Real apps need more than one trick - chain cheap-to-expensive strategies.
+
+flask-selfheal's `DatabaseResolver` tries, in order:
+
+1. Exact match
+2. SQL `LIKE` matching
+3. Normalized matching (`0→o`, `1→l`, ...)
+4. Word-based matching
+5. Partial matching
+6. Fuzzy matching *(last resort)*
+
+---
+
+### flask-selfheal, under the hood
+
+- `SelfHeal(app, resolvers=[...])` - one Flask extension, a *list* of resolvers
+- Resolvers are **chainable** - each is tried in order until one resolves the path
+- Built-ins: `FlaskRoutesResolver`, `AliasMappingResolver`, `FuzzyMappingResolver`, `DatabaseResolver`
+- Plug in only what you need; combine them for defense in depth
+
+---
+<!-- _class: code -->
+
+### Case study: fixing route typos
+
+```python
+from flask_selfheal import SelfHeal
+from flask_selfheal.resolvers import FlaskRoutesResolver
+
+@app.route("/home")
+def home(): ...
+
+@app.route("/about")
+def about(): ...
+
+SelfHeal(app, resolvers=[FlaskRoutesResolver()])
+```
+
+```
+/hme    -->  /home
+/abot   -->  /about
+/contat -->  /contact
+```
+
+Fuzzy-matches against your *already registered* Flask routes - zero extra config.
+
+---
+<!-- _class: code -->
+
+### Case study: chaining resolvers
+
+```python
+from flask_selfheal.resolvers import AliasMappingResolver, FuzzyMappingResolver
+
+resolvers = [
+    AliasMappingResolver({"old-path": "new-path"}),
+    FuzzyMappingResolver(["home", "new-path"]),
+]
+SelfHeal(app, resolvers=resolvers)
+```
+
+```
+/old-path -->  /new-path   (alias)
+/hme      -->  /home       (fuzzy)
+/new-pth  -->  /new-path   (fuzzy)
+```
+
+Explicit aliases for known renames; fuzzy matching as the safety net.
+
+---
+<!-- _class: code -->
+
+### Case study: healing slugs against a database
+
+```python
+from flask_selfheal.resolvers import DatabaseResolver
+
+resolver = DatabaseResolver(
+    Articles,
+    slug_field="slug",
+    fuzzy_cutoff=0.7,
+    enable_word_matching=True,
+    enable_partial_matching=True,
+    custom_normalizers={"0": "o", "ph": "f"},
+)
+SelfHeal(app, resolvers=[resolver], redirect_pattern="/articles/{slug}")
+```
+
+```
+/articles/hell-wrl  -->  /articles/hello-world-1234567
+```
+
+Same tuning knobs that power the last three techniques, exposed as config.
+
+---
+<!-- _paginate: false -->
+
+## Live demo
+
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+</style>
+
+1: A typo in a URL segment
+2: A missing / reordered slug word
+3: Case sensitivity
+4: A database-backed slug, healed end-to-end
+
+---
+
+### What happens on a request?
+
+<div class="flow">
+  <div class="step miss">404 raised</div>
+  <div class="arrow">→</div>
+  <div class="step miss">Resolver 1: exact</div>
+  <div class="arrow">→</div>
+  <div class="step miss">Resolver 2: fuzzy</div>
+  <div class="arrow">→</div>
+  <div class="step">Resolver 3: DB match</div>
+</div>
+<div class="flow">
+  <div class="arrow">match found</div>
+  <div class="step">301 / 302 redirect</div>
+  <div class="arrow">no match anywhere</div>
+  <div class="step miss">real 404</div>
+</div>
+
+Resolvers are tried in the order you configure them - first match wins.
+
+---
+
+### Limitations & trade-offs
+
+- Fuzzy matching can produce false positives - "close enough" isn't always "correct"
+- DB fallback strategies (word / partial / fuzzy) cost more than an indexed exact lookup
+- Redirect chains can confuse caching/SEO if not paired with proper 301s
+- Healing should never extend to security-sensitive or destructive routes
+
+---
+<!-- _paginate: false -->
+
+### Recap
+
+- 404s are a dead end - self-healing URLs turn them into a redirect
+- Treat the identifier as truth, keep the human-readable part flexible
+- Chain cheap → expensive resolution strategies (string match → fuzzy → DB)
+- flask-selfheal packages this up as composable resolvers for Flask
+
+---
+<!-- _paginate: false -->
+
+### 🔗 [github.com/GovernmentPlates/flask-selfheal](https://github.com/GovernmentPlates/flask-selfheal)
+### 📦 [pypi.org/project/flask-selfheal](https://pypi.org/project/flask-selfheal/)
+### 🐍 MIT licensed
+### Special thanks: Maxim Danilov
+
+<style scoped>
+    section {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+</style>
